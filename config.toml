@@ -1,0 +1,11 @@
+baseurl = "http://replace-this-with-your-hugo-site.com/"
+languageCode = "en-us"
+title = "Product Name"
+theme = "stellar"
+googleAnalytics = "UA-123-45"
+
+[params]
+name="Product Name"
+tagline="Rethinking Impact Measurement"
+subtitle="Impact Measurement for All"
+description="Impact Measurement has long been an exclusive activity for larger organisations. We are changing this. We believe impact measurement should be practiced by all organisations benefiting society. No matter what your budget, what CRM you use or the size of your organisation, start measuring your impact with Product Name"

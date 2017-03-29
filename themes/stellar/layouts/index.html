@@ -1,0 +1,39 @@
+{{ partial "header_before.html" . }}
+{{ partial "header_after.html" . }}
+
+<!-- Header -->
+<header id="header" class="alt">
+    {{ if isset .Site.Params "logo" }}
+        <span class="logo"><img src="/images/{{ with .Site.Params.logo }}{{ . }}{{ else }}logo.svg{{ end }} " alt="" /></span>
+    {{ end }}
+    <h1>{{ .Site.Params.name }}</h1>
+    <p>{{ .Site.Params.tagline }}</p>
+</header>
+
+<!-- Nav -->
+<nav id="nav">
+    <ul>
+        <li><a href="#intro" class="active">Introduction</a></li>
+        <li><a href="#why">Impact Measurement</a></li>
+        <li><a href="#usp">Features</a></li>
+        <li><a href="#signup">Signup</a></li>
+    </ul>
+</nav>
+
+<!-- Main -->
+<div id="main">
+    <section id="intro" class="main">
+        {{ partial "intro.html" . }}
+    </section>
+    <section id="why" class="main special">
+        {{ partial "feature.html" . }}
+    </section>
+    <section id="usp" class="main special">
+        {{ partial "usp.html" . }}
+    </section>
+    <section id="signup" class="main special">
+        {{ partial "signup.html" . }}
+    </section>
+</div>
+
+{{ partial "footer.html" . }}

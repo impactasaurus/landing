@@ -1,0 +1,21 @@
+<header class="major">
+    <h2>Key Features</h2>
+</header>
+<ul class="features">
+    {{ range .Site.Data.features }}
+    <li>
+        {{ if isset . "image" }}
+            <span class="icon major style1 fa-code"></span>
+        {{ end }}
+        <h3>{{ .name }}</h3>
+        <p>{{ .description }}</p>
+    </li>
+    {{ end }}
+</ul>
+<footer class="major">
+<!--
+    <ul class="actions">
+        <li><a href="generic.html" class="button">Learn More</a></li>
+    </ul>
+-->
+</footer>
