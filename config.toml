@@ -7,6 +7,6 @@ googleAnalytics = "UA-123-45"
 [params]
 name="Impactasaurus"
 logo="logo.svg"
-tagline="Demonstrate and improve your social impact by measuring it"
+tagline="Demonstrate and Improve Your Social Impact"
 subtitle="Impact Measurement for All"
-description="Impact Measurement has long been an exclusive activity for larger organisations. We are changing this. We believe impact measurement should be practiced by all organisations benefiting society. No matter what your budget, what CRM you use or the size of your organisation, start measuring your impact with Impactasaurus"
+description="Impact Measurement has long been an exclusive activity for larger organisations. <b>We are changing this</b>. We believe impact measurement should be practiced by all organisations benefiting society. <br />No matter what your budget, what CRM you use or the size of your organisation, start measuring your impact with Impactasaurus"
