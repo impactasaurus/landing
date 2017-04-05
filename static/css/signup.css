@@ -1,0 +1,26 @@
+#signup a {
+    border-bottom: none;
+    color: #9bb2e1;
+    cursor: pointer;
+    font-weight: bold;
+}
+#signup a:hover {
+    color: #c79cc8;
+}
+#signup button {
+    background-color: #8cc9f0;
+    color: white !important;
+}
+#signup button:hover {
+    background-color: #8cc9f0;
+    color: white !important;
+}
+#signup input[type="submit"] {
+    background-color: #8cc9f0;
+    color: white !important;
+}
+
+#signup input[type="submit"]:hover {
+    background-color: #8cc9f0;
+    color: white !important;
+}
