@@ -4,7 +4,7 @@
 <!-- Header -->
 <header id="header" class="alt">
     {{ if isset .Site.Params "logo" }}
-        <span class="logo"><img src="/images/{{ with .Site.Params.logo }}{{ . }}{{ else }}logo.svg{{ end }} " alt="" /></span>
+        <img src="/images/{{ with .Site.Params.logo }}{{ . }}{{ else }}logo.svg{{ end }}"></img>
     {{ end }}
     <h1>{{ .Site.Params.name }}</h1>
     <p>{{ .Site.Params.tagline }}</p>
