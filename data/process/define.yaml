@@ -1,0 +1,5 @@
+name: "Define"
+description: "Select sector standard outcomes or define your own"
+color: "style1"
+icon: "fa-pencil-square-o"
+order: 1

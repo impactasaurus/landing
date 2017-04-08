@@ -1,0 +1,5 @@
+name: "Report"
+description: "Impact reported at the beneficiary or organisation level"
+color: "style3"
+icon: "fa-bar-chart"
+order: 3
