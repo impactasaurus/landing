@@ -3,6 +3,7 @@
     color: #9bb2e1;
     cursor: pointer;
     font-weight: bold;
+    text-decoration: underline;
 }
 #signup a:hover {
     color: #c79cc8;
