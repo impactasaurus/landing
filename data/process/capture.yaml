@@ -1,5 +1,6 @@
 name: "Capture"
-description: "Forms and questionnaires to capture outcomes"
+subtitle: "Forms and questionnaires to capture outcomes"
+description: "Whether you use standard evaluation frameworks or custom, {{ .Site.Params.name }} provides a platform to collect feedback from beneficaries. Select from a range of standard framework questionnaires of design your own. Beneficaries can directly provide feedback to the {{ .Site.Params.name }} web app or data can be imported into the system at a later date."
 color: "style2"
 icon: "fa-check-square-o"
 order: 2

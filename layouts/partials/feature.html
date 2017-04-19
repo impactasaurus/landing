@@ -3,10 +3,10 @@
 </header>
 
 {{ range sort .Site.Data.process "order" "asc" }}
-    <ul class="statistics">
+    <ul class="process">
         <li class="{{ .color }}">
             <span class="icon {{ .icon }}"></span><strong>{{ .name }}</strong>
-            <p>{{ .description }}</p>
+            <p>{{ replace .description  "{{ .Site.Params.name }}" $.Site.Params.name }}</p>
         </li>
     </ul>
 {{ end }}
