@@ -1,6 +1,6 @@
 name: "Demonstrate"
 subtitle: "Provide evidence of your impact to donors, investors and wider stakeholders"
-description: "It is becoming increasing important to demonstrate your social impact to trustees, investors, donors and other stakeholders. With {{ .Site.Params.name }} you can show your organisation's social impact and demonstrate the benefit you are providing to the wider community. By doing so, organisations are more likely to continue obtaining support, in an ever more competitive sector"
+description: " - With {{ .Site.Params.name }} you can demonstrate the benefit you are providing to the wider community."
 color: "style5"
 icon: "fa-star-o"
 order: 4

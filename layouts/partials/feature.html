@@ -6,7 +6,7 @@
     <ul class="process">
         <li class="{{ .color }}">
             <span class="icon {{ .icon }}"></span><strong>{{ .name }}</strong>
-            <p>{{ replace .description  "{{ .Site.Params.name }}" $.Site.Params.name }}</p>
+            <p>{{ replace .description  "{{ .Site.Params.name }}" $.Site.Params.name | safeHTML}}</p>
         </li>
     </ul>
 {{ end }}

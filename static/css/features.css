@@ -42,7 +42,7 @@
 }
 
 .process li strong, .process li b {
-    display: block;
+    display: inline-block;;
     font-size: 2em;
     line-height: 1.1;
     color: inherit !important;
@@ -62,6 +62,8 @@
 
 .process li .icon {
     display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 25px;
 }
 
 .process li .icon:before {

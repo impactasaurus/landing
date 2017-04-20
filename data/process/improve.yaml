@@ -1,6 +1,6 @@
 name: "Improve"
 subtitle: "As the saying goes, 'If you can't measure it, you can't improve it'"
-description: "By measuring impact, your organisation can understand what areas need improvement and what changes would be most benefical in increasing your impact"
+description: " - {{ .Site.Params.name }} allows visualisation of the factors which make up your social impact<br /> - Areas which need improvement are clearly highighted."
 color: "style4"
 icon: "fa-line-chart"
 order: 5
