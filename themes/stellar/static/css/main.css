@@ -3123,7 +3123,7 @@
 				-webkit-transition-delay: 0.5s;
 				-ms-transition-delay: 0.5s;
 				transition-delay: 0.5s;
-				opacity: 1;
+                opacity: 0;
 			}
 
 			#header.alt .logo {
@@ -3218,11 +3218,15 @@
 
 		}
 
-		body.is-loading #header.alt > * {
+		body #header.alt > * {
 			opacity: 0;
 		}
 
-		body.is-loading #header.alt .logo {
+		body.loaded #header.alt > * {
+			opacity: 1;
+		}
+
+		body #header.alt .logo {
 			-moz-transform: scale(0.8) rotate(-30deg);
 			-webkit-transform: scale(0.8) rotate(-30deg);
 			-ms-transform: scale(0.8) rotate(-30deg);
