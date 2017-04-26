@@ -1,6 +1,6 @@
 name: "Report"
 subitle: "Impact reported at the beneficiary or organisation level"
-description: " - {{ .Site.Params.name }} includes a powerful reporting capability.<br /> - The beneficary reports highlight an individual's journey of change, providing beneficaries with a sense of achievement and progress.<br /> - The organisation reports provide aggregated information, showing the impact across the entire organisation - ideal for stakeholders"
+description: " - {{ .Site.Params.name }} includes a powerful reporting capability.<br /> - Report on an individual's journey of change, providing a sense of achievement and progress.<br /> - Impact reports detail your organisation's aggregated impact - ideal for stakeholders"
 color: "style3"
 icon: "fa-bar-chart"
 order: 3
