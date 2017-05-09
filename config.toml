@@ -2,7 +2,7 @@ baseurl = "http://replace-this-with-your-hugo-site.com/"
 languageCode = "en-us"
 title = "Impactasaurus"
 theme = "stellar"
-googleAnalytics = "UA-123-45"
+googleAnalytics = "UA-61133305-4"
 
 [params]
 name="Impactasaurus"
