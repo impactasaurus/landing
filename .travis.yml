@@ -5,7 +5,7 @@ script:
   - python --version
   - sudo pip install s3cmd awscli
   - s3cmd sync --delete-removed --no-mime-magic --guess-mime-type -P -M -r public/ $S3_BUCKET
-  - aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "*"
+  - aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 notifications:
     email:
         on_failure: always
