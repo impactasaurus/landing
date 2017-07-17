@@ -11,6 +11,7 @@
 #signup button {
     background-color: #8cc9f0;
     color: white !important;
+    font-weight: normal;
 }
 #signup button:hover {
     background-color: #8cc9f0;
@@ -19,6 +20,7 @@
 #signup input[type="submit"] {
     background-color: #8cc9f0;
     color: white !important;
+    margin-top: 15px;
 }
 
 #signup input[type="submit"]:hover {

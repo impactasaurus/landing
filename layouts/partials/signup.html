@@ -1,34 +1,40 @@
 <div id="signup">
     <header class="major">
         <h2>Interested?</h2>
-        <p>{{ .Site.Params.name }} is under active development and will be available shortly</p>
+        <p>{{ .Site.Params.name }} is currently accepting beta users</p>
     </header>
     <footer class="major">
-        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-        <script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { window.register=function(){L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"ac08d2dbf13a18957793c2b11","lid":"3b6d4dee1b"})} })</script>
-        <p>We would love to keep in contact, please fill in our <a href="https://goo.gl/forms/bdHyNRhsfTmzuGEl1">short questionnaire</a> or leave your email address:</p>
-
         <div id="mc_embed_signup">
-            <!-- Begin MailChimp Signup Form -->
-            <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+            <p>Please leave your email address and we will create an account for you:</p>
             <style type="text/css">
             	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-            	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-            	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
             </style>
             <div id="mc_embed_signup">
-            <form action="//impact.us15.list-manage.com/subscribe/post?u=ac08d2dbf13a18957793c2b11&amp;id=3b6d4dee1b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                <div id="mc_embed_signup_scroll">
-
-            	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ac08d2dbf13a18957793c2b11_3b6d4dee1b" tabindex="-1" value=""></div>
-                <div class="clear"><input type="submit" value="Register Interest" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                </div>
-            </form>
+                <form id="signup-form">
+                    <input id="signup-email" type="email" value="" name="email" class="email" placeholder="email address" required>
+                    <input type="submit" value="Signup" class="button"></div>
+                </form>
             </div>
-
-            <!--End mc_embed_signup-->
+        </div>
+        <div id="signup-complete" style="display:none;">
+            Thanks for considering Impactasaurus. We have received your request and will create an account within 24 hours.
         </div>
     </footer>
+    <script>
+        
+        $("#signup-form").submit(function( event ) {
+            event.preventDefault();
+            var email = $("#signup-email").val();
+            $.get("https://hooks.zapier.com/hooks/catch/2391493/55oy4x/", { 
+                email:email
+            })
+            .done(function() {
+                $("#mc_embed_signup").hide();
+                $("#signup-complete").show();
+            })
+            .fail(function() {
+                alert( "Something went wrong. Please email support@impactasaurus.org" );
+            })
+});
+    </script>
 </div>
