@@ -56,7 +56,11 @@
     <script>
         $("#signup-form").submit(function( event ) {
             event.preventDefault();
+            // adwords conversion
             goog_report_conversion();
+            // ga event
+            ga('send', 'event', "signup", "submitted");
+            // record email address
             var email = $("#signup-email").val();
             $.get("https://hooks.zapier.com/hooks/catch/2391493/55oy4x/", { 
                 email:email
