@@ -1,4 +1,37 @@
 <div id="signup">
+
+    <!-- Google Code for Signup Conversion Page
+    In your html page, add the snippet and call
+    goog_report_conversion when someone clicks on the
+    chosen link or button. -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        goog_snippet_vars = function() {
+            var w = window;
+            w.google_conversion_id = 1017119165;
+            w.google_conversion_label = "Y7bBCPuchHQQvYOA5QM";
+            w.google_remarketing_only = false;
+        }
+        // DO NOT CHANGE THE CODE BELOW.
+        goog_report_conversion = function(url) {
+            goog_snippet_vars();
+            window.google_conversion_format = "3";
+            var opt = new Object();
+            opt.onload_callback = function() {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            }
+            var conv_handler = window['google_trackConversion'];
+            if (typeof(conv_handler) == 'function') {
+                conv_handler(opt);
+            }
+        }
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+    <!-- end google code -->
+
     <header class="major">
         <h2>Interested?</h2>
         <p>{{ .Site.Params.name }} is currently accepting beta users</p>
@@ -21,9 +54,9 @@
         </div>
     </footer>
     <script>
-        
         $("#signup-form").submit(function( event ) {
             event.preventDefault();
+            goog_report_conversion();
             var email = $("#signup-email").val();
             $.get("https://hooks.zapier.com/hooks/catch/2391493/55oy4x/", { 
                 email:email
@@ -35,6 +68,7 @@
             .fail(function() {
                 alert( "Something went wrong. Please email support@impactasaurus.org" );
             })
-});
+        });
     </script>
+
 </div>
