@@ -21,6 +21,7 @@
         <li><a href="#intro" class="active">Benefits</a></li>
         <li><a href="#why">Features</a></li>
         <li><a href="#usp">Why {{ .Site.Params.name}}</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#signup">Signup</a></li>
     </ul>
 </nav>
@@ -35,6 +36,9 @@
     </section>
     <section id="usp" class="main special">
         {{ partial "usp.html" . }}
+    </section>
+    <section id="pricing" class="main special">
+        {{ partial "price.html" . }}
     </section>
     <section id="signup" class="main special">
         {{ partial "signup.html" . }}
