@@ -3326,6 +3326,11 @@
 						box-shadow: none;
 					}
 
+					#nav ul li a img {
+						height: 1em;
+						vertical-align: middle;
+					}
+
 		#nav.alt {
 			position: fixed;
 			top: 0;
