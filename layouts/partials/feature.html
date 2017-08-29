@@ -1,20 +1,18 @@
-<header class="major">
-    <h2>Features</h2>
-</header>
+<div id="features">
+    <header class="major">
+        <h2>Features</h2>
+    </header>
 
-{{ range sort .Site.Data.process "order" "asc" }}
-    <ul class="process">
-        <li class="{{ .color }}">
-            <span class="icon {{ .icon }}"></span><strong>{{ .name }}</strong>
-            <p>{{ replace .description  "{{ .Site.Params.name }}" $.Site.Params.name | safeHTML}}</p>
-        </li>
-    </ul>
-{{ end }}
+    {{ range sort .Site.Data.process "order" "asc" }}
+        <ul class="process">
+            <li class="{{ .color }}">
+                <img src="{{.image}}" class="col-xs-6"></img>
+                <div class="inner" class="col-xs-6">
+                    <span class="icon {{ .icon }}"></span><strong>{{ .name }}</strong>
+                    <p>{{ replace .description  "{{ .Site.Params.name }}" $.Site.Params.name | safeHTML}}</p>
+                </div>
+            </li>
+        </ul>
+    {{ end }}
 
-<footer class="major">
-<!--
-    <ul class="actions">
-        <li><a href="generic.html" class="button">Learn More</a></li>
-    </ul>
--->
-</footer>
+</div>

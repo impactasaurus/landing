@@ -1,6 +1,7 @@
 name: "Demonstrate"
 subtitle: "Provide evidence of your impact to donors, investors and wider stakeholders"
-description: " - With {{ .Site.Params.name }} you can demonstrate the benefit you are providing to the wider community."
+description: "<ul><li>With {{ .Site.Params.name }} you can demonstrate the benefit you are providing to the wider community.</li></ul>"
 color: "style5"
 icon: "fa-star-o"
+image: "/images/nathan-anderson-99010.jpg"
 order: 4

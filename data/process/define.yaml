@@ -1,6 +1,7 @@
 name: "Define"
 subtitle: "Select sector standard outcomes or define your own"
-description: " - {{ .Site.Params.name }} includes a library of sector standard monitoring and evaluation frameworks.<br /> - Alternatively, you can define exactly the information you would like to collect."
+description: "<ul><li>{{ .Site.Params.name }} includes a library of sector standard monitoring and evaluation frameworks.</li><li>Alternatively, you can define exactly the information you would like to collect.</li></ul>"
 color: "style1"
 icon: "fa-pencil-square-o"
+image: "/images/questionset.png"
 order: 1
