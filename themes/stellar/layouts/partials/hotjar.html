@@ -1,22 +1,3 @@
-
-<!-- Google Analytics -->
-{{ with .Site.GoogleAnalytics }}
-<script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', {{ . }}, 'auto');
-
-    ga('require', 'cleanUrlTracker');
-    ga('require', 'eventTracker');
-    ga('require', 'outboundLinkTracker');
-
-    ga('send', 'pageview');
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-
-{{ end }}
-
-
 <!-- Hotjar Tracking Code for impactasaurus.org only in prod -->
 <script>
     if (window.location.hostname.indexOf("impactasaurus") !== -1) {
