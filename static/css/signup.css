@@ -8,6 +8,9 @@
 #signup a:hover {
     color: #c79cc8;
 }
+#signup ul {
+    list-style-position: inside;
+}
 #signup button {
     background-color: #8cc9f0;
     color: white !important;

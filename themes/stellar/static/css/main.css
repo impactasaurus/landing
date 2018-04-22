@@ -3479,7 +3479,6 @@
 		#main input[type="email"],
 		#main select,
 		#main textarea {
-			background: rgba(222, 222, 222, 0.25);
 			border-color: #dddddd;
 		}
 

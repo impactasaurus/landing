@@ -38,14 +38,19 @@
     </header>
     <footer class="major">
         <div id="mc_embed_signup">
-            <p>Please leave your email address and we will create an account for you:</p>
+            <p>If you meet the following criteria, please leave your email address below and we will be in contact soon:</p>
+            <ul>
+                <li>You help beneficiaries over a period of time</li>
+                <li>Questionnaires can be asked before and after 'intervention' (as a minimum)</li>
+                <li>Your desired questionnaire is composed of Likert scales</li>
+            </ul>
             <style type="text/css">
             	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
             </style>
             <div id="mc_embed_signup">
                 <form id="signup-form">
                     <input id="signup-email" type="email" value="" name="email" class="email" placeholder="email address" required>
-                    <input type="submit" value="Signup" class="button"></div>
+                    <input type="submit" value="Register" class="button"></div>
                 </form>
             </div>
         </div>
@@ -62,7 +67,7 @@
             ga('send', 'event', "signup", "submitted");
             // record email address
             var email = $("#signup-email").val();
-            $.get("https://hooks.zapier.com/hooks/catch/2391493/55oy4x/", { 
+            $.get("https://hooks.zapier.com/hooks/catch/2391493/55oy4x/", {
                 email:email
             })
             .done(function() {
