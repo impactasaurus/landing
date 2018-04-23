@@ -1,7 +1,0 @@
-name: "Report"
-subitle: "Impact reported at the beneficiary or organisation level"
-description: "<ul><li>Report on an individual's progress, providing guidance and a sense of achievement.</li><li>Impact reports detail your organisation's aggregated impact - ideal for stakeholders.</li><ul>"
-color: "style3"
-icon: "fa-bar-chart"
-image: "/images/q-radar.png"
-order: 3

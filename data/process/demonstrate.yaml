@@ -1,7 +1,0 @@
-name: "Demonstrate"
-subtitle: "Provide evidence of your impact to donors, investors and wider stakeholders"
-description: "<ul><li>With {{ .Site.Params.name }} you can demonstrate the benefit you are providing to the wider community.</li></ul>"
-color: "style5"
-icon: "fa-star-o"
-image: "/images/report.png"
-order: 4

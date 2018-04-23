@@ -1,0 +1,6 @@
+name: "Mobile Compatible"
+description: "Our web application can be used on computers, phones and tablets"
+color: "style2"
+icon: "fa-tablet"
+image: "/images/question.png"
+order: 10

@@ -1,6 +1,5 @@
-name: "Define"
-subtitle: "Select sector standard outcomes or define your own"
-description: "<ul><li>{{ .Site.Params.name }} includes a library of sector standard monitoring and evaluation frameworks.</li><li>Alternatively, you can define exactly the information you would like to collect.</li></ul>"
+name: "Define Questionnaires"
+description: "Create as many questionnaires as you want in the system"
 color: "style1"
 icon: "fa-pencil-square-o"
 image: "/images/questionset.png"

@@ -1,0 +1,6 @@
+name: "Service Reports"
+description: "Generate reports showing your organisation's impact across all your beneficiaries"
+color: "style5"
+icon: "fa-line-chart"
+image: "/images/report.png"
+order: 4

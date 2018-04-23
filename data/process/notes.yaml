@@ -1,0 +1,6 @@
+name: "Notes"
+description: "Capture comments, goals and actions"
+color: "style2"
+icon: "fa-comment"
+image: "/images/question.png"
+order: 9

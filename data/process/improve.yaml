@@ -1,7 +1,0 @@
-name: "Improve"
-subtitle: "As the saying goes, 'If you can't measure it, you can't improve it'"
-description: "<ul><li>{{ .Site.Params.name }} allows visualisation of the factors which make up your social impact.</li><li>Areas which need improvement are clearly highighted.</li></ul>"
-color: "style4"
-icon: "fa-line-chart"
-image: "/images/cat-radar.png"
-order: 5

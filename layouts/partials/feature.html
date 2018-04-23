@@ -1,18 +1,19 @@
-<div id="features">
+<div>
     <header class="major">
         <h2>Features</h2>
     </header>
 
+    <ul class="features">
     {{ range sort .Site.Data.process "order" "asc" }}
-        <ul class="process">
-            <li class="{{ .color }}">
-                <img src="{{.image}}" class="col-xs-6"></img>
-                <div class="inner" class="col-xs-6">
-                    <span class="icon {{ .icon }}"></span><strong>{{ .name }}</strong>
-                    <p>{{ replace .description  "{{ .Site.Params.name }}" $.Site.Params.name | safeHTML}}</p>
-                </div>
-            </li>
-        </ul>
+        <li class="{{ .color }}">
+            <h3>
+                {{ if isset . "icon" }}
+                    <span class="icon {{ .icon }}"></span>
+                {{ end }}
+                {{ .name }}
+            </h3>
+            <p>{{ replace .description  "{{ .Site.Params.name }}" $.Site.Params.name | safeHTML}}</p>
+        </li>
     {{ end }}
-
+    </ul>
 </div>
