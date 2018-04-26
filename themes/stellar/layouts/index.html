@@ -3,9 +3,6 @@
 
 <!-- Header -->
 <header id="header" class="alt">
-    {{ if isset .Site.Params "logo" }}
-        <img src="/images/{{ with .Site.Params.logo }}{{ . }}{{ else }}logo.svg{{ end }}"></img>
-    {{ end }}
     <h1>{{ .Site.Params.name }}</h1>
     <p>{{ .Site.Params.tagline }}</p>
     <script
@@ -14,6 +11,12 @@
         crossorigin="anonymous">
     </script>
 </header>
+
+<div id="screenshots" class="horizontal">
+    <img class="screenshot left" src="images/answering-frame.png" />
+    <img class="screenshot center" src="images/radar-frame.png" />
+    <img class="screenshot right" src="images/line-frame.png" />
+</div>
 
 <!-- Nav -->
 <nav id="nav">
