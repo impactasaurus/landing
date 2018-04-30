@@ -3442,7 +3442,7 @@
 		#main input[type="email"],
 		#main select,
 		#main textarea {
-			border-color: #dddddd;
+			border-color: rgba(99, 99, 99, 0.6);
 		}
 
 			#main input[type="text"]:focus,
@@ -3450,7 +3450,7 @@
 			#main input[type="email"]:focus,
 			#main select:focus,
 			#main textarea:focus {
-				border-color: #8cc9f0;
+				border-color: #935D8C;
 				box-shadow: 0 0 0 1px #8cc9f0;
 			}
 
@@ -3483,23 +3483,23 @@
 		}
 
 		#main ::-webkit-input-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(99, 99, 99, 0.9) !important;
 		}
 
 		#main :-moz-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(99, 99, 99, 0.9) !important;
 		}
 
 		#main ::-moz-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(99, 99, 99, 0.9) !important;
 		}
 
 		#main :-ms-input-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(99, 99, 99, 0.9) !important;
 		}
 
 		#main .formerize-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(99, 99, 99, 0.9) !important;
 		}
 
 		#main .icon.major {

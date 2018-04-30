@@ -12,21 +12,31 @@
     list-style-position: inside;
 }
 #signup button {
-    background-color: #8cc9f0;
+    background-color: #935D8C;
     color: white !important;
     font-weight: normal;
 }
 #signup button:hover {
-    background-color: #8cc9f0;
+    background-color: #7e5078;
     color: white !important;
 }
+
+#signup button:focus {
+    outline-width: 0px;
+}
+
 #signup input[type="submit"] {
-    background-color: #8cc9f0;
+    background-color: #935D8C;
     color: white !important;
     margin-top: 15px;
 }
 
 #signup input[type="submit"]:hover {
-    background-color: #8cc9f0;
+    background-color: #7e5078;
     color: white !important;
 }
+
+#signup input[type="submit"]:focus {
+    outline-width: 0px;
+}
+
