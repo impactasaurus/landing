@@ -5,9 +5,7 @@ before_deploy: sudo pip install s3cmd awscli
 deploy:
   skip_cleanup: true
   provider: script
-  script: 
-   - s3cmd sync --delete-removed --no-mime-magic --guess-mime-type -P -M -r public/ $S3_BUCKET
-   - aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+  script: s3cmd sync --delete-removed --no-mime-magic --guess-mime-type -P -M -r public/ $S3_BUCKET && aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
   on:
     repo: impactasaurus/landing
     branch: master
