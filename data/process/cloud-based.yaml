@@ -1,6 +1,0 @@
-name: "Cloud Based"
-description: "Everything is stored in the cloud, accessible from anywhere in the world"
-color: "style2"
-icon: "fa-cloud"
-image: "/images/question.png"
-order: 5

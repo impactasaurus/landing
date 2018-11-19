@@ -1,6 +1,0 @@
-name: "Slice and Dice"
-description: "Reports can be generated for subsets of your beneficiaries, ideal for reporting on individual programmes or initiatives"
-color: "style2"
-icon: "fa-filter"
-image: "/images/question.png"
-order: 9

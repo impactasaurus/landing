@@ -1,6 +1,0 @@
-name: "Complete Questionnaires"
-description: "Questionnaires can be completed within the web app, the responses are stored within the system for future reference"
-color: "style2"
-icon: "fa-check-square-o"
-image: "/images/question.png"
-order: 2
