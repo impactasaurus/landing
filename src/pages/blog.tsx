@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { StaticQuery, graphql } from "gatsby";
-import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
+import { graphql } from "gatsby";
+import { Grid, Card, Container, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";

@@ -1,11 +1,12 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { get } from "lodash";
-import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
-import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
+import { Header, Container, Segment, Label, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
+import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import {withLayout, LayoutProps} from "../components/Layout";
 import { graphql } from "gatsby";
+import SEO from "../components/SEO/SEO";
 
 interface BlogPostProps extends LayoutProps {
   data: {
@@ -15,7 +16,7 @@ interface BlogPostProps extends LayoutProps {
 }
 
 const BlogPostPage = (props: BlogPostProps) => {
-  const { frontmatter, html, timeToRead } = props.data.post;
+  const { frontmatter, html, timeToRead, excerpt, fields } = props.data.post;
   const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
 
   const tags = props.data.post.frontmatter.tags
@@ -59,6 +60,7 @@ const BlogPostPage = (props: BlogPostProps) => {
   const cover = get(frontmatter, "image.children.0.fixed", {} );
   return (
     <Container>
+      <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} pathname={fields.slug} />
       <BlogTitle />
       <Segment vertical style={{ border: "none" }}>
         <Item.Group>
@@ -80,7 +82,7 @@ const BlogPostPage = (props: BlogPostProps) => {
       <Image
         {...cover}
         fluid
-      /> 
+      />
       <Segment vertical
         style={{ border: "none" }}
         dangerouslySetInnerHTML={{
@@ -90,12 +92,6 @@ const BlogPostPage = (props: BlogPostProps) => {
       <Segment vertical>
         {tags}
       </Segment>
-      {props.data.site
-        && props.data.site.siteMetadata
-        && props.data.site.siteMetadata.disqus
-        && <Segment vertical>
-        </Segment>
-      }
       <Segment vertical>
         <Grid padded centered>
           {recents}
