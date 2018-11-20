@@ -1,17 +1,23 @@
 module.exports = {
   siteMetadata: {
-    title: `My website`,
-    googleVerification: `abcdefz`
+    title: 'Impact Reporting for All',
+    titleTemplate: '%s - Impactasaurus',
+    siteLanguage: 'en',
+    logo: '/logos/logo.png',
+    url: 'https://impactasaurus.org',
+    description: 'Demonstrate and improve your social impact with Impactasaurus! No matter what your budget or the size of your organisation',
+    twitter: '@impactasaurus',
+    googleVerification: 'abcdefz'
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': `AuthorJson`
+    'MarkdownRemark.frontmatter.author': 'AuthorJson'
   },
   plugins: [
     // Expose `/data` to graphQL layer
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `data`,
+        name: 'data',
         path: `${__dirname}/data`
       }
     },

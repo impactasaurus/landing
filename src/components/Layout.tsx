@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import {Menu} from "./Menu";
+import SEO from "./SEO";
 import { Segment, Icon, Container } from "semantic-ui-react";
 import { Provider } from "react-redux";
 import { store } from "../store";
