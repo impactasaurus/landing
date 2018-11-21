@@ -1,33 +1,63 @@
 import * as React from "react";
 import Navbar from "react-bootstrap/lib/Navbar";
 import Nav from "react-bootstrap/lib/Nav";
+import NavDropdown from "react-bootstrap/lib/NavDropdown";
+import Button from "react-bootstrap/lib/Button";
 import "./style.less";
 import {GatsbyLinkProps} from "gatsby-link";
 
-export interface MenuItem {
+export interface IMenuItem {
   name: string;
   path: string;
   exact: boolean;
-  icon?: string;
-  inverted?: boolean;
+  children?: IMenuItem[];
+  right?: boolean;
 }
 
-export interface MenuProps extends React.HTMLProps<HTMLDivElement> {
-  items: MenuItem[];
+export interface IMenuProps extends React.HTMLProps<HTMLDivElement> {
+  items: IMenuItem[];
   pathname: string;
   Link: React.ComponentClass<GatsbyLinkProps<any>> | any;
 }
 
-export const Menu = ({ items, pathname, Link }: MenuProps) =>
-    <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-                {items.map((item) => {
-                    const active = (item.exact) ? pathname === item.path : pathname.startsWith(item.path);
-                    return <Nav.Link as={Link} to={item.path} key={item.path}>{item.name}</Nav.Link>;
-                })}
-            </Nav>
-        </Navbar.Collapse>
-    </Navbar>;
+export interface IRenderItemProp {
+  item: IMenuItem;
+  pathname: string;
+  Link: React.ComponentClass<GatsbyLinkProps<any>> | any;
+}
+
+const isActive = (exact: boolean, itemPath: string, pathname: string): boolean =>
+  (exact) ? pathname === itemPath : pathname.startsWith(itemPath);
+
+const MenuItem = ({item, pathname, Link}: IRenderItemProp) => {
+  if (item.children) {
+    const active = item.children.reduce((a, c) => {
+      return a || isActive(c.exact, c.path, pathname);
+    }, false);
+    return (
+      <NavDropdown title={item.name} id={item.name} key={item.path} active={active}>
+        {item.children.map((i) =>
+          <NavDropdown.Item as={Link} to={i.path} key={i.path} active={isActive(i.exact, i.path, pathname)}>{i.name}</NavDropdown.Item>,
+        )}
+      </NavDropdown>
+    );
+  } else {
+    return <Nav.Link as={Link} to={item.path} key={item.path} active={isActive(item.exact, item.path, pathname)}>{item.name}</Nav.Link>;
+  }
+};
+
+export const Menu = ({ items, pathname, Link }: IMenuProps) =>
+  <Navbar bg="light" expand="lg">
+    <Navbar.Brand as={Link} to="/">Impactasaurus</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="mr-auto">
+        {items.filter((i) => i.right !== true).map((item) => <MenuItem item={item} pathname={pathname} Link={Link} key={item.path} />)}
+      </Nav>
+      <Nav className="justify-content-end">
+        {items.filter((i) => i.right === true).map((item) => <MenuItem item={item} pathname={pathname} Link={Link} key={item.path} />)}
+        <Nav.Item as={Button} variant="outline-primary" href="https://app.impactasaurus.org">Log in</Nav.Item>
+        <Nav.Item as={Button} variant="primary" href="https://app.impactasaurus.org/signup">Sign up</Nav.Item>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>;
