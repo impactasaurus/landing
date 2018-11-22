@@ -53,7 +53,14 @@ module.exports = {
       }
     },
 
-    // Parse all images files
+    // Parse all images files and make available via graphql
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/static/images`
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
