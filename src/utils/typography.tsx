@@ -26,13 +26,15 @@ const t = new Typography({
   overrideStyles: ({adjustFontSizeTo}, options) => ({
     h1: {
       "letter-spacing": "1px",
+      "text-align": "center",
     },
     h2: {
-      ...adjustFontSizeTo("36px"),
+      ...adjustFontSizeTo("38px"),
       "color": "#555555",
       "letter-spacing": "-1.1px",
       "margin-top": "53px",
       "word-spacing": "3px",
+      "text-align": "center",
     },
     h3: {
       ...adjustFontSizeTo("34px"),
@@ -40,14 +42,16 @@ const t = new Typography({
       "letter-spacing": "-.1px",
       "word-spacing": "2px",
       "font-weight": 400,
+      "text-align": "center",
     },
     h4: {
-    ...adjustFontSizeTo("30px"),
+    ...adjustFontSizeTo("28px"),
       "color": "#555555",
       "fontFamily": options.bodyFontFamily.join(","),
       "letter-spacing": "-.1px",
       "word-spacing": "2px",
       "font-weight": 300,
+      "text-align": "center",
     },
     h5: {
       ...adjustFontSizeTo("19px"),

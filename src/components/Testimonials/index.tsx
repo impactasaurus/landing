@@ -3,12 +3,15 @@ import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Testimonial from "../Testimonial";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default () => (
   <Container>
-    <Row>
+    <Row className="header">
       <Col>
-        <h3>What Charities are Saying</h3>
+        <h2>Inspirational organisations <FontAwesomeIcon icon={faHeart} /> Impactasaurus</h2>
+        <h4>Over 100 organisations use Impactasaurus to demonstrate their impact</h4>
       </Col>
     </Row>
     <Row>

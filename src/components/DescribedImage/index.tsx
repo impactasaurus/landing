@@ -12,7 +12,7 @@ interface IProps {
 export default ({title, desc, image, odd}: IProps) => {
   const img = (
     <Col>
-      <img src={image} width="100%"/>
+      <img src={image} />
     </Col>
   );
   return (

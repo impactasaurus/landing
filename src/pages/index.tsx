@@ -1,20 +1,28 @@
 import * as React from "react";
 import { withLayout, LayoutProps } from "../components/Layout";
 import Hero from "../components/Hero";
-import Clients from "../components/Clients";
 import Signup from "../components/Signup";
 import Testimonials from "../components/Testimonials";
 import Steps from "../components/Steps";
+import Row from "react-bootstrap/lib/Row";
+import Col from "react-bootstrap/lib/Col";
 
 const IndexPage = (props: LayoutProps) => (
   <div>
     <Hero>
-      <h1>Simple impact reporting</h1>
-      <h4>Attract funding and improve your service, with minimal overhead</h4>
-      <img src="/images/screenshots/radar-frame.png" />
+      <Row className="header">
+        <Col>
+          <h1>Simple impact reporting</h1>
+          <h4>Attract funding and improve your service, with minimal overhead</h4>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <img src="/images/screenshots/radar-frame.png" />
+        </Col>
+      </Row>
     </Hero>
     <Steps />
-    <Clients />
     <Testimonials />
     <Signup />
   </div>

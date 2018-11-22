@@ -6,33 +6,33 @@ import DescribedImage from "../DescribedImage";
 
 export default () => (
   <Container>
-    <Row>
+    <Row className="header">
       <Col>
-        <h2>You're Only 4 Steps Away from Impact Reporting</h2>
-        <p>From choosing a questionnaire to reporting on your impact, we keep things simple</p>
+        <h2>You're only 4 steps away from demonstrating your impact</h2>
+        <h4>From choosing a questionnaire to reporting your impact, we keep things simple</h4>
       </Col>
     </Row>
     <DescribedImage
       image="/images/screenshots/radar-frame.png"
-      title="Select a Questionnaire"
+      title="Select a questionnaire"
       desc="Pick from our range of questionnaires or define your own"
       odd={true}
     />
     <DescribedImage
       image="/images/screenshots/radar-frame.png"
-      title="Collect Responses"
+      title="Collect responses"
       desc="Gather responses from your beneficiaries"
       odd={false}
     />
     <DescribedImage
       image="/images/screenshots/radar-frame.png"
-      title="Monitor Progress"
+      title="Monitor progress"
       desc="View your beneficiary's journey during the intervention"
       odd={true}
     />
     <DescribedImage
       image="/images/screenshots/radar-frame.png"
-      title="Report Your Impact"
+      title="Report your impact"
       desc="Generate reports showing the impact your organisation had on your beneficiaries"
       odd={false}
     />

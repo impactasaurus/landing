@@ -12,10 +12,10 @@ interface IProps {
 export default ({name, quote, image}: IProps) => {
   return (
     <Row key="intro">
-      <Col md={4}>
-        <Image src={image} roundedCircle width="100%" />
+      <Col md={{span: 3, offset: 1}}>
+        <Image src={image} width="100%" />
       </Col>
-      <Col>
+      <Col md={{span: 6, offset: 1}}>
         <h5>{name}</h5>
         <p>{quote}</p>
       </Col>
