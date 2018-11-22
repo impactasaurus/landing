@@ -16,7 +16,7 @@ export default ({name, quote, image}: IProps) => {
         <Image src={image} roundedCircle width="100%" />
       </Col>
       <Col>
-        <h3>{name}</h3>
+        <h5>{name}</h5>
         <p>{quote}</p>
       </Col>
     </Row>

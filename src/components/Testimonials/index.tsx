@@ -8,7 +8,7 @@ export default () => (
   <Container>
     <Row>
       <Col>
-        <h2>What Charities are Saying</h2>
+        <h3>What Charities are Saying</h3>
       </Col>
     </Row>
     <Row>

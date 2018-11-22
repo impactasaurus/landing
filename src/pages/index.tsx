@@ -10,7 +10,7 @@ const IndexPage = (props: LayoutProps) => (
   <div>
     <Hero>
       <h1>Simple impact reporting</h1>
-      <h3>Attract funding and improve your service, with minimal overhead</h3>
+      <h4>Attract funding and improve your service, with minimal overhead</h4>
       <img src="/images/screenshots/radar-frame.png" />
     </Hero>
     <Steps />

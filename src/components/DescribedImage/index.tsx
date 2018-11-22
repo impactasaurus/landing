@@ -19,7 +19,7 @@ export default ({title, desc, image, odd}: IProps) => {
     <Row>
       {odd && img}
       <Col>
-        <h3>{title}</h3>
+        <h5>{title}</h5>
         <p>{desc}</p>
       </Col>
       {!odd && img}
