@@ -17,32 +17,36 @@ export default () => (
     <Row>
       <Col>
         <Testimonial
-          image="/images/clients/mind.png"
-          name="Test User"
-          quote="Great TOOL!! Excellent Print Outs. Has helped me acquire funding. Customer Service is excellent. One phone call and My questions are not only acknowledged but Resolved. I cannot Recommend this tool enough"
+          image="/images/clients/bac.jpg"
+          name="Battersea Arts Centre"
+          quote="TODO"
+          url="https://www.bac.org.uk"
         />
       </Col>
       <Col>
         <Testimonial
-          image="/images/clients/mind.png"
-          name="Test User"
-          quote="Really great way to measure impact, fantastic support from the team, easy to use, love it"
+          image="/images/clients/crcc.jpg"
+          name="Cornwall Rural Community Charity"
+          quote="TODO"
+          url="https://www.cornwallrcc.org.uk"
         />
       </Col>
     </Row>
     <Row>
       <Col>
         <Testimonial
-          image="/images/clients/mind.png"
-          name="Test User"
-          quote="It is very user friendly,well designed and presents data in clear and professional way."
+          image="/images/clients/breathing-spaces.jpg"
+          name="Breathing Spaces"
+          quote="TODO"
+          url="https://www.breathingspaces.co"
         />
       </Col>
       <Col>
         <Testimonial
-          image="/images/clients/mind.png"
-          name="Test User"
-          quote="This is great"
+          image="/images/clients/sporting-force.png"
+          name="Sporting Force"
+          quote="Impactasaurus is an easy to use piece of software, it takes seconds to input questionnaire responses. We can provide funders and trustees with visuals that are easily understood on each beneficiary or project."
+          url="http://www.sportingforce.org"
         />
       </Col>
     </Row>

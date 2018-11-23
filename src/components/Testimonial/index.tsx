@@ -7,16 +7,22 @@ interface IProps {
   name: string;
   quote: string;
   image: string;
+  url: string;
 }
 
-export default ({name, quote, image}: IProps) => {
+export default ({name, quote, image, url}: IProps) => {
+  const linkWrapper = (inner: JSX.Element): JSX.Element => (
+    <a href={url}>
+      {inner}
+    </a>
+  );
   return (
     <Row key="intro">
       <Col md={{span: 3, offset: 1}}>
-        <Image src={image} width="100%" />
+        {linkWrapper(<Image src={image} width="100%" />)}
       </Col>
       <Col md={{span: 6, offset: 1}}>
-        <h5>{name}</h5>
+        {linkWrapper(<h5>{name}</h5>)}
         <p>{quote}</p>
       </Col>
     </Row>
