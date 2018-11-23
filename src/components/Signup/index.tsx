@@ -3,25 +3,28 @@ import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import SlantedHero from "../Hero/slanted";
 import Button from "react-bootstrap/lib/Button";
+import "./style.less";
 
 export default () => {
   return (
-    <SlantedHero top={true}>
-      <Row>
-        <Col>
-          <h1>Get Started Today</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h4>You will be recording your impact in a few minutes</h4>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Button variant="primary" href="https://app.impactasaurus.org/signup">Sign Up</Button>
-        </Col>
-      </Row>
-    </SlantedHero>
+    <div className="signup">
+      <SlantedHero top={true}>
+        <Row>
+          <Col>
+            <h1>Get Started Today</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h4>In 5 minutes, you will be monitoring your impact</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="buttons">
+            <Button className="signup-button" size="lg" href="https://app.impactasaurus.org/signup" width="100px">Sign Up</Button>
+          </Col>
+        </Row>
+      </SlantedHero>
+    </div>
   );
 };

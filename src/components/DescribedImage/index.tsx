@@ -5,7 +5,7 @@ import "./style.less";
 
 interface IProps {
   title: string;
-  desc: string;
+  desc: string|JSX.Element;
   image: string;
   odd: boolean;
 }
