@@ -1,6 +1,7 @@
 import * as React from "react";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
+import "./style.less";
 
 interface IProps {
   title: string;
@@ -11,16 +12,18 @@ interface IProps {
 
 export default ({title, desc, image, odd}: IProps) => {
   const img = (
-    <Col>
+    <Col className="image">
       <img src={image} />
     </Col>
   );
   return (
-    <Row>
+    <Row className="described-image">
       {odd && img}
-      <Col>
-        <h5>{title}</h5>
-        <p>{desc}</p>
+      <Col className="desc">
+        <div>
+          <h5>{title}</h5>
+          <p>{desc}</p>
+        </div>
       </Col>
       {!odd && img}
     </Row>
