@@ -1,7 +1,42 @@
 .hero {
   background-color: rgb(147, 93, 140) !important;
+  position: relative;
+  z-index: 1;
 
   * {
     color: white !important;
+  }
+}
+
+.slanted.bottom .hero {
+  &:after {
+    background: inherit;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(-3deg);
+    transform-origin: 100%;
+    z-index: -1;
+  }
+}
+
+.slanted.top .hero {
+  margin-top: 80px;
+  &:before {
+    background: inherit;
+    top: 0;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(-3deg);
+    transform-origin: 0%;
+    z-index: -1;
   }
 }

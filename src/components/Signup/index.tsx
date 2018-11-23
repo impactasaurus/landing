@@ -1,12 +1,12 @@
 import * as React from "react";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
-import Hero from "../Hero";
+import SlantedHero from "../Hero/slanted";
 import Button from "react-bootstrap/lib/Button";
 
 export default () => {
   return (
-    <Hero>
+    <SlantedHero top={true}>
       <Row>
         <Col>
           <h1>Get Started Today</h1>
@@ -22,6 +22,6 @@ export default () => {
           <Button variant="primary" href="https://app.impactasaurus.org/signup">Sign Up</Button>
         </Col>
       </Row>
-    </Hero>
+    </SlantedHero>
   );
 };
