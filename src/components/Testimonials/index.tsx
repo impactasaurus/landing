@@ -15,7 +15,7 @@ export default () => (
       </Col>
     </Row>
     <Row>
-      <Col>
+      <Col xs={12} sm={6}>
         <Testimonial
           image="/images/clients/bac.jpg"
           name="Battersea Arts Centre"
@@ -23,7 +23,7 @@ export default () => (
           url="https://www.bac.org.uk"
         />
       </Col>
-      <Col>
+      <Col xs={12} sm={6}>
         <Testimonial
           image="/images/clients/crcc.jpg"
           name="Cornwall Rural Community Charity"
@@ -33,7 +33,7 @@ export default () => (
       </Col>
     </Row>
     <Row>
-      <Col>
+      <Col xs={12} sm={6}>
         <Testimonial
           image="/images/clients/breathing-spaces.jpg"
           name="Breathing Spaces"
@@ -41,7 +41,7 @@ export default () => (
           url="https://www.breathingspaces.co"
         />
       </Col>
-      <Col>
+      <Col xs={12} sm={6}>
         <Testimonial
           image="/images/clients/sporting-force.png"
           name="Sporting Force"

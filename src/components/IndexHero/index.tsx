@@ -13,7 +13,7 @@ export default ({children}: LayoutProps) => {
         <Row className="header">
           <Col>
             <h1>Simple impact reporting</h1>
-            <h4>Attract funding and improve your service, with minimal overhead</h4>
+            <h4>Attract funding and improve your service, with minimal effort</h4>
           </Col>
         </Row>
       </SlantedHero>
