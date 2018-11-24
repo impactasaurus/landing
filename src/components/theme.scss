@@ -1,0 +1,74 @@
+@import url('//fonts.googleapis.com/css?family=Nunito:400,700|Source+Sans+Pro:300,400,400i,700');
+
+$primary: #935D8C;
+$font-size-base: 1rem;
+$line-height-base: 1.6875;
+$font-family-sans-serif: "Source Sans Pro", "Arial", "Helvetica", "sans-serif";
+
+$h1-font-size: 3.5rem;
+$h2-font-size: 2.375rem;
+$h3-font-size: 2.125rem;
+$h4-font-size: 1.75rem;
+$h5-font-size: 1.1875rem;
+$h6-font-size: 1.125rem;
+
+$body-color: hsla(0,0%,0%,0.8);
+$headings-color: #555555;
+
+
+$headings-font-family: 'Nunito',sans-serif;
+$headings-font-weight: 700;
+$body-font-family: $font-family-sans-serif;
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+html {
+  font-family: $body-font-family;
+}
+
+h1{
+  margin: 0 0 1.6875rem;
+  color: hsla(0,0%,0%,1);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+h2{
+  margin: 53px 0 1.6875rem;
+  letter-spacing: -1.1px;
+  word-spacing: 3px;
+  text-align: center;
+}
+
+h3{
+  margin: 0 0 1.6875rem;
+  letter-spacing: -.1px;
+  word-spacing: 2px;
+  font-weight: 400;
+  text-align: center;
+}
+
+h4{
+  margin: 0 0 1.6875rem;
+  font-family: $body-font-family;
+  letter-spacing: -.1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  text-align: center;
+}
+
+h5{
+  margin: 0 0 20px;
+  color: #363f3b;
+  letter-spacing: -.1px;
+  word-spacing: 2px;
+}
+
+h6{
+  margin: 0 0 1.6875rem;
+  letter-spacing: .3px;
+  word-spacing: 2px;
+  font-weight: 400;
+}

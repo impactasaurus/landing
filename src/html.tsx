@@ -33,7 +33,6 @@ export default (props: HtmlProps) => {
         {head.meta.toComponent()}
         {head.link.toComponent()}
         {verification}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
       </head>
       <body>
         <div

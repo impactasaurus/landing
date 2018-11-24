@@ -1,13 +1,15 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import {Menu, IMenuItem} from "./Menu";
-import { Segment, Icon, Container } from "semantic-ui-react";
 import { Provider } from "react-redux";
 import { store } from "../store";
+import "./theme.scss";
+import "./global.less";
 
 export const menuItems: IMenuItem[] = [
   {name: "Features", path: "", exact: true, children: [
     {name: "Questionnaires", path: "/features/questionnaires/", exact: true},
+    {name: "Records", path: "/features/records/", exact: true},
     {name: "Journey", path: "/features/journey/", exact: true},
     {name: "Reporting", path: "/features/reporting/", exact: true},
     {name: "Segments", path: "/features/segments/", exact: true},
@@ -35,19 +37,10 @@ const Layout = (props: LayoutProps) => {
   return (
     <Provider store={store}>
       <div>
-        {isHome ? null : <Menu
-          Link={Link}
-          pathname={pathname}
-          items={menuItems}
-        />}
-        <div style={{ paddingBottom: 60 }}>
+        <Menu Link={Link} pathname={pathname} items={menuItems} />
+        <div>
           {props.children}
         </div>
-        <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
-          <Container textAlign="center">
-            <p>Powered with <Icon name="heart" /> by Gatsby 2.0</p>
-          </Container>
-        </Segment>
       </div>
     </Provider>
   );

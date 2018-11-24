@@ -53,7 +53,14 @@ module.exports = {
       }
     },
 
-    // Parse all images files
+    // Parse all images files and make available via graphql
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/static/images`
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
@@ -65,6 +72,7 @@ module.exports = {
 
     // Css preprocessors
     `gatsby-plugin-less`,
+    `gatsby-plugin-sass`,
 
     // This plugin takes your configuration and generates a
     // web manifest file so your website can be added to your
