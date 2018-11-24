@@ -20,6 +20,13 @@ $headings-font-family: 'Nunito',sans-serif;
 $headings-font-weight: 700;
 $body-font-family: $font-family-sans-serif;
 
+:root {
+  --headings-font-family: #{$headings-font-family};
+}
+
+$navbar-light-color: $body-color;
+$navbar-light-hover-color: darken($body-color, 50%);
+$navbar-light-active-color: $primary;
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
