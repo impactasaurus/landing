@@ -12,7 +12,7 @@ interface IProps {
 
 export default ({title, desc, image, odd}: IProps) => {
   return (
-    <Row className="described-image">
+    <Row className="described-image header">
       <Col className="image" sm={{span: 12, order: 3}} md={{span: 6, order: odd ? 3 : 1}}>
         <img src={image} />
       </Col>
