@@ -3,13 +3,19 @@
   position: relative;
   z-index: 1;
 
-  p, h1, h2, h3, h4, h5, h6 {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: white !important;
   }
 }
 
 .slanted.bottom .hero {
-  &:after {
+  &::after {
     background: inherit;
     bottom: 0;
     content: '';
@@ -26,7 +32,8 @@
 
 .slanted.top .hero {
   margin-top: 80px;
-  &:before {
+
+  &::before {
     background: inherit;
     top: 0;
     content: '';
