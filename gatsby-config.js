@@ -72,6 +72,7 @@ module.exports = {
 
     // Css preprocessors
     `gatsby-plugin-less`,
+    `gatsby-plugin-sass`,
 
     // This plugin takes your configuration and generates a
     // web manifest file so your website can be added to your

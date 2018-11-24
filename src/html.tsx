@@ -3,7 +3,6 @@
 
 import * as React from "react";
 import Helmet from "react-helmet";
-import typography from "./utils/typography";
 
 const config = require("../gatsby-config.js");
 
@@ -34,8 +33,6 @@ export default (props: HtmlProps) => {
         {head.meta.toComponent()}
         {head.link.toComponent()}
         {verification}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
-        {typography()}
       </head>
       <body>
         <div

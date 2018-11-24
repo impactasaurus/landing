@@ -3,6 +3,7 @@ import * as React from "react";
 import {Menu, IMenuItem} from "./Menu";
 import { Provider } from "react-redux";
 import { store } from "../store";
+import "./theme.scss";
 import "./global.less";
 
 export const menuItems: IMenuItem[] = [
