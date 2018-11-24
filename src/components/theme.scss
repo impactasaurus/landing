@@ -35,29 +35,29 @@ html {
   font-family: $body-font-family;
 }
 
-h1{
+h1 {
   margin: 0 0 1.6875rem;
   color: hsla(0,0%,0%,1);
   letter-spacing: 1px;
   text-align: center;
 }
 
-h2{
+h2 {
   margin: 53px 0 1.6875rem;
   letter-spacing: -1.1px;
   word-spacing: 3px;
   text-align: center;
 }
 
-h3{
-  margin: 0 0 1.6875rem;
+h3 {
+  margin: 2.2rem 0 1.6875rem;
   letter-spacing: -.1px;
   word-spacing: 2px;
   font-weight: 400;
   text-align: center;
 }
 
-h4{
+h4 {
   margin: 0 0 1.6875rem;
   font-family: $body-font-family;
   letter-spacing: -.1px;
@@ -66,16 +66,20 @@ h4{
   text-align: center;
 }
 
-h5{
+h5 {
   margin: 0 0 20px;
   color: #363f3b;
   letter-spacing: -.1px;
   word-spacing: 2px;
 }
 
-h6{
-  margin: 0 0 1.6875rem;
+h6 {
+  margin: 2rem 0 1.6875rem;
   letter-spacing: .3px;
   word-spacing: 2px;
   font-weight: 400;
+}
+
+.dropdown-toggle::after {
+  vertical-align: 0.12em;
 }
