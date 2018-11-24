@@ -47,7 +47,7 @@ const MenuItem = ({item, pathname, Link}: IRenderItemProp) => {
 };
 
 export const Menu = ({ items, pathname, Link }: IMenuProps) =>
-  <Navbar expand="lg">
+  <Navbar expand="lg" sticky="top">
     <Navbar.Brand as={Link} to="/">
       <img src="/images/logos/logo.svg"/>
       <span>Impactasaurus</span>
