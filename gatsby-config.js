@@ -4,7 +4,7 @@ module.exports = {
     titleTemplate: '%s - Impactasaurus',
     siteLanguage: 'en',
     logo: '/logos/logo.png',
-    url: 'https://impactasaurus.org',
+    siteUrl: `https://impactasaurus.org`,
     description: 'Demonstrate and improve your social impact with Impactasaurus! No matter what your budget or the size of your organisation',
     twitter: '@impactasaurus',
     googleVerification: 'abcdefz'
@@ -74,27 +74,14 @@ module.exports = {
     `gatsby-plugin-less`,
     `gatsby-plugin-sass`,
 
-    // This plugin takes your configuration and generates a
-    // web manifest file so your website can be added to your
-    // homescreen on Android.
-    /* eslint-disable camelcase */
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby website`,
-        short_name: `Gatsby website`,
-        start_url: `/`,
-        background_color: `#f7f7f7`,
-        theme_color: `#191919`,
-        display: `minimal-ui`
-      }
-    },
-    /* eslint-enable camelcase */
-
     // This plugin generates a service worker and AppShell
     // html file so the site works offline and is otherwise
     // resistant to bad networks. Works with almost any
     // site!
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+
+    // Crawler support
+    'gatsby-plugin-robots-txt',
+    `gatsby-plugin-sitemap`
   ]
 };
