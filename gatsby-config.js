@@ -3,8 +3,8 @@ module.exports = {
     title: 'Impact Reporting for All',
     titleTemplate: '%s - Impactasaurus',
     siteLanguage: 'en',
-    logo: '/logos/logo.png',
-    url: 'https://impactasaurus.org',
+    logo: '/images/logos/logo.png',
+    siteUrl: `https://impactasaurus.org`,
     description: 'Demonstrate and improve your social impact with Impactasaurus! No matter what your budget or the size of your organisation',
     twitter: '@impactasaurus',
     googleVerification: 'abcdefz'

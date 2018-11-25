@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
+import Helmet from "react-helmet";
 import {Menu, IMenuItem} from "./Menu";
 import {Footer, IFooterItem, convertMenuItem} from "./Footer";
 import { Provider } from "react-redux";
@@ -54,6 +55,10 @@ const Layout = (props: LayoutProps) => {
   return (
     <Provider store={store}>
       <div>
+        <Helmet>
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        </Helmet>
         <Menu Link={Link} pathname={pathname} items={menuItems} />
         <div>
           {props.children}
