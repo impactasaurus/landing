@@ -5,6 +5,7 @@ import NavDropdown from "react-bootstrap/lib/NavDropdown";
 import Button from "react-bootstrap/lib/Button";
 import "./style.less";
 import {GatsbyLinkProps} from "gatsby-link";
+import Logo from "../Logo";
 
 export interface IMenuItem {
   name: string;
@@ -49,8 +50,7 @@ const MenuItem = ({item, pathname, Link}: IRenderItemProp) => {
 export const Menu = ({ items, pathname, Link }: IMenuProps) =>
   <Navbar expand="lg" sticky="top">
     <Navbar.Brand as={Link} to="/">
-      <img src="/images/logos/logo.svg"/>
-      <span>Impactasaurus</span>
+      <Logo />
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
