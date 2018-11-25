@@ -4,10 +4,13 @@ import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
+import SEO from "../components/SEO";
 
 const TermsPage = () => {
+  const intro = "These Terms of Use contain the terms under which we provide our Services to you and describe how our Services may be accessed and used";
   return (
     <>
+    <SEO title="Terms Of Use" description={intro} />
     <Hero>
       <h1>Terms Of Use</h1>
     </Hero>
@@ -18,10 +21,10 @@ const TermsPage = () => {
             <b>Last Updated</b> : November 11th, 2018
           </p>
           <p>
-            These Terms of Use ("TOU") contain the terms under which we (Impactasaurus) provide our Services to you and describe how our Services may be accessed and used.
+            {intro}.
           </p>
           <p>
-            You indicate your agreement to these TOU by clicking or tapping on a button indicating your acceptance of these Terms or by using our Services. If you will be using our Services on behalf of an organization, you agree to these Terms on behalf of that organization and you represent that you have the authority to do so. In such case, "you" and "your" will refer to that organization.
+            You indicate your agreement to these Terms of Use by clicking or tapping on a button indicating your acceptance of these Terms or by using our Services. If you will be using our Services on behalf of an organization, you agree to these Terms on behalf of that organization and you represent that you have the authority to do so. In such case, "you" and "your" will refer to that organization.
           </p>
 
           <h3>Fees and Payment</h3>

@@ -4,10 +4,13 @@ import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
+import SEO from "../components/SEO/SEO";
 
 const PrivacyPolicyPage = () => {
+  const intro = "This Privacy Policy explains the information that Impactasaurus collects when you use its products and services, how that information is used, with whom it may be shared, and your privacy choices";
   return (
     <>
+    <SEO title="Privacy Policy" description={intro} />
     <Hero>
       <h1>Privacy Policy</h1>
     </Hero>
@@ -18,7 +21,7 @@ const PrivacyPolicyPage = () => {
             <b>Last Updated</b> : November 8th, 2018
           </p>
           <p>
-            This Privacy Policy explains the information that Impactasaurus collects when you use its products and services, how that information is used, with whom it may be shared, and your privacy choices.
+            {intro}.
           </p>
           <p>
             By registering for, or using our services, you accept this Privacy Policy, which is part of our <a href="/terms">Terms of Use</a>.

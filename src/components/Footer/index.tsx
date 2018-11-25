@@ -5,6 +5,7 @@ import Container from "react-bootstrap/lib/Container";
 import {GatsbyLinkProps} from "gatsby-link";
 import {IMenuItem} from "../Menu";
 import Logo from "../Logo";
+import Signup from "../Signup";
 import "./style.less";
 
 export interface IFooterItem {
@@ -37,6 +38,7 @@ export const Footer = ({ items, Link }: IFooterProps) => {
   console.log(items);
   return (
     <footer>
+      <Signup />
       <Container>
         <Row>
           <Logo />

@@ -4,10 +4,13 @@ import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
+import SEO from "../components/SEO/SEO";
 
 const CookiePolicyPage = () => {
+  const intro = "This Cookie Policy explains how Impactasaurus and our affiliates use cookies and similar technologies to recognise you when you visit our website";
   return (
     <>
+    <SEO title="Cookie Policy" description={intro} />
     <Hero>
       <h1>Cookie Policy</h1>
     </Hero>
@@ -18,7 +21,7 @@ const CookiePolicyPage = () => {
             <b>Last Updated</b> : November 10th, 2018
           </p>
           <p>
-            This Cookie Policy explains how Impactasaurus and our affiliates use cookies and similar technologies to recognise you when you visit our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.
+            {intro}. It explains what these technologies are and why we use them, as well as your rights to control our use of them.
           </p>
 
           <h3>What Are Cookies?</h3>
