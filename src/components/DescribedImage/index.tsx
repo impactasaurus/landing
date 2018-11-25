@@ -11,6 +11,7 @@ interface IProps {
 }
 
 export default ({title, desc, image, odd}: IProps) => {
+  const isString = desc instanceof String;
   return (
     <Row className="described-image header">
       <Col className="image" sm={{span: 12, order: 3}} md={{span: 6, order: odd ? 3 : 1}}>
@@ -19,7 +20,7 @@ export default ({title, desc, image, odd}: IProps) => {
       <Col className="desc" sm={{span: 12, order: 2}} md={{span: 6, order: 2}}>
         <div>
           <h5>{title}</h5>
-          <p>{desc}</p>
+          {isString ? <p>{desc}</p> : desc}
         </div>
       </Col>
     </Row>

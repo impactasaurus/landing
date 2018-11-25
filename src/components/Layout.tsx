@@ -1,26 +1,43 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import {Menu, IMenuItem} from "./Menu";
+import {Footer, IFooterItem, convertMenuItem} from "./Footer";
 import { Provider } from "react-redux";
 import { store } from "../store";
 import "./theme.scss";
 import "./global.less";
 
-export const menuItems: IMenuItem[] = [
+const menuItems: IMenuItem[] = [
   {name: "Features", path: "", exact: true, children: [
-    {name: "Questionnaires", path: "/features/questionnaires/", exact: true},
-    {name: "Records", path: "/features/records/", exact: true},
-    {name: "Journey", path: "/features/journey/", exact: true},
-    {name: "Reporting", path: "/features/reporting/", exact: true},
-    {name: "Segments", path: "/features/segments/", exact: true},
-    {name: "Security", path: "/features/security/", exact: true},
-    {name: "Privacy", path: "/features/privacy/", exact: true},
-  ]},
+      {name: "Questionnaires", path: "/features/questionnaires/", exact: true},
+      {name: "Records", path: "/features/records/", exact: true},
+      {name: "Journey", path: "/features/journey/", exact: true},
+      {name: "Reporting", path: "/features/reporting/", exact: true},
+      {name: "Segments", path: "/features/segments/", exact: true},
+      {name: "Security", path: "/features/security/", exact: true},
+    ]},
   {name: "Pricing", path: "/pricing/", exact: true},
   {name: "FAQ", path: "/faq/", exact: true},
   {name: "Blog", path: "/blog/", exact: false},
   {name: "About", path: "/about/", exact: true},
   {name: "Support", path: "/support/", exact: true, right: true},
+];
+
+const footerItems: IFooterItem[] = [
+  convertMenuItem(menuItems, "Features"),
+  {name: "Product", path: "", children: [
+    convertMenuItem(menuItems, "Pricing"),
+    convertMenuItem(menuItems, "FAQ"),
+    convertMenuItem(menuItems, "Support"),
+    {name: "Terms of Use", path: "/terms/"},
+  ]},
+  {name: "Company", path: "", children: [
+    convertMenuItem(menuItems, "About"),
+    convertMenuItem(menuItems, "Blog"),
+    {name: "Contact", path: convertMenuItem(menuItems, "Support").path},
+    {name: "Privacy", path: "/privacy/"},
+    {name: "Cookies", path: "/cookie/"},
+  ]},
 ];
 
 export interface LayoutProps {
@@ -41,6 +58,7 @@ const Layout = (props: LayoutProps) => {
         <div>
           {props.children}
         </div>
+        <Footer Link={Link} items={footerItems}/>
       </div>
     </Provider>
   );

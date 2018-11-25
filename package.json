@@ -8,11 +8,12 @@
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "lint": "npm run lint:ts && npm run lint:md && npm run lint:js && npm run lint:less",
+    "lint": "npm run lint:ts && npm run lint:md && npm run lint:js && npm run lint:less && npm run lint:scss",
     "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
     "lint:md": "remark .",
     "lint:js": "xo",
     "lint:less": "stylelint \"src/**/*.less\" --syntax less",
+    "lint:scss": "stylelint \"src/**/*.scss\" --syntax scss",
     "test": "npm run lint && jest",
     "test:watch": "jest --watch",
     "generate": "plop --plopfile ./generators/plopfile.js",
@@ -142,7 +143,16 @@
       "git add"
     ],
     "*.css": [
-      "stylelint"
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.less": [
+      "stylelint --syntax less --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --syntax scss --fix",
+      "git add"
     ]
   },
   "xo": {

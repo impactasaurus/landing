@@ -18,8 +18,8 @@ export default ({name, quote, image, url}: IProps) => {
   );
   return (
     <Row key="intro">
-      <Col md={{span: 3, offset: 1}} style={{"text-align": "center"}}>
-        {linkWrapper(<Image src={image} width="100%" style={{"max-width": "20vw"}} />)}
+      <Col md={{span: 3, offset: 1}} style={{textAlign: "center"}}>
+        {linkWrapper(<Image src={image} width="100%" style={{maxWidth: "20vw"}} />)}
       </Col>
       <Col md={{span: 6, offset: 1}}>
         {linkWrapper(<h5>{name}</h5>)}
