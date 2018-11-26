@@ -43,7 +43,7 @@ const TermsPage = () => {
           </p>
           <h6>Price Changes</h6>
           <p>
-            We may change the fees charged for the Services at any time, provided that, for Services billed on a subscription basis, the change will become effective only at the end of the then-current billing cycle of your Subscription. SurveyMonkey will provide you with reasonable prior written notice of any change in fees to give you an opportunity to cancel your Subscription before the change becomes effective.
+            We may change the fees charged for the Services at any time, provided that, for Services billed on a subscription basis, the change will become effective only at the end of the then-current billing cycle of your Subscription. We will provide you with reasonable prior written notice of any change in fees to give you an opportunity to cancel your Subscription before the change becomes effective.
           </p>
 
           <h3>Privacy</h3>
@@ -117,7 +117,7 @@ const TermsPage = () => {
           <ul>
             <li>You may not purchase, use, or access the Services for the purpose of building a competitive product or service or for any other competitive purposes.</li>
             <li>You may not misuse our Services by interfering with their normal operation, or attempting to access them using a method other than through the interfaces and instructions that we provide.</li>
-            <li>You may not circumvent or attempt to circumvent any limitations that we impose on your account (such as by opening up a new account to conduct a survey that we have closed for a Terms violation).</li>
+            <li>You may not circumvent or attempt to circumvent any limitations that we impose on your account (such as by opening up a new account to conduct a questionnaire that we have closed for a Terms violation).</li>
             <li>Unless authorized by us in writing, you may not probe, scan, or test the vulnerability of our system or network.</li>
             <li>Unless authorized by us in writing, you may not use any manual or automated system or software to extract or scrape data from the websites or other interfaces through which we make our Services available.</li>
             <li>You may not use the Services to infringe the intellectual property rights of others, or to commit an unlawful activity.</li>
