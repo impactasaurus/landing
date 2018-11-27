@@ -4,7 +4,7 @@ import {withLayout} from "../components/Layout";
 const FAQPage = () => {
   return (
     <div>
-      TODO - FAQ (Ben IDs, is Impactasaurus the software for me, GDPR, Segmentation, Data export
+      TODO - FAQ (Ben IDs, is Impactasaurus the software for me, GDPR, Segmentation, Data export, who backs Impacatasaurus)
     </div>
   );
 };

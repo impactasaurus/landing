@@ -3,18 +3,17 @@ import {withLayout} from "../components/Layout";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
-import SlantedHero from "../components/Hero/slanted";
+import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 
 const PricingPage = () => {
   return (
     <>
     <SEO title="Pricing"/>
-    <SlantedHero bottom={true}>
+    <Hero>
       <h1>Pricing</h1>
-      <h4>Hope you are sitting down...</h4>
-    </SlantedHero>
-    <Container style={{paddingTop: "2em", paddingBottom: "7em"}}>
+    </Hero>
+    <Container className="slanted">
       <Row className="header">
         <Col>
           <h2>Impactasaurus is free!</h2>
