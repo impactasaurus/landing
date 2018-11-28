@@ -1,14 +1,18 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
-import { Grid, Card, Container, Segment, Comment } from "semantic-ui-react";
+import { Card, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
-import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
 import {withLayout, LayoutProps} from "../components/Layout";
 import { MarkdownRemark } from "../graphql-types";
+import Row from "react-bootstrap/lib/Row";
+import Col from "react-bootstrap/lib/Col";
+import Container from "react-bootstrap/lib/Container";
+import Hero from "../components/Hero";
+import SEO from "../components/SEO/SEO";
 
 interface BlogProps extends LayoutProps {
   data: {
@@ -20,80 +24,69 @@ interface BlogProps extends LayoutProps {
   };
 }
 
-const BlogPage = (props: BlogProps) => {
-  const tags = props.data.tags.group;
-  const posts = props.data.posts.edges;
-  const { pathname } = props.location;
-  const pageCount = Math.ceil(props.data.posts.totalCount / 10);
+const BlogSnippet = ({node}: {node: MarkdownRemark}) => {
+  const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
+  const cover = get(frontmatter, "image.children.0.fixed", {});
 
-  // TODO export posts in a proper component
-  const Posts = (
-    <Container>
-      {posts.map(({ node }: {node: MarkdownRemark}) => {
-        const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
-        const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
-        const cover = get(frontmatter, "image.children.0.fixed", {});
+  const extra = (
+    <Comment.Group>
+      <Comment>
+        <Comment.Content>
+          <Comment.Metadata style={{ margin: 0 }}>
+            {frontmatter.updatedDate} - {timeToRead} min read
+          </Comment.Metadata>
+        </Comment.Content>
+      </Comment>
+    </Comment.Group>
+  );
 
-        const extra = (
-          <Comment.Group>
-            <Comment>
-              <Comment.Avatar
-                src={avatar.fixed.src}
-                srcSet={avatar.fixed.srcSet}
-              />
-              <Comment.Content>
-                <Comment.Author style={{ fontWeight: 400 }}>
-                  {frontmatter.author.id}
-                </Comment.Author>
-                <Comment.Metadata style={{ margin: 0 }}>
-                  {frontmatter.updatedDate} - {timeToRead} min read
-              </Comment.Metadata>
-              </Comment.Content>
-            </Comment>
-          </Comment.Group>
-        );
-
-        const description = (
-          <Card.Description>
-            {excerpt}
-            <br />
-            <Link to={slug}>Read more…</Link>
-          </Card.Description>
-        );
-
-        return (
-          <Card key={slug}
-            fluid
-            image={cover}
-            header={frontmatter.title}
-            extra={extra}
-            description={description}
-          />
-        );
-      })}
-    </Container>
+  const description = (
+    <Card.Description>
+      {excerpt}
+      <br />
+      <Link to={slug}>Read more…</Link>
+    </Card.Description>
   );
 
   return (
-    <Container>
-      {/* Title */}
-      <BlogTitle />
+    <Card key={slug}
+          fluid
+          image={cover}
+          header={frontmatter.title}
+          extra={extra}
+          description={description}
+    />
+  );
+};
 
-      {/* Content */}
-      <Segment vertical>
-        <Grid padded style={{ justifyContent: "space-around" }}>
-          <div style={{ maxWidth: 600 }}>
-            {Posts}
-            <Segment vertical textAlign="center">
-              <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
-            </Segment>
-          </div>
-          <div>
-            <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
-          </div>
-        </Grid>
-      </Segment>
+const BlogPage = (props: BlogProps) => {
+  const tags = props.data.tags.group;
+  const posts = props.data.posts.edges.map((e) => e.node);
+  const { pathname } = props.location;
+  const pageCount = Math.ceil(props.data.posts.totalCount / 10);
+
+  return (
+    <>
+    <SEO title="Blog"/>
+    <Hero>
+      <h1>Blog</h1>
+    </Hero>
+    <Container>
+      <Row>
+        <Col>
+          {posts.map((node) => <BlogSnippet node={node}/>)}
+        </Col>
+        <Col>
+          <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
+        </Col>
+      </Row>
     </Container>
+    </>
   );
 };
 
@@ -135,19 +128,6 @@ query PageBlog {
                 fixed(width: 700, height: 100) {
                   src
                   srcSet
-                }
-              }
-            }
-          }
-          author {
-            id
-            avatar {
-              children {
-                ... on ImageSharp {
-                  fixed(width: 35, height: 35) {
-                    src
-                    srcSet
-                  }
                 }
               }
             }

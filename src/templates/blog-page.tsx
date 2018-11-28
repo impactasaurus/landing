@@ -47,19 +47,6 @@ query TemplateBlogPage($skip: Int) {
               }
             }
           }
-          author {
-            id
-            avatar {
-              children {
-                ... on ImageSharp {
-                  fixed(width: 35, height: 35) {
-                    src
-                    srcSet
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }
