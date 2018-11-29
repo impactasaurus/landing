@@ -12,8 +12,8 @@ export default ({children}: LayoutProps) => {
       <SlantedHero bottom={true}>
         <Row className="header">
           <Col>
-            <h1>Simple impact reporting</h1>
-            <h4>Attract funding and improve your service, with minimal effort</h4>
+            <h1>Easy impact reporting</h1>
+            <h4>Attract funding and improve your service</h4>
           </Col>
         </Row>
       </SlantedHero>

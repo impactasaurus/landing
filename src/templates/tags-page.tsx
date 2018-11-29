@@ -46,19 +46,6 @@ query TemplateTagPage($tag: String) {
               }
             }
           }
-          author {
-            id
-            avatar {
-              children {
-                ... on ImageSharp {
-                  fixed(width: 35, height: 35) {
-                    src
-                    srcSet
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }

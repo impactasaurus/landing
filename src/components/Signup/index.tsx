@@ -11,17 +11,17 @@ export default () => {
       <SlantedHero top={true}>
         <Row>
           <Col>
-            <h1>Get Started Today</h1>
+            <h1>Understand your impact</h1>
           </Col>
         </Row>
         <Row>
           <Col>
-            <h4>In 5 minutes, you will be monitoring your impact</h4>
+            <h4>Demonstrate your value and drive improvements</h4>
           </Col>
         </Row>
         <Row>
           <Col className="buttons">
-            <Button className="signup-button" size="lg" href="https://app.impactasaurus.org/signup" width="100px">Sign Up</Button>
+            <Button className="signup-button" size="lg" href="https://app.impactasaurus.org/signup" width="100px" style={{maxWidth: "80vw"}}>Get started</Button>
           </Col>
         </Row>
       </SlantedHero>

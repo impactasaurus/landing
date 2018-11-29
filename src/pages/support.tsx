@@ -5,8 +5,10 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
+import {Questions} from "./faq";
 
 const SupportPage = () => {
+  const qs = Questions.filter((q) => q.support);
   return (
     <>
     <SEO title="Support" description="We are here to help, if you have a question or need help, please get in contact"/>
@@ -28,31 +30,12 @@ const SupportPage = () => {
       <Row className="header">
         <Col>
           <h3>Common Queries</h3>
-          <h5>Can I add more users to my account?</h5>
-          <p>
-            Yes, you can add as many users to your organisation as you would like.
-            To invite others, head to settings then organisation.
-            On this page you can generate an invite link which should be given to anyone you would like to join your Impactasaurus.
-          </p>
-          <h5>How do I import my historic data?</h5>
-          <p>
-            Due to the variety of data formats, we do not support this within the application currently.
-            If you have a lot of data which needs importing, please email a sample of the data.
-            We are happy to do one off imports from any data format as long as the data is compatible with Impactasaurus.
-          </p>
-          <h5>How do I export my data?</h5>
-          <p>
-            Impactasaurus offers a range of export functionality within the application.
-            You can export all the data associated with a questionnaire, an individual beneficiary or the data used in a report.
-            When viewing a graph, look for a download icon in the control panel.
-            To export data for a particular questionnaire, head to the settings > data page.
-          </p>
-          <h5>How do I add or edit tags across many records?</h5>
-          <p>
-            Currently the app allows tags to be edited for one record at a time.
-            It can be time consuming to make sweeping changes to your tags.
-            We are working on making this easier within the app, but until then, please email and explain how you would like your tags adjusted.
-          </p>
+          {qs.map((q) => (
+            <>
+            <h5>{q.title}</h5>
+            {q.main}
+            </>
+          ))}
         </Col>
       </Row>
     </Container>

@@ -41,8 +41,10 @@ export const Footer = ({ items, Link }: IFooterProps) => {
       <Signup />
       <Container>
         <Row>
-          <Logo />
-          <hr width="100%"/>
+          <Col>
+            <Logo />
+            <hr width="100%"/>
+          </Col>
         </Row>
         <Row>
           {items.map((i) => <Column key={i.name} item={i} Link={Link} />)}
