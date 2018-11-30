@@ -74,15 +74,11 @@ const BlogPage = (props: BlogProps) => {
     <Container>
       <Row>
         <Col>
-          {posts.map((node) => <BlogSnippet node={node}/>)}
+          {posts.map((node) => <BlogSnippet node={node} key={node.fields.slug} />)}
+          <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
         </Col>
         <Col>
           <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
         </Col>
       </Row>
     </Container>

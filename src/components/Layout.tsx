@@ -35,7 +35,6 @@ const footerItems: IFooterItem[] = [
   {name: "Company", path: "", children: [
     convertMenuItem(menuItems, "About"),
     convertMenuItem(menuItems, "Blog"),
-    {name: "Contact", path: convertMenuItem(menuItems, "Support").path},
     {name: "Privacy", path: "/privacy/"},
     {name: "Cookies", path: "/cookie/"},
   ]},

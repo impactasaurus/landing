@@ -26,7 +26,7 @@ export const Column = ({item, Link}) => {
       <ul>
         {(item.children || []).map((i) => (
           <li key={i.name}>
-            <Link  to={i.path}>{i.name}</Link>
+            <Link to={i.path}>{i.name}</Link>
           </li>
         ))}
       </ul>
@@ -50,7 +50,7 @@ export const Footer = ({ items, Link }: IFooterProps) => {
           {items.map((i) => <Column key={i.name} item={i} Link={Link} />)}
         </Row>
         <Row>
-          <span className="copyright">© {(new Date()).getFullYear()} Impactasaurus. All rights reserved.</span>
+          <span className="copyright">© {(new Date()).getFullYear()} Impactasaurus</span>
         </Row>
       </Container>
     </footer>

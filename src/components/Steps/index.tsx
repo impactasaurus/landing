@@ -14,13 +14,13 @@ export default () => (
     </Row>
     <DescribedImage
       image="/images/screenshots/questionnaire.png"
-      title="Select a questionnaire"
+      title="1. Select a questionnaire"
       desc="Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire."
       odd={true}
     />
     <DescribedImage
       image="/images/screenshots/collect.png"
-      title="Collect responses"
+      title="2. Collect responses"
       desc={(
         <>
         <span>Ask your beneficiaries to complete your questionnaire. You can either:</span>
@@ -36,13 +36,13 @@ export default () => (
     />
     <DescribedImage
       image="/images/screenshots/impactasaurus-graph.png"
-      title="Monitor progress"
+      title="3. Monitor progress"
       desc="During your intervention, a beneficiary's journey can be monitored. This allows you to tailor your services to best serve the beneficiary."
       odd={true}
     />
     <DescribedImage
       image="/images/screenshots/radar-chart.png"
-      title="Report your impact"
+      title="4. Report your impact"
       desc="Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a certain segment (e.g. a project or a location)."
       odd={false}
     />

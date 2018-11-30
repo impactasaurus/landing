@@ -62,7 +62,7 @@ const BlogPostPage = (props: BlogPostProps) => {
   const recents = props.data.recents.edges
     .map(({ node }) => (
       <Col>
-        <BlogSnippet node={node}/>
+        <BlogSnippet key={node.fields.slug} node={node}/>
       </Col>
     ));
 
@@ -116,21 +116,6 @@ export const pageQuery = graphql`
     }
     frontmatter {
       tags
-      author {
-        id
-        bio
-        twitter
-        avatar {
-          children {
-            ... on ImageSharp {
-              fixed(width: 80, height: 80, quality: 100) {
-                src
-                srcSet
-              }
-            }
-          }
-        }
-      }
       title
       updatedDate(formatString: "MMM D, YYYY")
       image {

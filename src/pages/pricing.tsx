@@ -22,6 +22,21 @@ const PricingPage = () => {
       </Row>
       <Row>
         <Col>
+          <h5>What happens if the situation changes?</h5>
+          <p>
+            If our donations dry up or our running costs dramatically increase, there is a chance we may need to charge you.
+          </p>
+          <p>
+            If we start charging for Impactasaurus, you will be given at least 2 months warning.
+            If you decide you do not want to pay, we will help you migrate to another solution.
+          </p>
+          <p>
+            Impactasaurus is a non profit organisation, future pricing will only cover the costs of running and developing the software.
+          </p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
           <h5>How do you afford the running costs?</h5>
           <p>
             Impactasaurus was designed from the start to exploit cloud computing technology, as such, running costs are minimal. Donations cover these costs.
@@ -33,21 +48,6 @@ const PricingPage = () => {
           <h5>How do you afford to develop the software?</h5>
           <p>
             Development of the software is undertaken by volunteers who want to give back to society.
-          </p>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h5>What happens if the situation changes?</h5>
-          <p>
-            If our donations dry up or our running costs dramatically increase, there is a chance we may need to charge you.
-          </p>
-          <p>
-            If we start charging for Impactasaurus, you will be given at least 2 months warning.
-            If you decide you do not want to pay, we will help you migrate to another solution.
-          </p>
-          <p>
-            Impactasaurus is a non profit organisation, future pricing will only cover the costs of running and developing the software.
           </p>
         </Col>
       </Row>
