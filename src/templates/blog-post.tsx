@@ -59,12 +59,28 @@ const BlogPostPage = (props: BlogPostProps) => {
   const tags = props.data.post.frontmatter.tags
     .map((tag) => <Label key={tag}><Link to={`/blog/tags/${tag}/`}>{tag}</Link></Label>);
 
-  const recents = props.data.recents.edges
-    .map(({ node }) => (
-      <Col>
-        <BlogSnippet key={node.fields.slug} node={node}/>
-      </Col>
-    ));
+  const recentsAvailable = props.data.recents && props.data.recents.edges;
+  let recents = <div />;
+  if (recentsAvailable) {
+    const snippets = props.data.recents.edges
+      .map(({ node }) => (
+        <Col>
+          <BlogSnippet key={node.fields.slug} node={node}/>
+        </Col>
+      ));
+    recents = (
+      <>
+      <Row>
+        <Col>
+          <h5>Recent Posts</h5>
+        </Col>
+      </Row>
+      <Row>
+        {snippets}
+      </Row>
+      </>
+    );
+  }
 
   const cover = get(frontmatter, "image.children.0.fixed", {} );
   return (
@@ -74,12 +90,9 @@ const BlogPostPage = (props: BlogPostProps) => {
       <h1>{frontmatter.title}</h1>
       <h4>{frontmatter.updatedDate} - {timeToRead} min read</h4>
     </Hero>
-    <div style={{textAlign: "center"}}>
-      <img {...cover} />
-    </div>
-    <Container>
+    <Container style={{maxWidth: "700px"}}>
       <Row>
-        <Col dangerouslySetInnerHTML={{
+        <Col style={{fontSize: "1.3rem", marginTop: "2em", marginBottom: "2em", textAlign: "justify"}} dangerouslySetInnerHTML={{
           __html: html,
         }}>
         </Col>
@@ -90,14 +103,7 @@ const BlogPostPage = (props: BlogPostProps) => {
           <p>{tags}</p>
         </Col>
       </Row>
-      <Row>
-        <Col>
-          <h5>Recent Posts</h5>
-        </Col>
-      </Row>
-      <Row>
-        {recents}
-      </Row>
+      {recents}
     </Container>
     </>
   );
@@ -150,7 +156,7 @@ export const pageQuery = graphql`
           image {
             children {
               ... on ImageSharp {
-                fixed(width: 300, height: 100) {
+                fixed(width: 1920, height: 600) {
                   src
                   srcSet
                 }

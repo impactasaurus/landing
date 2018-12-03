@@ -1,9 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
-import { Card, Comment } from "semantic-ui-react";
-import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
-import TagsCard from "../components/TagsCard/TagsCard";
+import { MarkdownRemarkConnection } from "../graphql-types";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
 import {withLayout, LayoutProps} from "../components/Layout";
@@ -25,37 +23,16 @@ interface BlogProps extends LayoutProps {
 }
 
 const BlogSnippet = ({node}: {node: MarkdownRemark}) => {
-  const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
+  const { frontmatter, fields: { slug } } = node;
   const cover = get(frontmatter, "image.children.0.fixed", {});
 
-  const extra = (
-    <Comment.Group>
-      <Comment>
-        <Comment.Content>
-          <Comment.Metadata style={{ margin: 0 }}>
-            {frontmatter.updatedDate} - {timeToRead} min read
-          </Comment.Metadata>
-        </Comment.Content>
-      </Comment>
-    </Comment.Group>
-  );
-
-  const description = (
-    <Card.Description>
-      {excerpt}
-      <br />
-      <Link to={slug}>Read more…</Link>
-    </Card.Description>
-  );
-
   return (
-    <Card key={slug}
-          fluid
-          image={cover}
-          header={frontmatter.title}
-          extra={extra}
-          description={description}
-    />
+    <Col lg={4} md={6} key={slug}>
+      <Link to={slug} style={{display: "flex", flexDirection: "column", border: "1px solid lightgray", marginBottom: "4rem"}}>
+        <img src={cover.src} srcSet={cover.srcSet} style={{height: "12rem", objectFit: "cover"}} />
+        <h4 style={{marginTop: "1.6rem", maxWidth: "90%"}}>{frontmatter.title}</h4>
+      </Link>
+    </Col>
   );
 };
 
@@ -64,6 +41,7 @@ const BlogPage = (props: BlogProps) => {
   const posts = props.data.posts.edges.map((e) => e.node);
   const { pathname } = props.location;
   const pageCount = Math.ceil(props.data.posts.totalCount / 10);
+  const tabIdx = props.pageContext.tag ? tags.map((t) => t.fieldValue).indexOf(props.pageContext.tag) + 1 : 0;
 
   return (
     <>
@@ -71,14 +49,13 @@ const BlogPage = (props: BlogProps) => {
     <Hero>
       <h1>Blog</h1>
     </Hero>
-    <Container>
+    <Container className="slanted">
+      <Row>
+        {posts.map((node) => <BlogSnippet node={node} key={node.fields.slug} />)}
+      </Row>
       <Row>
         <Col>
-          {posts.map((node) => <BlogSnippet node={node} key={node.fields.slug} />)}
           <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
-        </Col>
-        <Col>
-          <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
         </Col>
       </Row>
     </Container>
@@ -121,7 +98,7 @@ query PageBlog {
           image {
           	children {
               ... on ImageSharp {
-                fixed(width: 700, height: 100) {
+                fixed(width: 800, height: 400) {
                   src
                   srcSet
                 }
