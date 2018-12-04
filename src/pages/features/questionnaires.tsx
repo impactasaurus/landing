@@ -4,7 +4,12 @@ import {withLayout} from "../../components/Layout";
 const QuestionnairePage = () => {
   return (
     <div>
-      TODO - Questionnaire
+      <ul>
+        <li>Catalogue</li>
+        <li>Custom - Scale + Comments</li>
+        <li>Question categories</li>
+        <li>Instructions</li>
+      </ul>
     </div>
   );
 };

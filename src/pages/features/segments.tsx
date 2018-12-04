@@ -4,7 +4,11 @@ import {withLayout} from "../../components/Layout";
 const SegmentPage = () => {
   return (
     <div>
-      TODO - Segments
+      <ul>
+        <li>Tags records</li>
+        <li>Report based on tags</li>
+        <li>Use cases</li>
+      </ul>
     </div>
   );
 };

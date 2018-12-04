@@ -1,8 +1,10 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import DescribedImage from "../DescribedImage";
+import LearnMore from "../LearnMore";
 
 export default () => (
   <Container>
@@ -15,7 +17,12 @@ export default () => (
     <DescribedImage
       image="/images/screenshots/questionnaire.png"
       title="1. Select a questionnaire"
-      desc="Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire."
+      desc={(
+        <>
+        <p>Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire.</p>
+        <LearnMore to="/features/questionnaires/" />
+        </>
+      )}
       odd={true}
     />
     <DescribedImage
@@ -23,13 +30,8 @@ export default () => (
       title="2. Collect responses"
       desc={(
         <>
-        <span>Ask your beneficiaries to complete your questionnaire. You can either:</span>
-        <ul>
-          <li>complete the questionnaire together with your beneficiary</li>
-          <li>send them a link to complete it on their own</li>
-          <li>enter answers captured on paper or historically.</li>
-        </ul>
-        <span>Questionnaire responses are securely saved within Impactasaurus.</span>
+        <p>Collect questionnaire responses however best suits your service. Responses are <Link to={"/features/security/"}>securely</Link> saved within Impactasaurus for review and analysis.</p>
+        <LearnMore to="/features/responses/" />
         </>
       )}
       odd={false}
@@ -37,13 +39,23 @@ export default () => (
     <DescribedImage
       image="/images/screenshots/impactasaurus-graph.png"
       title="3. Monitor progress"
-      desc="During your intervention, a beneficiary's journey can be monitored. This allows you to tailor your services to best serve the beneficiary."
+      desc={(
+        <>
+        <p>During your intervention, a beneficiary's journey can be monitored. This allows you to tailor your services to best serve the beneficiary.</p>
+        <LearnMore to="/features/monitor/" />
+        </>
+      )}
       odd={true}
     />
     <DescribedImage
       image="/images/screenshots/radar-chart.png"
       title="4. Report your impact"
-      desc="Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a certain segment (e.g. a project or a location)."
+      desc={(
+        <>
+        <p>Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a certain <Link to={"/features/segments"}>segment</Link> (e.g. a project or a location).</p>
+        <LearnMore to="/features/reporting/" />
+        </>
+      )}
       odd={false}
     />
   </Container>

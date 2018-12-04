@@ -4,7 +4,11 @@ import {withLayout} from "../../components/Layout";
 const ReportingPage = () => {
   return (
     <div>
-      TODO - Reporting
+      <ul>
+        <li>Radar graph across beneficiaries</li>
+        <li>Segment by tag</li>
+        <li>Export data</li>
+      </ul>
     </div>
   );
 };

@@ -11,8 +11,8 @@ import "./global.less";
 const menuItems: IMenuItem[] = [
   {name: "Features", path: "", exact: true, children: [
       {name: "Questionnaires", path: "/features/questionnaires/", exact: true},
-      {name: "Records", path: "/features/records/", exact: true},
-      {name: "Journey", path: "/features/journey/", exact: true},
+      {name: "Responses", path: "/features/responses/", exact: true},
+      {name: "Monitor", path: "/features/monitor/", exact: true},
       {name: "Reporting", path: "/features/reporting/", exact: true},
       {name: "Segments", path: "/features/segments/", exact: true},
       {name: "Security", path: "/features/security/", exact: true},
