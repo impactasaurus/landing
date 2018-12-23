@@ -27,7 +27,7 @@ export default () => (
         <Testimonial
           image="/images/clients/crcc.jpg"
           name="Cornwall Rural Community Charity"
-          quote="TODO"
+          quote="Impactasaurus helps us understand the impact of our different projects. It produces fantastic visual representations that help us communicate the journey people make with our support."
           url="https://www.cornwallrcc.org.uk"
         />
       </Col>

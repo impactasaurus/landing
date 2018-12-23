@@ -22,6 +22,8 @@ interface BlogProps extends LayoutProps {
   };
 }
 
+// modelled on https://www.helpscout.net/blog/
+
 const BlogSnippet = ({node}: {node: MarkdownRemark}) => {
   const { frontmatter, fields: { slug } } = node;
   const cover = get(frontmatter, "image.children.0.fixed", {});
