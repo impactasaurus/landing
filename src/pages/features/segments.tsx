@@ -54,10 +54,4 @@ const SegmentPage = () => {
   );
 };
 
-/*
-        <li>Tags records</li>
-        <li>Report based on tags</li>
-        <li>Use cases</li>
- */
-
 export default withLayout(SegmentPage);
