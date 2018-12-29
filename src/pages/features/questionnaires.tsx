@@ -40,7 +40,7 @@ const QuestionnairePage = () => {
       />
       <DescribedImage
         image="/images/screenshots/categories.png"
-        title="Categories"
+        title="Question Categories"
         desc={(
           <p>
             Related questions can be categorised to produce higher level views of the data. Perfect for questionnaires with lots of questions.

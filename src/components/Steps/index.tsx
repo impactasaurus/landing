@@ -5,9 +5,10 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import DescribedImage from "../DescribedImage";
 import LearnMore from "../LearnMore";
+import "./style.less";
 
 export default () => (
-  <Container>
+  <Container className="steps">
     <Row className="header">
       <Col>
         <h2>You're only 4 steps away from demonstrating your impact</h2>
@@ -15,7 +16,7 @@ export default () => (
       </Col>
     </Row>
     <DescribedImage
-      image="/images/screenshots/questionnaire.png"
+      image="/images/screenshots/catalogue.png"
       title="1. Select a questionnaire"
       desc={(
         <>
@@ -26,7 +27,7 @@ export default () => (
       odd={true}
     />
     <DescribedImage
-      image="/images/screenshots/collect.png"
+      image="/images/screenshots/response-capture.png"
       title="2. Collect responses"
       desc={(
         <>

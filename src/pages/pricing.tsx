@@ -51,6 +51,14 @@ const PricingPage = () => {
           </p>
         </Col>
       </Row>
+      <Row>
+        <Col>
+          <h5>I took part in the beta, how will future pricing apply to me?</h5>
+          <p>
+            Organisations which took part in the beta will have free access to Impactasaurus forever, as a thanks for your invaluable feedback.
+          </p>
+        </Col>
+      </Row>
     </Container>
     </>
   );
