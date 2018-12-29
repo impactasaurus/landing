@@ -11,6 +11,7 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
+import "./blog.less";
 
 interface BlogProps extends LayoutProps {
   data: {

@@ -90,17 +90,11 @@ const BlogPostPage = (props: BlogPostProps) => {
       <h1>{frontmatter.title}</h1>
       <h4>{frontmatter.updatedDate} - {timeToRead} min read</h4>
     </Hero>
-    <Container style={{maxWidth: "700px"}}>
+    <Container style={{maxWidth: "700px"}} className="blog-post">
       <Row>
         <Col style={{fontSize: "1.3rem", marginTop: "2em", marginBottom: "2em", textAlign: "justify"}} dangerouslySetInnerHTML={{
           __html: html,
         }}>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h5>Tags</h5>
-          <p>{tags}</p>
         </Col>
       </Row>
       {recents}
