@@ -7,6 +7,10 @@ import SignupForm, {IFormOutput} from "../components/SignupForm";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 
+const sendToApp = () => {
+  window.location.href = "http://app.impactasaurus.org";
+};
+
 const onSubmit = (v: IFormOutput) => {
   return fetch("https://api.impactasaurus.org/v1/graphql", {
     method: "POST",
@@ -34,7 +38,19 @@ const onSubmit = (v: IFormOutput) => {
     return json;
   })
   .then(() => {
-    window.location.href = "http://app.impactasaurus.org";
+    if (window.ga) {
+      window.ga("send", {
+        hitType: "event",
+        eventCategory: "interaction",
+        eventAction: "signup",
+        eventLabel: "success",
+        hitCallback: sendToApp,
+      });
+      // as a backup
+      setTimeout(sendToApp, 2000);
+    } else {
+      sendToApp();
+    }
   });
 };
 
