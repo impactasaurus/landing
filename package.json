@@ -46,6 +46,7 @@
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-robots-txt": "^1.3.0",
     "gatsby-plugin-sass": "^2.0.4",
+    "gatsby-plugin-sentry": "^1.0.0",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-sitemap": "^2.0.2",
     "gatsby-plugin-typescript": "^2.0.0-rc.4",

@@ -34,6 +34,14 @@ module.exports = {
         respectDNT: true
       }
     },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://a01a68a753034c548bbeff7c06dd2d37@sentry.io/1362042',
+        environment: process.env.NODE_ENV,
+        enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)()
+      }
+    },
 
     // Parse all markdown files (each plugin add/parse some data into graphQL layer)
     {

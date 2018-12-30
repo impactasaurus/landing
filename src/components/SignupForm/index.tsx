@@ -121,6 +121,9 @@ const SignupForm = withFormik<IProps, IFormOutput>({
         if (e.message.includes("already")) {
           formikBag.setError(`User with email address ${v.email} already exists`);
         } else {
+          if (Sentry) {
+            Sentry.captureMessage(e.message);
+          }
           formikBag.setError(`Signup failed. Please refresh and try again, if that doesn't work, please drop us an email at support@impactasaurus.org`);
         }
       });
