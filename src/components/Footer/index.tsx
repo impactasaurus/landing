@@ -17,6 +17,7 @@ export interface IFooterItem {
 export interface IFooterProps extends React.HTMLProps<HTMLDivElement> {
   items: IFooterItem[];
   Link: React.ComponentClass<GatsbyLinkProps<any>> | any;
+  signup?: boolean;
 }
 
 export const Column = ({item, Link}) => {
@@ -34,15 +35,14 @@ export const Column = ({item, Link}) => {
   );
 };
 
-export const Footer = ({ items, Link }: IFooterProps) => {
-  console.log(items);
+export const Footer = ({ items, Link, signup }: IFooterProps) => {
   return (
     <footer>
-      <Signup />
+      {signup !== false && <Signup />}
       <Container>
         <Row>
           <Col>
-            <Logo />
+            {signup !== false && <Logo /> }
             <hr width="100%"/>
           </Col>
         </Row>

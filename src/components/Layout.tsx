@@ -48,7 +48,7 @@ export interface LayoutProps {
   children: any;
 }
 
-const Layout = (props: LayoutProps) => {
+const Layout = (props: LayoutProps & {signup?: boolean}) => {
   const { pathname } = props.location;
   const isHome = pathname === "/";
 
@@ -63,7 +63,7 @@ const Layout = (props: LayoutProps) => {
         <div>
           {props.children}
         </div>
-        <Footer Link={Link} items={footerItems}/>
+        <Footer Link={Link} items={footerItems} signup={props.signup}/>
       </div>
     </Provider>
   );
@@ -71,11 +71,11 @@ const Layout = (props: LayoutProps) => {
 
 export default Layout;
 
-export const withLayout = <P extends object>(WrappedComponent: React.ComponentType<P>) =>
+export const withLayout = <P extends object>(WrappedComponent: React.ComponentType<P>, signup: boolean = true) =>
   class WithLayout extends React.Component<P & LayoutProps> {
     public render() {
       return (
-        <Layout location={this.props.location}>
+        <Layout location={this.props.location} signup={signup}>
           <WrappedComponent {...this.props} />
         </Layout>
       );
