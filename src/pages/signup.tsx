@@ -41,8 +41,8 @@ const onSubmit = (v: IFormOutput) => {
     if (window.ga) {
       window.ga("send", {
         hitType: "event",
-        eventCategory: "interaction",
-        eventAction: "signup",
+        eventCategory: "signup",
+        eventAction: "submitted",
         eventLabel: "success",
         hitCallback: sendToApp,
       });
