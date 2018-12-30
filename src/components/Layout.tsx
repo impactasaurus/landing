@@ -27,6 +27,7 @@ const menuItems: IMenuItem[] = [
 const footerItems: IFooterItem[] = [
   convertMenuItem(menuItems, "Features"),
   {name: "Product", path: "", children: [
+    {name: "Signup", path: "/signup/"},
     convertMenuItem(menuItems, "Pricing"),
     convertMenuItem(menuItems, "FAQ"),
     convertMenuItem(menuItems, "Support"),
@@ -58,7 +59,7 @@ const Layout = (props: LayoutProps) => {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         </Helmet>
-        <Menu Link={Link} pathname={pathname} items={menuItems} />
+        <Menu pathname={pathname} items={menuItems} />
         <div>
           {props.children}
         </div>

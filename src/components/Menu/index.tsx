@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/lib/Nav";
 import NavDropdown from "react-bootstrap/lib/NavDropdown";
 import Button from "react-bootstrap/lib/Button";
 import "./style.less";
-import {GatsbyLinkProps} from "gatsby-link";
+import { Link } from "gatsby";
 import Logo from "../Logo";
 
 export interface IMenuItem {
@@ -18,19 +18,17 @@ export interface IMenuItem {
 export interface IMenuProps extends React.HTMLProps<HTMLDivElement> {
   items: IMenuItem[];
   pathname: string;
-  Link: React.ComponentClass<GatsbyLinkProps<any>> | any;
 }
 
 export interface IRenderItemProp {
   item: IMenuItem;
   pathname: string;
-  Link: React.ComponentClass<GatsbyLinkProps<any>> | any;
 }
 
 const isActive = (exact: boolean, itemPath: string, pathname: string): boolean =>
   (exact) ? pathname === itemPath : pathname.startsWith(itemPath);
 
-const MenuItem = ({item, pathname, Link}: IRenderItemProp) => {
+const MenuItem = ({item, pathname}: IRenderItemProp) => {
   if (item.children) {
     const active = item.children.reduce((a, c) => {
       return a || isActive(c.exact, c.path, pathname);
@@ -47,7 +45,11 @@ const MenuItem = ({item, pathname, Link}: IRenderItemProp) => {
   }
 };
 
-export const Menu = ({ items, pathname, Link }: IMenuProps) =>
+const ButtonLink = (p) => {
+  return <Button as={Link} {...p}>{p.children}</Button>;
+};
+
+export const Menu = ({ items, pathname }: IMenuProps) =>
   <Navbar expand="lg" sticky="top">
     <Navbar.Brand as={Link} to="/">
       <Logo />
@@ -55,12 +57,12 @@ export const Menu = ({ items, pathname, Link }: IMenuProps) =>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
-        {items.filter((i) => i.right !== true).map((item) => <MenuItem item={item} pathname={pathname} Link={Link} key={item.path} />)}
+        {items.filter((i) => i.right !== true).map((item) => <MenuItem item={item} pathname={pathname} key={item.path} />)}
       </Nav>
       <Nav className="justify-content-end">
-        {items.filter((i) => i.right === true).map((item) => <MenuItem item={item} pathname={pathname} Link={Link} key={item.path} />)}
+        {items.filter((i) => i.right === true).map((item) => <MenuItem item={item} pathname={pathname} key={item.path} />)}
         <Nav.Item as={Button} variant="outline-primary" href="https://app.impactasaurus.org">Log in</Nav.Item>
-        <Nav.Item as={Button} variant="primary" href="https://app.impactasaurus.org/signup">Sign up</Nav.Item>
+        <Nav.Item as={ButtonLink} variant="primary" to="/signup">Sign up</Nav.Item>
       </Nav>
     </Navbar.Collapse>
   </Navbar>;

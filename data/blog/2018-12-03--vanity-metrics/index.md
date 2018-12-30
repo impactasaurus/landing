@@ -1,7 +1,7 @@
 ---
 title: "Vanity metrics in social\_impact"
 createdDate: '2018-12-03'
-updatedDate: '2018-12-29'
+updatedDate: '2018-12-30'
 author: Dan R
 tags:
   - outcomes
@@ -45,4 +45,4 @@ Real impact is only realised if the lesson is given to many children and it is s
 
 Clearly, measuring outcomes is much harder than measuring outputs, but it is key to understanding your impact and to improving your service. 
 
-Impactasaurus was created to provide a simple solution to measuring your outcomes. If the complexity of measuring your outcomes has put you off in the past, [give us a go and see how easy it can be](https://app.impactasaurus.org/signup).
+Impactasaurus was created to provide a simple solution to measuring your outcomes. If the complexity of measuring your outcomes has put you off in the past, [give us a go and see how easy it can be](/signup).
