@@ -33,7 +33,7 @@ const BlogSnippet = ({node}: {node: MarkdownRemark}) => {
     <Col lg={4} md={6} key={slug}>
       <Link to={slug} style={{display: "flex", flexDirection: "column", border: "1px solid lightgray", marginBottom: "4rem"}}>
         <img src={cover.src} srcSet={cover.srcSet} style={{height: "12rem", objectFit: "cover"}} />
-        <h4 style={{marginTop: "1.6rem", maxWidth: "90%"}}>{frontmatter.title}</h4>
+        <h4 style={{margin: "1rem auto", maxWidth: "90%"}}>{frontmatter.title}</h4>
       </Link>
     </Col>
   );

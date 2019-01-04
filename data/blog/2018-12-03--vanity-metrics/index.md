@@ -1,48 +1,65 @@
 ---
-title: "Vanity metrics in social\_impact"
+title: Avoiding misleading vanity metrics to drive improvements
 createdDate: '2018-12-03'
-updatedDate: '2018-12-30'
+updatedDate: '2019-01-04'
 author: Dan R
 tags:
-  - outcomes
+  - impact
 image: abacus-addition-arithmetic-1019470.jpg
 draft: false
 ---
 
-Impact is often seen as a counting game. Many charities have impact reports full of quantities: the number of interventions, the number of workshops conducted and the amount of donations received.
+Sure, most charities measure social impact to attract funding.
+But it can also be a driver for positive change in your charity.
+To unlock this potential, you must measure the right metrics.
 
-The startup world has a term for such stats - vanity metrics. Vanity metrics, in business, cover things like website views, downloads and registered users. On their own, these numbers do not represent impact, merely the activity and interest the company is receiving. As you can guess from the name, they are often used to present the illusion of progress, but don't correlate with business success.
+Social impact is often seen as a counting game. 
+Many charities have impact reports full of quantities: the number of interventions, the number of workshops conducted and the amount of donations received.
+The startup world has a term for such stats - vanity metrics. 
+Vanity metrics, might make you feel good, but they don’t offer clear guidance for what to do.
 
-Actionable metrics, on the other hand, are metrics which convey how a business is performing. Conversion and retention rates are a good example, they explain how successful the business is being in terms of gaining new customers and keeping them - both of which are highly correlated with business success.
+Say you performed 100 workshops last year, now what?
+Do you know that the workshops produced the desired results?
+How can you improve the workshops?
+Does performing more workshops achieve your organisation's long term goals?
 
-Combined, vanity and actionable metrics demonstrate how much impact a company is achieving.
-
-* * *
-
-Vanity and actionable metrics also apply to charities and the measurement of social impact.
-
-The counts I described at the start of this post are called _outputs_. They detail what your charity has done or produced. These are the vanity metrics of social impact. Don't get me wrong, these numbers are a key component to understanding your impact, but they are only one half of the puzzle. On their own, they merely state what you, as an organisation, have done. Running 20 workshops or engaging with 2000 individuals does not, in itself, mean you had an impact.
-
-_Outcomes_ are the actionable metrics of the social impact world. They describe how successful you were. As an example, an actionable metric may explain if you improved a beneficiary's well-being, or their skills. Actionable metrics get to the core of how well your service is performing. 
-
-Similarly to the business world, to understand impact, outcomes and outputs must be considered together. By combining, you can describe how many people you affect and the success of your intervention.
-
-* * *
-
-Let's talk around an example. 
-
-Consider a charity trying to reduce childhood obesity. The charity may decide to tackle the issue by giving lessons to children about healthy eating. 
-
-The number of lessons conducted is the output of the charity. Measuring output is as simple as counting the lessons given.
-
-The charity's goal is to reduce the amount of childhood obesity, this is their desired outcome.  To measure outcome, they could weigh the children when they conduct the lesson and 6 months later, the weight lost is the outcome of their intervention.
-
-If the lessons are not successful in reducing weight, no matter how many workshops the charity ran, they would never have an impact. Conversely, if the lesson lead to significant weight loss, but was only given to a single cohort of children, the charity would not have a large impact. 
-
-Real impact is only realised if the lesson is given to many children and it is successful in reducing their weight.
+To assess change, you must first understand how well the goals of your organisation are being achieved.
+Remember, change is not always beneficial, without monitoring your performance, a change could be detrimental.
+Once performance monitoring is available, changes can be made and their effect on your performance observed.
+Metrics which tie actions to observed results are called actionable metrics.
+To improve as an organisation, you must measure actionable metrics related to the organisation's goals.
 
 * * *
 
-Clearly, measuring outcomes is much harder than measuring outputs, but it is key to understanding your impact and to improving your service. 
+Social impact is typically made up from two components, outputs and outcomes.
 
-Impactasaurus was created to provide a simple solution to measuring your outcomes. If the complexity of measuring your outcomes has put you off in the past, [give us a go and see how easy it can be](/signup).
+_Outputs_ detail what your charity has done or produced. 
+For example, how many interventions or workshops you have conducted.
+Outputs are easy to measure and are important in understanding your impact as they describe your reach.
+However, they are not ideal for learning and improvement as they rarely relate to your goals.
+I have yet to meet a charity whose goal was to run workshops, they are just the chosen medium for achieving their desired social change.
+Does increasing the number of workshops you run a year improve your charity? 
+It may increase your reach, but it does not help inform and measure change.
+Outputs are the vanity metrics of social impact.
+
+_Outcomes_ describe the result of your organisation's efforts.
+For example, the improvements to a beneficiary's well-being as a result of your intervention.
+If the outcomes being measured relate to the organisation's goals, there is scope to learn and improve.
+There are many tools available to help define outcomes which contribute towards your goals.
+Theory of change is a popular tool, which maps from programs or initiatives, to outcomes and finally your long term goals.
+By following this process, improvements to your outcomes should mean you are improving your ability to achieve your goals.
+
+To be able to learn from your outcomes, you must understand what actions affect them.
+For example, if we introduce a new intervention, did it outperform the status quo?
+To be able to answer this, your outcome measurement and reporting tool must be capable of reporting on different segments of your data.
+Segments are a subset of your data which have similar attributes.
+In this example, we could segment our data based on the type of intervention, giving us an insight into how well each performed.
+With this capability, organisations can innovate quickly by trialing new approaches and assessing their performance.
+
+To improve as a sector, we must take a leaf from the startup world and focus on actionable metrics.
+In the case of social impact, measuring outcomes which are defined based on your goals is a great start.
+The next step is to make them actionable, by understanding how your actions affect your outcomes.
+
+Impactasaurus is a simple tool for outcome measuring and reporting.
+Data within Impactasaurus can be tagged, allowing reports to be generated for different segments.
+If you would like to take the next step, [signup now](/signup) and see how easy it can be.
