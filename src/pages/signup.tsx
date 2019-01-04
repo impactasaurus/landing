@@ -60,7 +60,7 @@ const SignupPage = () => {
     <SEO title="Signup"/>
     <Hero>
       <h1>Signup</h1>
-      <h4>In two minutes you will be measuring your impact</h4>
+      <h4>In two minutes, you will be measuring your impact</h4>
     </Hero>
     <Container className="slanted">
       <Row>

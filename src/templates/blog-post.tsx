@@ -1,7 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { get } from "lodash";
-import { Label, Card, Comment } from "semantic-ui-react";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
@@ -10,6 +8,7 @@ import { MarkdownRemark, MarkdownRemarkConnection } from "../graphql-types";
 import {withLayout, LayoutProps} from "../components/Layout";
 import { graphql } from "gatsby";
 import SEO from "../components/SEO/SEO";
+import {BlogSnippet} from "../components/BlogSnippet";
 
 interface BlogPostProps extends LayoutProps {
   data: {
@@ -18,46 +17,8 @@ interface BlogPostProps extends LayoutProps {
   };
 }
 
-const BlogSnippet = ({node}: {node: MarkdownRemark}) => {
-  const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
-  const cover = get(frontmatter, "image.children.0.fixed", {});
-
-  const extra = (
-    <Comment.Group>
-      <Comment>
-        <Comment.Content>
-          <Comment.Metadata style={{ margin: 0 }}>
-            {frontmatter.updatedDate} - {timeToRead} min read
-          </Comment.Metadata>
-        </Comment.Content>
-      </Comment>
-    </Comment.Group>
-  );
-
-  const description = (
-    <Card.Description>
-      {excerpt}
-      <br />
-      <Link to={slug}>Read more…</Link>
-    </Card.Description>
-  );
-
-  return (
-    <Card key={slug}
-          fluid
-          image={cover}
-          header={frontmatter.title}
-          extra={extra}
-          description={description}
-    />
-  );
-};
-
 const BlogPostPage = (props: BlogPostProps) => {
   const { frontmatter, html, timeToRead, excerpt, fields } = props.data.post;
-
-  const tags = props.data.post.frontmatter.tags
-    .map((tag) => <Label key={tag}><Link to={`/blog/tags/${tag}/`}>{tag}</Link></Label>);
 
   const recentsAvailable = props.data.recents && props.data.recents.edges;
   let recents = <div />;

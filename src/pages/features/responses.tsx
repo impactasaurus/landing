@@ -12,6 +12,7 @@ const RecordsPage = () => {
     <SEO title="Responses"/>
     <Hero>
       <h1>Questionnaire responses</h1>
+      <h4>Collect and store your beneficiaries' responses</h4>
     </Hero>
     <Container className="slanted">
       <DescribedImage

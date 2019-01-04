@@ -11,7 +11,7 @@ const SecurityPage = () => {
     <SEO title="Security"/>
     <Hero>
       <h1>Security</h1>
-      <h4>At Impactasaurus, the security of your data is our highest priority</h4>
+      <h4>The security of your data is our highest priority</h4>
     </Hero>
     <Container className="slanted">
       <h5>How we protect your data</h5>
@@ -22,7 +22,8 @@ const SecurityPage = () => {
       </p>
       <h5>How we protect your beneficiaries privacy</h5>
       <p>
-        Questionnaire responses contain extremely personal information, to protect your beneficiaries, we do not store personally identifiable information about them.
+        Questionnaire responses contain extremely personal information.
+        To protect your beneficiaries, we do not store personally identifiable information about them.
         Instead, beneficiaries are referred to by ID only, keeping their responses anonymous to outside eyes.
       </p>
       <h5>How we protect your privacy</h5>

@@ -56,7 +56,7 @@ export const Questions: IQuestion[] = [{
   title: "Is there a mobile app available?",
   main: (
     <p>
-      No, however, the web app is responsive to screen size and works well on mobile phones or tablets.
+      No, however, the web app works well on mobile phones and tablets.
     </p>
   ),
   id: "app",
@@ -131,7 +131,7 @@ export const Questions: IQuestion[] = [{
   main: (
     <p>
       Due to the variety of data formats, we do not support this within the application currently.
-      If you have a lot of data which needs importing, please email a sample of the data.
+      If you have a lot of data which needs importing, <Link to="/support/">please email</Link> a sample of the data.
       We are happy to do one off imports from any data format as long as the data is compatible with Impactasaurus.
     </p>
   ),

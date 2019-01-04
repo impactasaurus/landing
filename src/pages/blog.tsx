@@ -3,15 +3,14 @@ import { Link } from "gatsby";
 import { graphql } from "gatsby";
 import { MarkdownRemarkConnection } from "../graphql-types";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
-import { get } from "lodash";
 import {withLayout, LayoutProps} from "../components/Layout";
-import { MarkdownRemark } from "../graphql-types";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 import "./blog.less";
+import {BlogSnippet} from "../components/BlogSnippet";
 
 interface BlogProps extends LayoutProps {
   data: {
@@ -24,20 +23,6 @@ interface BlogProps extends LayoutProps {
 }
 
 // modelled on https://www.helpscout.net/blog/
-
-const BlogSnippet = ({node}: {node: MarkdownRemark}) => {
-  const { frontmatter, fields: { slug } } = node;
-  const cover = get(frontmatter, "image.children.0.fixed", {});
-
-  return (
-    <Col lg={4} md={6} key={slug}>
-      <Link to={slug} style={{display: "flex", flexDirection: "column", border: "1px solid lightgray", marginBottom: "4rem"}}>
-        <img src={cover.src} srcSet={cover.srcSet} style={{height: "12rem", objectFit: "cover"}} />
-        <h4 style={{margin: "1rem auto", maxWidth: "90%"}}>{frontmatter.title}</h4>
-      </Link>
-    </Col>
-  );
-};
 
 const BlogPage = (props: BlogProps) => {
   const tags = props.data.tags.group;

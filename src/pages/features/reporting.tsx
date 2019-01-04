@@ -12,6 +12,7 @@ const ReportingPage = () => {
     <SEO title="Reporting"/>
     <Hero>
       <h1>Reporting</h1>
+      <h4>Produce visualisations to demonstrate your impact</h4>
     </Hero>
     <Container className="slanted">
       <DescribedImage

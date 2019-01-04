@@ -11,11 +11,12 @@ const QuestionnairePage = () => {
     <SEO title="Questionnaires"/>
     <Hero>
       <h1>Questionnaires</h1>
+      <h4>Define questions to measure your outcomes</h4>
     </Hero>
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/catalogue.png"
-        title="Catalogue"
+        title="Select from our catalogue"
         desc={(
           <>
           <p>
@@ -30,7 +31,7 @@ const QuestionnairePage = () => {
       />
       <DescribedImage
         image="/images/screenshots/new-likert-q.png"
-        title="Custom"
+        title="Create your own"
         desc={(
           <p>
             If our catalogue of questionnaires does not suit, you can create your own questionnaire. Define your own questions and scales easily with our questionnaire creator.
@@ -40,7 +41,7 @@ const QuestionnairePage = () => {
       />
       <DescribedImage
         image="/images/screenshots/categories.png"
-        title="Question Categories"
+        title="Group questions"
         desc={(
           <p>
             Related questions can be categorised to produce higher level views of the data. Perfect for questionnaires with lots of questions.

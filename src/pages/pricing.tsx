@@ -12,6 +12,7 @@ const PricingPage = () => {
     <SEO title="Pricing"/>
     <Hero>
       <h1>Pricing</h1>
+      <h4>Hope you are sitting down...</h4>
     </Hero>
     <Container className="slanted">
       <Row className="header">

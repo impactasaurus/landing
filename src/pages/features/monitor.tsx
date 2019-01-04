@@ -11,11 +11,12 @@ const JourneyPage = () => {
     <SEO title="Monitor"/>
     <Hero>
       <h1>Monitor</h1>
+      <h4>Tailor your service to fit your beneficiary's journey</h4>
     </Hero>
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/impactasaurus-graph.png"
-        title="Journey"
+        title="Your beneficiary's journey"
         desc={(
           <p>
             Your beneficiaries go through a journey with your support. Understand their journey by visualising an individual beneficiary's records.
@@ -25,7 +26,7 @@ const JourneyPage = () => {
       />
       <DescribedImage
       image="/images/screenshots/table.png"
-      title="Optimise service"
+      title="Tailor your service"
       desc={(
         <p>
           Once a beneficiary's journey can be visualised, the service you provide can be optimised for the individual. If you can't measure it, you can't improve it.
