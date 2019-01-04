@@ -37,7 +37,7 @@ export default () => (
         <Testimonial
           image="/images/clients/breathing-spaces.jpg"
           name="Breathing Spaces"
-          quote="TODO"
+          quote="We are delighted to recommend Impactasaurus to anyone who needs an easy to use, meaningful and efficient way of collecting, analysing and presenting data that demonstrates their outcomes and impact."
           url="https://www.breathingspaces.co"
         />
       </Col>
