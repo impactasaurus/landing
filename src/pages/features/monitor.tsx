@@ -29,7 +29,7 @@ const JourneyPage = () => {
       title="Tailor your service"
       desc={(
         <p>
-          Once a beneficiary's journey can be visualised, the service you provide can be optimised for the individual. If you can't measure it, you can't improve it.
+          Tailor the service you provide based on an individual's journey. As the saying goes, "If you can't measure it, you can't improve it".
         </p>
       )}
       odd={false}

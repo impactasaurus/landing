@@ -171,7 +171,7 @@ const FAQPage = () => {
       <h4>Answers to some common questions</h4>
     </Hero>
     <Container className="slanted">
-      {Questions.filter((q) => q.sales).map((q) => <Question q={q}/>)}
+      {Questions.filter((q) => q.sales).map((q) => <Question key={q.id} q={q}/>)}
     </Container>
     </>
   );
