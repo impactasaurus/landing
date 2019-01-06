@@ -25,8 +25,8 @@ const BlogPostPage = (props: BlogPostProps) => {
   if (recentsAvailable) {
     const snippets = props.data.recents.edges
       .map(({ node }) => (
-        <Col>
-          <BlogSnippet key={node.fields.slug} node={node}/>
+        <Col key={node.fields.slug}>
+          <BlogSnippet key={node.fields.slug} node={node} wide={true}/>
         </Col>
       ));
     recents = (
@@ -49,7 +49,7 @@ const BlogPostPage = (props: BlogPostProps) => {
     <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} pathname={fields.slug} />
     <Hero>
       <h1>{frontmatter.title}</h1>
-      <h4>{frontmatter.updatedDate} - {timeToRead} min read</h4>
+      <h4>{frontmatter.createdDate} - {timeToRead} min read</h4>
     </Hero>
     <Container style={{maxWidth: "700px"}} className="blog-post">
       <Row>
@@ -78,7 +78,7 @@ export const pageQuery = graphql`
     frontmatter {
       tags
       title
-      updatedDate(formatString: "MMM D, YYYY")
+      createdDate(formatString: "MMM D, YYYY")
       image {
         children {
           ... on ImageSharp {
