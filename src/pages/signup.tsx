@@ -64,7 +64,7 @@ const SignupPage = () => {
     </Hero>
     <Container className="slanted">
       <Row>
-        <Col xs={{span: 6, offset: 3}}>
+        <Col md={{span: 10, offset: 1}} lg={{span: 8, offset: 2}} xl={{span: 6, offset: 3}}>
           <SignupForm onFormSubmit={onSubmit}/>
         </Col>
       </Row>

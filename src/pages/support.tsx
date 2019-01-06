@@ -31,10 +31,10 @@ const SupportPage = () => {
         <Col>
           <h3>Common Queries</h3>
           {qs.map((q) => (
-            <>
-            <h5>{q.title}</h5>
-            {q.main}
-            </>
+            <div key={q.id}>
+              <h5>{q.title}</h5>
+              {q.main}
+            </div>
           ))}
         </Col>
       </Row>

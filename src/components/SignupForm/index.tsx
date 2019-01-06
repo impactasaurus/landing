@@ -52,7 +52,7 @@ const InnerForm = (props: InjectedFormikProps<IProps, IFormOutput>) => {
     handleBlur,
     handleChange,
   };
-  const termsLabel = <label>I agree to the <Link to="/terms/">Terms of Use</Link> and <Link to="/privacy/">Privacy Policy</Link></label>;
+  const termsLabel = <label>I agree to the <Link to="/terms/">Terms of Use</Link>, <Link to="/privacy/">Privacy Policy</Link> and <Link to="/cookie/">Cookie Policy</Link></label>;
 
   return (
     <Form noValidate={true} onSubmit={handleSubmit}>
