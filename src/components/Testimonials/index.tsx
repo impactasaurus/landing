@@ -17,10 +17,10 @@ export default () => (
     <Row>
       <Col xs={12} sm={6}>
         <Testimonial
-          image="/images/clients/bac.jpg"
-          name="Battersea Arts Centre"
-          quote="TODO"
-          url="https://www.bac.org.uk"
+          image="/images/clients/inclusion-gloucestershire.jpg"
+          name="Inclusion Gloucestershire"
+          quote="Times are tough for everyone and competition for funding is tight, having robust evidence of impact is critical. Working with Impactasaurus has helped us demonstrate the difference our work makes."
+          url="https://www.inclusiongloucestershire.co.uk/"
         />
       </Col>
       <Col xs={12} sm={6}>
