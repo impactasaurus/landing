@@ -97,7 +97,7 @@ export const pageQuery = graphql`
       frontmatter: {draft: {ne: true}},
       fileAbsolutePath: {regex: "/blog/"},
     },
-    sort: {order: DESC, fields: [frontmatter___updatedDate]},
+    sort: {order: DESC, fields: [frontmatter___createdDate]},
     limit: 4
   ) {
     edges {

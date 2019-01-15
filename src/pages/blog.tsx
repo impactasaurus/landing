@@ -65,7 +65,7 @@ query PageBlog {
 
   # Get posts
   posts: allMarkdownRemark(
-    sort: { order: DESC, fields: [frontmatter___updatedDate] },
+    sort: { order: DESC, fields: [frontmatter___createdDate] },
     filter: {
       frontmatter: { draft: { ne: true } },
       fileAbsolutePath: { regex: "/blog/" }
@@ -82,7 +82,7 @@ query PageBlog {
         }
         frontmatter {
           title
-          updatedDate(formatString: "DD MMMM, YYYY")
+          createdDate(formatString: "DD MMMM, YYYY")
           image {
           	children {
               ... on ImageSharp {

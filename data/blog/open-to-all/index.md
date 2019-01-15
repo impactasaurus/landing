@@ -1,7 +1,7 @@
 ---
 title: 'Impactasaurus: open to all'
 createdDate: '2018-01-14'
-updatedDate: '2019-01-06'
+updatedDate: '2019-01-15'
 author: Dan R
 tags:
   - impactasaurus
@@ -20,12 +20,12 @@ We found the commercial offering at the time were:
 -   not configurable enough
 -   too complicated
 
-so Impactasaurus was born with the simple vision: _for all organisations, benefiting society, to understand their social impact_.
+so Impactasaurus was born with a simple vision: _for all organisations, benefiting society, to understand their social impact_.
 
 After 10 months of development, we invited our first beta users to start using Impactasaurus.
 The aim of the beta was to get feedback from users to make Impactasaurus exactly what they needed.
-The beta has ran for 13 months now and has welcomed over 100 organisations.
-Through this process we have learnt a lot, leading to the development of many new features within the tool.
+The beta has run for 13 months now and has welcomed over 100 organisations.
+Through this process we have learned a lot, leading to the development of many new features within the tool.
 We are forever grateful to our kind beta users and thank them for their input.
 
 Impactasaurus addresses the problems we saw 2 years ago: it is free, CRM independent, configurable and easy to use.

@@ -1,7 +1,7 @@
 ---
 title: Avoiding misleading vanity metrics to drive improvements
 createdDate: '2018-01-15'
-updatedDate: '2019-01-06'
+updatedDate: '2019-01-15'
 author: Dan R
 tags:
   - impact
@@ -16,12 +16,12 @@ To unlock this potential, you must measure the right metrics.
 Social impact is often seen as a counting game. 
 Many charities have impact reports full of quantities: the number of interventions, the number of workshops conducted and the amount of donations received.
 The startup world has a term for such stats - vanity metrics. 
-Vanity metrics, might make you feel good, but they don’t offer clear guidance for what to do.
+Vanity metrics, might make you feel good, but they don’t offer clear guidance on what to do.
 
 Say you performed 100 workshops last year, now what?
 Do you know that the workshops produced the desired results?
 How can you improve the workshops?
-Does performing more workshops achieve your organisation's long term goals?
+Does performing more workshops achieve your organisation's long-term goals?
 
 To assess change, you must first understand how well the goals of your organisation are being achieved.
 Remember, change is not always beneficial, without monitoring your performance, a change could be detrimental.
@@ -46,7 +46,7 @@ _Outcomes_ describe the result of your organisation's efforts.
 For example, the improvements to a beneficiary's well-being as a result of your intervention.
 If the outcomes being measured relate to the organisation's goals, there is scope to learn and improve.
 There are many tools available to help define outcomes which contribute towards your goals.
-Theory of change is a popular tool, which maps from programs or initiatives, to outcomes and finally your long term goals.
+Theory of change is a popular tool, which maps from programs or initiatives, to outcomes and finally your long term-goals.
 By following this process, improvements to your outcomes should mean you are improving your ability to achieve your goals.
 
 To be able to learn from your outcomes, you must understand what actions affect them.

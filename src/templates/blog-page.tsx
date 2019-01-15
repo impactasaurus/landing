@@ -16,7 +16,7 @@ query TemplateBlogPage($skip: Int) {
 
   # Get posts
   posts: allMarkdownRemark(
-    sort: { order: DESC, fields: [frontmatter___updatedDate] },
+    sort: { order: DESC, fields: [frontmatter___createdDate] },
     filter: {
       frontmatter: {
         draft: { ne: true }
@@ -36,7 +36,7 @@ query TemplateBlogPage($skip: Int) {
         }
         frontmatter {
           title
-          updatedDate(formatString: "DD MMMM, YYYY")
+          createdDate(formatString: "DD MMMM, YYYY")
           image {
           	children {
               ... on ImageSharp {
