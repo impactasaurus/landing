@@ -10,19 +10,11 @@ export default () => (
   <Container>
     <Row className="header">
       <Col>
-        <h2>Inspirational organisations <FontAwesomeIcon icon={faHeart} /> Impactasaurus</h2>
+        <h2>Inspirational organisations <FontAwesomeIcon style={{color: "var(--primary)"}} icon={faHeart} /> Impactasaurus</h2>
         <h4>Over 100 organisations use Impactasaurus to demonstrate their impact</h4>
       </Col>
     </Row>
     <Row>
-      <Col xs={12} sm={6}>
-        <Testimonial
-          image="/images/clients/inclusion-gloucestershire.jpg"
-          name="Inclusion Gloucestershire"
-          quote="Times are tough for everyone and competition for funding is tight, having robust evidence of impact is critical. Working with Impactasaurus has helped us demonstrate the difference our work makes."
-          url="https://www.inclusiongloucestershire.co.uk/"
-        />
-      </Col>
       <Col xs={12} sm={6}>
         <Testimonial
           image="/images/clients/crcc.jpg"
@@ -31,8 +23,6 @@ export default () => (
           url="https://www.cornwallrcc.org.uk"
         />
       </Col>
-    </Row>
-    <Row>
       <Col xs={12} sm={6}>
         <Testimonial
           image="/images/clients/breathing-spaces.jpg"
@@ -41,12 +31,22 @@ export default () => (
           url="https://www.breathingspaces.co"
         />
       </Col>
+    </Row>
+    <Row>
       <Col xs={12} sm={6}>
         <Testimonial
           image="/images/clients/sporting-force.png"
           name="Sporting Force"
           quote="Impactasaurus is an easy to use piece of software, it takes seconds to input questionnaire responses. We can provide funders and trustees with visuals that are easily understood on each beneficiary or project."
           url="http://www.sportingforce.org"
+        />
+      </Col>
+      <Col xs={12} sm={6}>
+        <Testimonial
+          image="/images/clients/inclusion-gloucestershire.jpg"
+          name="Inclusion Gloucestershire"
+          quote="Times are tough for everyone and competition for funding is tight, having robust evidence of impact is critical. Working with Impactasaurus has helped us demonstrate the difference our work makes."
+          url="https://www.inclusiongloucestershire.co.uk/"
         />
       </Col>
     </Row>

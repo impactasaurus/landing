@@ -31,7 +31,7 @@ export default () => (
       title="2. Collect responses"
       desc={(
         <>
-        <p>Collect questionnaire responses however best suits your service. Responses are <Link to={"/features/security/"}>securely</Link> saved within Impactasaurus for review and analysis.</p>
+        <p>Questionnaire responses can be collected in person, remotely or retrospectively. Responses are <Link to={"/features/security/"}>securely</Link> saved within Impactasaurus for review and analysis.</p>
         <LearnMore to="/features/responses/" />
         </>
       )}
@@ -42,7 +42,7 @@ export default () => (
       title="3. Monitor progress"
       desc={(
         <>
-        <p>During your intervention, a beneficiary's journey can be monitored. This allows you to tailor your services to best serve the beneficiary.</p>
+        <p>A beneficiary's journey can be monitored during your intervention. This allows you to tailor your services to meet their specific requirements.</p>
         <LearnMore to="/features/monitor/" />
         </>
       )}
