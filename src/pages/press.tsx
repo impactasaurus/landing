@@ -8,6 +8,7 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
+import MediaItem, {IMediaItemVersion} from "../components/MediaItem";
 
 interface PressProps extends LayoutProps {
   data: {
@@ -34,6 +35,47 @@ export const PRSnippet = ({node}: {node: MarkdownRemark}) => {
   );
 };
 
+const MediaItems = () => (
+  <Row>
+    <Col md={3}>
+      <MediaItem thumbnail={"/images/logos/logo.png"} name="impactasaurus-logo" versions={[{
+        path: "/images/logos/logo.svg",
+        version: "svg",
+      }, {
+        path: "/images/logos/logo.png",
+        version: "png",
+      }] as IMediaItemVersion[]} />
+    </Col>
+    <Col md={3}>
+      <MediaItem thumbnail={"/images/logos/logo-inverse.png"} name="impactasaurus-inverted" versions={[{
+        path: "/images/logos/logo-inverse.svg",
+        version: "svg",
+      }, {
+        path: "/images/logos/logo-inverse.png",
+        version: "png",
+      }] as IMediaItemVersion[]} />
+    </Col>
+    <Col md={3}>
+      <MediaItem thumbnail={"/images/logos/logo-full.png"} name="impactasaurus-logo-full" versions={[{
+        path: "/images/logos/logo-full.svg",
+        version: "svg",
+      }, {
+        path: "/images/logos/logo-full.png",
+        version: "png",
+      }] as IMediaItemVersion[]} />
+    </Col>
+    <Col md={3}>
+      <MediaItem thumbnail={"/images/logos/logo-inverse-full.png"} name="impactasaurus-inverted-full" versions={[{
+        path: "/images/logos/logo-inverse-full.svg",
+        version: "svg",
+      }, {
+        path: "/images/logos/logo-inverse-full.png",
+        version: "png",
+      }] as IMediaItemVersion[]} />
+    </Col>
+  </Row>
+);
+
 const PressPage = (props: PressProps) => {
   const prs = props.data.pressReleases.edges.map((e) => e.node);
 
@@ -46,6 +88,7 @@ const PressPage = (props: PressProps) => {
     </Hero>
     <Container className="slanted">
       <h2>Media Kit</h2>
+      <MediaItems />
       <h2>Press Releases</h2>
       {prs.map((node) => <PRSnippet node={node} key={node.fields.slug} />)}
     </Container>
