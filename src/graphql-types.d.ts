@@ -2819,6 +2819,7 @@ export interface fieldOwners_2 {
 
 export interface frontmatter_2 {
   title: string | null;
+  subtitle: string | null;
   createdDate: Date | null;
   updatedDate: Date | null;
   author: AuthorJson | null;

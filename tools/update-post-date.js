@@ -9,8 +9,8 @@ process.argv.slice(3).forEach(dirtyPath => {
   // Make sure it will works on windows
   const path = slash(dirtyPath);
 
-  // Only parse blog posts
-  if (!path.includes('/data/blog/')) {
+  // Only parse blog posts and PRs
+  if (!path.includes('/data/blog/') && !path.includes('/data/pr')) {
     return;
   }
 

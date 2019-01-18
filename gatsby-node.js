@@ -26,13 +26,7 @@ exports.onCreateNode = ({node, actions, getNode}) => {
   }
 };
 
-// Implement the Gatsby API `createPages`.
-// This is called after the Gatsby bootstrap is finished
-// so you have access to any information necessary to
-// programatically create pages.
-exports.createPages = ({graphql, actions}) => {
-  const {createPage} = actions;
-
+const createBlogPages = (graphql, createPage) => {
   return new Promise((resolve, reject) => {
     const templates = ['blogPost', 'tagsPage', 'blogPage']
       .reduce((mem, templateName) => {
@@ -43,7 +37,11 @@ exports.createPages = ({graphql, actions}) => {
     graphql(
       `
       {
-        posts: allMarkdownRemark {
+        posts: allMarkdownRemark(
+          filter: {
+            fileAbsolutePath: {regex: "/blog/"},
+          }
+        ) {
           edges {
             node {
               fields {
@@ -106,4 +104,66 @@ exports.createPages = ({graphql, actions}) => {
       resolve();
     });
   });
+};
+
+const createPressPages = (graphql, createPage) => {
+  console.log(graphql);
+  return new Promise((resolve, reject) => {
+    const templates = ['pressRelease']
+      .reduce((mem, templateName) => {
+        return Object.assign({}, mem,
+        {[templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`)});
+      }, {});
+
+    graphql(
+      `
+      {
+        posts: allMarkdownRemark(
+          filter: {
+            fileAbsolutePath: {regex: "/press/"},
+          }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+    ).then(result => {
+      if (result.errors) {
+        return reject(result.errors);
+      }
+      const posts = result.data.posts.edges.map(p => p.node);
+
+      // Create blog pages
+      posts.forEach(post => {
+        createPage({
+          path: post.fields.slug,
+          component: slash(templates.pressRelease),
+          context: {
+            slug: post.fields.slug
+          }
+        });
+      });
+
+      resolve();
+    });
+  });
+};
+
+// Implement the Gatsby API `createPages`.
+// This is called after the Gatsby bootstrap is finished
+// so you have access to any information necessary to
+// programatically create pages.
+exports.createPages = ({graphql, actions: {createPage}}) => {
+  const p = createBlogPages(graphql, createPage);
+  console.log(createPressPages(graphql, createPage));
+  return p
+    .then(() => {
+      return createPressPages(graphql, createPage);
+    });
 };

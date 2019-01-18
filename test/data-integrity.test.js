@@ -50,4 +50,27 @@ describe('data integrity', () => {
       });
     });
   });
+
+  describe('PRs', () => {
+    const posts = fs.readdirSync('data/press');
+    const validators = [
+      {key: 'title', validator: _.isString},
+      {key: 'subtitle', validator: _.isString},
+      {key: 'createdDate', validator: val => _.isDate(new Date(val))},
+      {key: 'updatedDate', validator: val => _.isDate(new Date(val))},
+      {key: 'author', validator: val => _.map(authors, 'id').includes(val)},
+      {key: 'draft', validator: _.isBoolean}
+    ];
+
+    posts.forEach(post => {
+      describe(`${post}`, () => {
+        const {data} = matter.read(`data/press/${post}/index.md`);
+        validators.forEach(field => {
+          it(`should have correct format for ${field.key}`, () => {
+            expect(field.validator(data[field.key], post)).toBeTruthy();
+          });
+        });
+      });
+    });
+  });
 });
