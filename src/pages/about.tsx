@@ -5,8 +5,6 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const AboutPage = () => {
   const vision = "Our vision is for all organisations, benefiting society, to understand their social impact, allowing them to demonstrate their value to stakeholders and drive improvements to their services";
@@ -14,7 +12,8 @@ const AboutPage = () => {
     <>
     <SEO title="About" description={vision}/>
     <Hero>
-      <h1>About</h1>
+      <h1>About Us</h1>
+      <h4>All organisations, benefiting society, should understand their social impact</h4>
     </Hero>
     <Container className="slanted">
       <Row>
@@ -57,7 +56,7 @@ const AboutPage = () => {
           <p>
             A team of volunteers help bring Impactasaurus' vision to life.
             From programming to marketing, many very talented people have given up their time to help.
-            We are truly grateful for their support <FontAwesomeIcon icon={faHeart} />.
+            We are truly grateful for their support.
           </p>
           <p>
             Dan, the founder of Impactasaurus, is new to the charity sector, having previously worked in software consultancy.

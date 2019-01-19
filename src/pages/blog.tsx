@@ -25,17 +25,16 @@ interface BlogProps extends LayoutProps {
 // modelled on https://www.helpscout.net/blog/
 
 const BlogPage = (props: BlogProps) => {
-  const tags = props.data.tags.group;
   const posts = props.data.posts.edges.map((e) => e.node);
   const { pathname } = props.location;
   const pageCount = Math.ceil(props.data.posts.totalCount / 10);
-  const tabIdx = props.pageContext.tag ? tags.map((t) => t.fieldValue).indexOf(props.pageContext.tag) + 1 : 0;
 
   return (
     <>
     <SEO title="Blog"/>
     <Hero>
       <h1>Blog</h1>
+      <h4>News and thoughts from the Impactasaurus team</h4>
     </Hero>
     <Container className="slanted">
       <Row>
