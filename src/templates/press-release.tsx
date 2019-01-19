@@ -17,7 +17,7 @@ interface PressReleaseProps extends LayoutProps {
 }
 
 const PressReleasePage = (props: PressReleaseProps) => {
-  const { frontmatter, html, timeToRead, excerpt, fields } = props.data.pr;
+  const { frontmatter, excerpt, html, fields } = props.data.pr;
 
   const cover = get(frontmatter, "image.children.0.fixed", {} );
   return (
@@ -25,13 +25,23 @@ const PressReleasePage = (props: PressReleaseProps) => {
     <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} pathname={fields.slug} />
     <Hero>
       <h1>{frontmatter.title}</h1>
-      <h4>{frontmatter.createdDate}</h4>
+      <h4>{frontmatter.subtitle}</h4>
     </Hero>
-    <Container style={{maxWidth: "700px"}} className="blog-post">
+    <Container style={{fontSize: "1.3rem", maxWidth: "700px", marginBottom: "2em" }} className="blog-post">
       <Row>
-        <Col style={{fontSize: "1.3rem", marginTop: "2em", marginBottom: "2em", textAlign: "justify"}} dangerouslySetInnerHTML={{
-          __html: html,
-        }}>
+        <Col style={{marginTop: "2em", textAlign: "justify"}}>
+
+          <span dangerouslySetInnerHTML={{
+            __html: html,
+          }} />
+        </Col>
+      </Row>
+      <Row>
+        <hr />
+      </Row>
+      <Row>
+        <Col>
+          <span>Contact: <a href="mailto:press@impactasaurus.org">press@impactasaurus.org</a></span>
         </Col>
       </Row>
     </Container>
@@ -46,14 +56,24 @@ export const pageQuery = graphql`
   pr: markdownRemark(fields: {slug: {eq: $slug}}) {
     html
     excerpt
-    timeToRead
     fields {
       slug
     }
     frontmatter {
       tags
       title
+      subtitle
       createdDate(formatString: "MMM D, YYYY")
+      image {
+        children {
+          ... on ImageSharp {
+            fixed(width: 900, height: 300, quality: 100) {
+              src
+              srcSet
+            }
+          }
+        }
+      }
     }
   }
 }
