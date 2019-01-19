@@ -36,6 +36,7 @@ const SegmentPage = () => {
       />
       <DescribedImage
         image="/images/screenshots/report-tags-with-report.png"
+        padding={0.5}
         title="Report on a subset of beneficiaries"
         desc={(
           <>

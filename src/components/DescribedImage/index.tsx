@@ -8,14 +8,21 @@ interface IProps {
   desc: string|JSX.Element;
   image: string;
   odd: boolean;
+  padding?: number;
 }
 
-export default ({title, desc, image, odd}: IProps) => {
+export default ({title, desc, image, odd, padding}: IProps) => {
   const isString = desc instanceof String;
   return (
     <Row className="described-image header">
       <Col className="image" xs={{span: 12, order: 3}} md={{span: 6, order: odd ? 3 : 1}}>
-        <img src={image} />
+        <img
+          style={{
+            boxShadow: "0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4)",
+            padding: `${padding ? padding : 0}rem`,
+          }}
+          src={image}
+        />
       </Col>
       <Col className="desc" xs={{span: 12, order: 2}} md={{span: 6, order: 2}}>
         <div>

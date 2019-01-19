@@ -17,6 +17,7 @@ const ReportingPage = () => {
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/report.png"
+        padding={1}
         title="Visualise your impact"
         desc={(
           <p>
@@ -27,6 +28,7 @@ const ReportingPage = () => {
       />
       <DescribedImage
         image="/images/screenshots/report-tags.png"
+        padding={1}
         title="Report on a subset of beneficiaries"
         desc={(
           <p>

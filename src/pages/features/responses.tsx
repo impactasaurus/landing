@@ -17,6 +17,7 @@ const RecordsPage = () => {
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/response-capture.png"
+        padding={0.8}
         title="Collect responses however works for you"
         desc={(
           <>
@@ -31,6 +32,7 @@ const RecordsPage = () => {
       />
       <DescribedImage
         image="/images/screenshots/record.png"
+        padding={0.5}
         title="Secure cloud storage"
         desc={(
           <p>

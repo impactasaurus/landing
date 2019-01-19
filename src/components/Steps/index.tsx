@@ -17,6 +17,7 @@ export default () => (
     </Row>
     <DescribedImage
       image="/images/screenshots/catalogue.png"
+      padding={1}
       title="1. Select a questionnaire"
       desc={(
         <>
@@ -28,6 +29,7 @@ export default () => (
     />
     <DescribedImage
       image="/images/screenshots/response-capture.png"
+      padding={0.8}
       title="2. Collect responses"
       desc={(
         <>
@@ -39,6 +41,7 @@ export default () => (
     />
     <DescribedImage
       image="/images/screenshots/impactasaurus-graph.png"
+      padding={1}
       title="3. Monitor progress"
       desc={(
         <>
@@ -50,6 +53,7 @@ export default () => (
     />
     <DescribedImage
       image="/images/screenshots/radar-chart.png"
+      padding={1}
       title="4. Report your impact"
       desc={(
         <>

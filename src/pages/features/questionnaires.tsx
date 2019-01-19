@@ -16,6 +16,7 @@ const QuestionnairePage = () => {
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/catalogue.png"
+        padding={1}
         title="Select from our catalogue"
         desc={(
           <>
@@ -41,6 +42,7 @@ const QuestionnairePage = () => {
       />
       <DescribedImage
         image="/images/screenshots/categories.png"
+        padding={1}
         title="Group questions"
         desc={(
           <p>

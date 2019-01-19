@@ -16,6 +16,7 @@ const JourneyPage = () => {
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/impactasaurus-graph.png"
+        padding={1}
         title="Your beneficiary's journey"
         desc={(
           <p>
@@ -26,6 +27,7 @@ const JourneyPage = () => {
       />
       <DescribedImage
       image="/images/screenshots/table.png"
+      padding={1}
       title="Tailor your service"
       desc={(
         <p>
