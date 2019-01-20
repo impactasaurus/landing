@@ -9,7 +9,7 @@ import { Link } from "gatsby";
 const ReportingPage = () => {
   return (
     <>
-    <SEO title="Reporting"/>
+    <SEO title="Reporting" description="Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a subset."/>
     <Hero>
       <h1>Reporting</h1>
       <h4>Produce visualisations to demonstrate your impact</h4>

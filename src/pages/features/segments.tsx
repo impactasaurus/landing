@@ -8,7 +8,7 @@ import SEO from "../../components/SEO/SEO";
 const SegmentPage = () => {
   return (
     <>
-    <SEO title="Segments"/>
+    <SEO title="Segments" description="Understand your impact for a specific location, project or demographic. Drive improvements by comparing the social impact of different approaches."/>
     <Hero>
       <h1>Segments</h1>
       <h4>Analyse a subset of your beneficiaries</h4>

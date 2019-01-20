@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 const SecurityPage = () => {
   return (
     <>
-    <SEO title="Security"/>
+    <SEO title="Security" description="The security of your data is our highest priority. We work hard to protect your data, your beneficiaries privacy and your privacy."/>
     <Hero>
       <h1>Security</h1>
       <h4>The security of your data is our highest priority</h4>

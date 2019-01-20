@@ -81,7 +81,7 @@ const PressPage = (props: PressProps) => {
 
   return (
     <>
-    <SEO title="Press"/>
+    <SEO title="Press" description="Impactasaurus' contact information, media kit and press releases. For all media enquiries please contact press@impactasaurus.org."/>
     <Hero>
       <h1>Press</h1>
       <h4><a style={{color: "white"}} href="mailto:press@impactasaurus.org">press@impactasaurus.org</a></h4>

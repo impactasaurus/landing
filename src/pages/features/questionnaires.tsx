@@ -8,7 +8,7 @@ import SEO from "../../components/SEO/SEO";
 const QuestionnairePage = () => {
   return (
     <>
-    <SEO title="Questionnaires"/>
+    <SEO title="Questionnaires" description="Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire."/>
     <Hero>
       <h1>Questionnaires</h1>
       <h4>Define questions to measure your outcomes</h4>

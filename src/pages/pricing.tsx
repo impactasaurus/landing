@@ -9,7 +9,7 @@ import SEO from "../components/SEO/SEO";
 const PricingPage = () => {
   return (
     <>
-    <SEO title="Pricing"/>
+    <SEO title="Pricing" description="Impactasaurus is free! If this changes in future, we will give at least 2 months notice. We are a non profit organisation."/>
     <Hero>
       <h1>Pricing</h1>
       <h4>Hope you are sitting down...</h4>

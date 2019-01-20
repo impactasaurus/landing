@@ -9,7 +9,7 @@ import SEO from "../../components/SEO/SEO";
 const RecordsPage = () => {
   return (
     <>
-    <SEO title="Responses"/>
+    <SEO title="Responses" description="Questionnaire responses can be collected in person, remotely or retrospectively. Responses are securely saved within Impactasaurus for review and analysis."/>
     <Hero>
       <h1>Questionnaire responses</h1>
       <h4>Collect and store your beneficiaries' responses</h4>

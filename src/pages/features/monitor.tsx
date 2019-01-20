@@ -6,9 +6,10 @@ import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
 
 const JourneyPage = () => {
+  const intro = "Your beneficiaries go through a journey with your support. Understand their journey by visualising an individual beneficiary's records.";
   return (
     <>
-    <SEO title="Monitor"/>
+    <SEO title="Monitor" description={intro}/>
     <Hero>
       <h1>Monitor</h1>
       <h4>Tailor your service to fit your beneficiary's journey</h4>
@@ -19,9 +20,7 @@ const JourneyPage = () => {
         padding={1}
         title="Your beneficiary's journey"
         desc={(
-          <p>
-            Your beneficiaries go through a journey with your support. Understand their journey by visualising an individual beneficiary's records.
-          </p>
+          <p>{intro}</p>
         )}
         odd={true}
       />

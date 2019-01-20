@@ -10,7 +10,7 @@ const AboutPage = () => {
   const vision = "Our vision is for all organisations, benefiting society, to understand their social impact, allowing them to demonstrate their value to stakeholders and drive improvements to their services";
   return (
     <>
-    <SEO title="About" description={vision}/>
+    <SEO title="About Us" description={vision}/>
     <Hero>
       <h1>About Us</h1>
       <h4>All organisations, benefiting society, should understand their social impact</h4>

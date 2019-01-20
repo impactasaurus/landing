@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'Impact Reporting for All',
+    title: 'Simple and Free Social Impact Reporting',
     titleTemplate: '%s - Impactasaurus',
     siteLanguage: 'en',
     logo: '/images/logos/logo.png',
     siteUrl: `https://impactasaurus.org`,
-    description: 'Demonstrate and improve your social impact with Impactasaurus! No matter what your budget or the size of your organisation',
+    description: 'Demonstrate your outcomes and social impact with Impactasaurus. Easy to use, free and only takes a few minutes to get started!',
     twitter: '@impactasaurus',
     googleVerification: 'abcdefz'
   },
