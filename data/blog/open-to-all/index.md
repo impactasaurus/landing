@@ -1,7 +1,7 @@
 ---
 title: 'Impactasaurus: open to all'
 createdDate: '2018-01-23'
-updatedDate: '2019-01-19'
+updatedDate: '2019-01-20'
 author: Dan R
 tags:
   - impactasaurus
@@ -13,7 +13,7 @@ Today we celebrate a huge milestone - Impactasaurus is now available to everyone
 
 When we started Impactasaurus, almost 2 years ago now, the problem we wanted to solve was — how do small charities monitor and report their impact?
 
-We found the commercial offering available at the time were:
+We found the commercial offerings available at the time were:
 
 -   too expensive
 -   only available to users of a specific CRM system
@@ -24,7 +24,7 @@ so Impactasaurus was born with a simple vision: _for all organisations, benefiti
 
 After 10 months of development, we began a beta trial, where we invited users to start using Impactasaurus.
 The aim of the beta was to get feedback from users to help us build exactly what they needed.
-The beta has run for 13 months now and has welcomed over 100 organisations.
+The beta has run for 14 months now and has welcomed over 100 organisations.
 Through this process we have built a tool which addresses the problems we saw 2 years ago: it is free, CRM independent and easy to configure and use.
 We're forever grateful to our beta users, and thank them for their kindness and invaluable input.
 

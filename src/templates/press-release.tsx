@@ -19,7 +19,7 @@ interface PressReleaseProps extends LayoutProps {
 const PressReleasePage = (props: PressReleaseProps) => {
   const { frontmatter, excerpt, html, fields } = props.data.pr;
 
-  const cover = get(frontmatter, "image.children.0.fixed", {} );
+  const cover = get(frontmatter, "image.children.0.fluid", {} );
   return (
     <>
     <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} pathname={fields.slug} />
@@ -67,7 +67,7 @@ export const pageQuery = graphql`
       image {
         children {
           ... on ImageSharp {
-            fixed(width: 900, height: 300, quality: 100) {
+            fluid(maxWidth: 900) {
               src
               srcSet
             }
