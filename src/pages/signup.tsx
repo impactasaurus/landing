@@ -8,7 +8,6 @@ import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 
 import "whatwg-fetch";
-import "promise-polyfill/src/polyfill";
 
 const sendToApp = () => {
   window.location.href = "http://app.impactasaurus.org";
