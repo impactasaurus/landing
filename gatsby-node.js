@@ -39,6 +39,9 @@ const createBlogPages = (graphql, createPage) => {
       {
         posts: allMarkdownRemark(
           filter: {
+            frontmatter: {
+              draft: { ne: true }
+            },
             fileAbsolutePath: {regex: "/blog/"},
           }
         ) {
