@@ -1,0 +1,177 @@
+{
+  "name": "gatsby-starter",
+  "version": "1.0.0",
+  "description": "Gatsby 1.0 starter",
+  "author": "fabien0102 <fabien0102@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gatsby develop",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "lint": "npm run lint:ts && npm run lint:md && npm run lint:js && npm run lint:less && npm run lint:scss",
+    "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
+    "lint:md": "remark .",
+    "lint:js": "xo",
+    "lint:less": "stylelint \"src/**/*.less\" --syntax less",
+    "lint:scss": "stylelint \"src/**/*.scss\" --syntax scss",
+    "test": "npm run lint && jest",
+    "test:watch": "jest --watch",
+    "generate": "plop --plopfile ./generators/plopfile.js",
+    "graphql-types": "gql-gen --url http://localhost:8000/___graphql --template typescript --out ./src/graphql-types.d.ts",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "@types/lodash": "^4.14.116",
+    "@types/reach__router": "^1.0.1",
+    "@types/react": "^16.0.20",
+    "@types/react-bootstrap": "^0.32.14",
+    "@types/react-dom": "^16.0.2",
+    "@types/react-helmet": "5.0.0",
+    "@types/react-redux": "^5.0.21",
+    "babel-eslint": "^7.2.1",
+    "bootstrap": "^4.1.3",
+    "change-case": "^3.0.1",
+    "email-validator": "^2.0.4",
+    "formik": "^1.4.1",
+    "gatsby": "2.0.85",
+    "gatsby-image": "^2.0.20",
+    "gatsby-link": "2.0.7",
+    "gatsby-plugin-glamor": "2.0.7",
+    "gatsby-plugin-google-analytics": "2.0.8",
+    "gatsby-plugin-less": "^2.0.7",
+    "gatsby-plugin-offline": "2.0.20",
+    "gatsby-plugin-robots-txt": "^1.3.0",
+    "gatsby-plugin-sass": "^2.0.4",
+    "gatsby-plugin-sentry": "^1.0.0",
+    "gatsby-plugin-sharp": "2.0.17",
+    "gatsby-plugin-sitemap": "^2.0.2",
+    "gatsby-plugin-typescript": "^2.0.0-rc.4",
+    "gatsby-remark-autolink-headers": "2.0.12",
+    "gatsby-remark-copy-linked-files": "2.0.8",
+    "gatsby-remark-images": "3.0.1 ",
+    "gatsby-source-filesystem": "2.0.12",
+    "gatsby-transformer-json": "2.1.6",
+    "gatsby-transformer-remark": "2.1.19",
+    "gatsby-transformer-sharp": "2.1.10",
+    "graphql-code-generator": "^0.5.2",
+    "gray-matter": "^2.1.1",
+    "less": "^3.8.1",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.10.0",
+    "react": "^16.4.2",
+    "react-bootstrap": "next",
+    "react-dom": "^16.4.2",
+    "react-helmet": "5.0.3",
+    "react-redux": "^5.0.7",
+    "redux-devtools-extension": "^2.13.2",
+    "slash": "1.0.0",
+    "ts-loader": "^2.3.7",
+    "typescript": "^2.8.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^2.8.9",
+    "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.15",
+    "@types/react-test-renderer": "^16.0.0",
+    "@types/storybook__addon-actions": "^3.0.1",
+    "@types/storybook__addon-knobs": "^3.2.0",
+    "@types/storybook__addon-notes": "^3.0.1",
+    "@types/storybook__addon-options": "^3.2.0",
+    "@types/storybook__react": "^3.0.5",
+    "@types/webpack-env": "^1.13.1",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
+    "eslint-config-xo-react": "0.11.1",
+    "eslint-plugin-react": "6.10.3",
+    "flat": "^2.0.1",
+    "husky": "0.13.3",
+    "jest": "19.0.2",
+    "lint-staged": "3.4.0",
+    "mkdirp": "^0.5.1",
+    "plop": "^1.7.4",
+    "raw-loader": "^0.5.1",
+    "react-addons-test-utils": "^15.5.1",
+    "react-test-renderer": "16",
+    "remark-cli": "^3.0.1",
+    "remark-preset-lint-recommended": "^2.0.0",
+    "storybook-readme": "^3.0.6",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
+    "ts-jest": "19.0.8",
+    "ts-lint": "4.5.1",
+    "xo": "^0.18.1"
+  },
+  "jest": {
+    "globals": {
+      "__LINK_PREFIX__": "",
+      "__PREFIX_LINKS__": ""
+    },
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/templates/",
+      "/.cache"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "html"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.md": [
+      "node tools/update-post-date.js",
+      "remark -o",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.less": [
+      "stylelint --syntax less --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --syntax scss --fix",
+      "git add"
+    ]
+  },
+  "xo": {
+    "extends": "xo-react/space",
+    "space": true,
+    "rules": {
+      "no-case-declarations": 0,
+      "default-case": 0
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  }
+}

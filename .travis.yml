@@ -1,7 +1,10 @@
-language: go
-install: go get -v github.com/spf13/hugo
-script: hugo
-before_deploy: sudo pip install s3cmd awscli
+language: node_js
+node_js:
+  - "node"
+cache: npm
+install: npm install
+script: npm test
+before_deploy: npm run build
 deploy:
   skip_cleanup: true
   provider: script

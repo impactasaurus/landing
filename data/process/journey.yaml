@@ -1,6 +1,0 @@
-name: "Beneficiary Journey"
-description: "Visualise a beneficiary's journey as a radar chart, table or line graph"
-color: "style5"
-icon: "fa-trophy"
-image: "/images/report.png"
-order: 3

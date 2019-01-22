@@ -1,6 +1,0 @@
-name: "Data Protection"
-description: "{{ .Site.Params.name }} collects no personally identifiable information, so there are minimal data security concerns"
-color: "style2"
-icon: "fa-lock"
-image: "/images/question.png"
-order: 6

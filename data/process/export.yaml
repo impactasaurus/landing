@@ -1,6 +1,0 @@
-name: "Data Export"
-description: "Export your data to Excel for manual analysis or backup"
-color: "style2"
-icon: "fa-cloud-download"
-image: "/images/question.png"
-order: 11

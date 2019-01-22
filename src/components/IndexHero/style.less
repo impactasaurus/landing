@@ -1,0 +1,46 @@
+#index-hero {
+  margin-bottom: 4rem;
+
+  .hero {
+    height: 650px;
+
+    @media (max-width: 575px) {
+      height: auto;
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+      height: 550px;
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+      height: 600px;
+    }
+  }
+
+  .screenshot {
+    @media (max-width: 575px) {
+      display: none;
+    }
+
+    .col {
+      overflow: visible;
+      z-index: 1;
+      text-align: center;
+    }
+
+    img {
+      margin-top: -450px;
+      width: 80%;
+
+      @media (min-width: 576px) and (max-width: 767px) {
+        margin-top: -350px;
+        width: 90%;
+      }
+
+      @media (min-width: 768px) and (max-width: 992px) {
+        margin-top: -400px;
+        width: 85%;
+      }
+    }
+  }
+}
