@@ -1,7 +1,7 @@
 ---
 title: 'Impactasaurus: open to all'
-createdDate: '2018-01-23'
-updatedDate: '2019-01-20'
+createdDate: '2019-01-23'
+updatedDate: '2019-01-24'
 author: Dan R
 tags:
   - impactasaurus

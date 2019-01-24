@@ -3,8 +3,8 @@ title: 'Impactasaurus, a social impact tool, has been released'
 subtitle: >-
   Easy to use and designed for smaller charities, Impactasaurus brings a fresh
   perspective to impact measurement and reporting
-createdDate: '2018-01-23'
-updatedDate: '2019-01-19'
+createdDate: '2019-01-23'
+updatedDate: '2019-01-24'
 author: Dan R
 image: radar-frame.png
 draft: false
