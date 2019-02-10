@@ -9,6 +9,7 @@ import {withLayout, LayoutProps} from "../components/Layout";
 import { graphql } from "gatsby";
 import SEO from "../components/SEO/SEO";
 import {BlogSnippet} from "../components/BlogSnippet";
+import Helmet from "react-helmet";
 
 interface BlogPostProps extends LayoutProps {
   data: {
@@ -44,8 +45,17 @@ const BlogPostPage = (props: BlogPostProps) => {
   }
 
   const cover = get(frontmatter, "image.children.0.fixed", {} );
+  const draft = frontmatter.draft === true;
   return (
     <>
+    {draft && (
+      <>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+      </Helmet>
+      <div style={{width: "100%", height: "2em", backgroundColor: "red", textAlign: "center"}}>DRAFT</div>
+      </>
+    )}
     <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} pathname={fields.slug} />
     <Hero>
       <h1>{frontmatter.title}</h1>
@@ -78,6 +88,7 @@ export const pageQuery = graphql`
     frontmatter {
       tags
       title
+      draft
       createdDate(formatString: "MMM D, YYYY")
       image {
         children {

@@ -90,6 +90,11 @@ module.exports = {
 
     // Crawler support
     'gatsby-plugin-robots-txt',
-    `gatsby-plugin-sitemap`
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: ['/draft/blog/*']
+      }
+    }
   ]
 };

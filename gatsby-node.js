@@ -26,6 +26,44 @@ exports.onCreateNode = ({node, actions, getNode}) => {
   }
 };
 
+const createDraftBlogPages = (graphql, createPage) => {
+  const template = path.resolve(`src/templates/${kebabCase('blogPost')}.tsx`);
+  return graphql(
+    `
+      {
+        posts: allMarkdownRemark(
+          filter: {
+            frontmatter: {
+              draft: { eq: true }
+            },
+            fileAbsolutePath: {regex: "/blog/"},
+          }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  ).then(result => {
+    const posts = result.data.posts.edges.map(p => p.node);
+
+    posts.filter(post => post.fields.slug.startsWith('/blog/')).forEach(post => {
+      createPage({
+        path: '/draft' + post.fields.slug,
+        component: slash(template),
+        context: {
+          slug: post.fields.slug
+        }
+      });
+    });
+  });
+};
+
 const createBlogPages = (graphql, createPage) => {
   return new Promise((resolve, reject) => {
     const templates = ['blogPost', 'tagsPage', 'blogPage']
@@ -110,7 +148,6 @@ const createBlogPages = (graphql, createPage) => {
 };
 
 const createPressPages = (graphql, createPage) => {
-  console.log(graphql);
   return new Promise((resolve, reject) => {
     const templates = ['pressRelease']
       .reduce((mem, templateName) => {
@@ -163,10 +200,9 @@ const createPressPages = (graphql, createPage) => {
 // so you have access to any information necessary to
 // programatically create pages.
 exports.createPages = ({graphql, actions: {createPage}}) => {
-  const p = createBlogPages(graphql, createPage);
-  console.log(createPressPages(graphql, createPage));
-  return p
-    .then(() => {
-      return createPressPages(graphql, createPage);
-    });
+  return Promise.all([
+    createBlogPages(graphql, createPage),
+    createPressPages(graphql, createPage),
+    createDraftBlogPages(graphql, createPage)
+  ]);
 };
