@@ -42,6 +42,13 @@ const PricingPage = () => {
           <p>
             Impactasaurus was designed from the start to exploit cloud computing technology, as such, running costs are minimal. Donations cover these costs.
           </p>
+          <p>
+            A special thanks to the following companies who provide their services for free:
+          </p>
+          <p style={{display: "flex", alignItems: "center"}}>
+            <a style={{padding: "0.3em", display: "inline-block"}} href="https://auth0.com/?utm_source=oss&utm_medium=gp&utm_campaign=oss" target="_blank" alt="Single Sign On & Token Based Authentication - Auth0"><img width="150" height="50" alt="JWT Auth for open source projects" src="/images/partners/a0.png"/></a>
+            <a style={{padding: "0.2em", display: "inline-block"}} href="https://sentry.io" target="_blank"><img width="150" height="50" alt="Error tracking - Sentry" src="/images/partners/sentry.svg" /></a>
+          </p>
         </Col>
       </Row>
       <Row>
@@ -49,6 +56,14 @@ const PricingPage = () => {
           <h5>How do you afford to develop the software?</h5>
           <p>
             Development of the software is undertaken by volunteers who want to give back to society.
+          </p>
+          <p>
+            A special thanks to the following companies who provide their tools and services for free:
+          </p>
+          <p style={{display: "flex", alignItems: "center"}}>
+            <a style={{padding: "1em", display: "inline-block"}} href="https://travis-ci.org" target="_blank"><img width="120" height="40" alt="Test and Deploy - Travis" src="/images/partners/travis.svg" /></a>
+            <a style={{padding: "1em", display: "inline-block"}} href="https://github.com/" target="_blank"><img width="80" height="18" alt="Development platform - Github" src="/images/partners/github.svg" /></a>
+            <a style={{padding: "1em", display: "inline-block"}} href="https://www.jetbrains.com" target="_blank"><img width="80" height="50" alt="Development tooling - Jetbrains" src="/images/partners/jetbrains.svg" /></a>
           </p>
         </Col>
       </Row>
