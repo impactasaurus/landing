@@ -19,3 +19,20 @@
 [type="button"] {
   -webkit-appearance: none !important;
 }
+
+hr {
+  margin-top: 2.4rem;
+  margin-bottom: 3rem;
+  border: 0;
+  text-align: center;
+
+  &::before {
+    content: '...';
+    margin-left: 0.6em;
+    position: relative;
+    top: -1.875rem;
+    font-size: 1.875rem;
+    font-style: italic;
+    letter-spacing: 0.6em;
+  }
+}
