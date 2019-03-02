@@ -38,7 +38,7 @@ export const Questions: IQuestion[] = [{
   main: (
     <p>
       Yes, we take data privacy and security extremely seriously.
-      For more information, see our <Link to="/features/security/">privacy and security feature page</Link>, <Link to="/privacy/">privacy policy</Link> and <Link to="/cookie">cookie policy</Link>.
+      For more information, see our <Link to="/features/security/">privacy and security feature page</Link>, <Link to="/privacy/">privacy policy</Link> and <Link to="/cookie/">cookie policy</Link>.
     </p>
   ),
   id: "gdpr",
