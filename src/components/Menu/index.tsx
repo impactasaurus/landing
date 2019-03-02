@@ -62,7 +62,7 @@ export const Menu = ({ items, pathname }: IMenuProps) =>
       <Nav className="justify-content-end">
         {items.filter((i) => i.right === true).map((item) => <MenuItem item={item} pathname={pathname} key={item.path} />)}
         <Nav.Item as={Button} variant="outline-primary" href="https://app.impactasaurus.org">Log in</Nav.Item>
-        <Nav.Item as={ButtonLink} variant="primary" to="/signup">Sign up</Nav.Item>
+        <Nav.Item as={ButtonLink} variant="primary" to="/signup/">Sign up</Nav.Item>
       </Nav>
     </Navbar.Collapse>
   </Navbar>;

@@ -22,7 +22,7 @@ export default () => {
         </Row>
         <Row>
           <Col className="buttons">
-            <Button className="signup-button" size="lg" as={Link} to="/signup" width="100px" style={{maxWidth: "80vw"}}>Get started</Button>
+            <Button className="signup-button" size="lg" as={Link} to="/signup/" width="100px" style={{maxWidth: "80vw"}}>Get started</Button>
           </Col>
         </Row>
       </SlantedHero>

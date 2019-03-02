@@ -38,7 +38,7 @@ export const Questions: IQuestion[] = [{
   main: (
     <p>
       Yes, we take data privacy and security extremely seriously.
-      For more information, see our <Link to="/features/security">privacy and security feature page</Link>, <Link to="/privacy">privacy policy</Link> and <Link to="/cookie">cookie policy</Link>.
+      For more information, see our <Link to="/features/security/">privacy and security feature page</Link>, <Link to="/privacy/">privacy policy</Link> and <Link to="/cookie">cookie policy</Link>.
     </p>
   ),
   id: "gdpr",
@@ -47,7 +47,7 @@ export const Questions: IQuestion[] = [{
   title: "Who is behind Impactasaurus?",
   main: (
     <>
-    <p>Impactasaurus is built by a team of volunteers. It is not backed by any companies. See more at our <Link to="/about">about page</Link>.</p>
+    <p>Impactasaurus is built by a team of volunteers. It is not backed by any companies. See more at our <Link to="/about/">about page</Link>.</p>
     </>
   ),
   id: "backing",
@@ -65,7 +65,7 @@ export const Questions: IQuestion[] = [{
   title: "Can I produce reports for a specific demographic, project or location?",
   main: (
     <p>
-      Yes, this is possible with the use of tags. <Link to="/features/segments">Click here for more information</Link>.
+      Yes, this is possible with the use of tags. <Link to="/features/segments/">Click here for more information</Link>.
     </p>
   ),
   id: "segment",
@@ -106,7 +106,7 @@ export const Questions: IQuestion[] = [{
       This decision was made to keep the software simple and easy to use.
     </p>
     <p>
-      If you would like some control over user permissions, <Link to="/support">please drop us an email</Link>.
+      If you would like some control over user permissions, <Link to="/support/">please drop us an email</Link>.
       If there is enough demand, we will consider adding this functionality.
     </p>
     </>
