@@ -26,9 +26,7 @@ const BlogPostPage = (props: BlogPostProps) => {
   if (recentsAvailable) {
     const snippets = props.data.recents.edges
       .map(({ node }) => (
-        <Col key={node.fields.slug}>
-          <BlogSnippet key={node.fields.slug} node={node} wide={true}/>
-        </Col>
+        <BlogSnippet key={node.fields.slug} node={node} wide={true}/>
       ));
     recents = (
       <>
