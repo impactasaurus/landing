@@ -7,7 +7,7 @@ const authors = require('../data/author.json');
 
 describe('data integrity', () => {
   describe('authors', () => {
-    const requiredFields = ['id', 'bio', 'avatar', 'twitter', 'github'];
+    const requiredFields = ['id', 'bio', 'avatar'];
 
     authors.forEach(author => {
       describe(`${author.id}`, () => {
