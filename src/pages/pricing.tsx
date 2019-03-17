@@ -46,9 +46,9 @@ const PricingPage = () => {
             A special thanks to the following companies who provide their services for free:
           </p>
           <p style={{display: "flex", alignItems: "center"}}>
-            <a style={{padding: "0.3em", display: "inline-block"}} href="https://auth0.com/?utm_source=oss&utm_medium=gp&utm_campaign=oss" target="_blank" alt="Single Sign On & Token Based Authentication - Auth0"><img width="150" height="50" alt="JWT Auth for open source projects" src="/images/partners/a0.png"/></a>
+            <a style={{padding: "1em", display: "inline-block"}} href="https://auth0.com/?utm_source=oss&utm_medium=gp&utm_campaign=oss" target="_blank" alt="Single Sign On & Token Based Authentication - Auth0"><img width="150" height="50" alt="JWT Auth for open source projects" src="/images/partners/a0.png"/></a>
             <a style={{padding: "0.2em", display: "inline-block"}} href="https://sentry.io" target="_blank"><img width="150" height="50" alt="Error tracking - Sentry" src="/images/partners/sentry.svg" /></a>
-            <a style={{padding: "0.2em", display: "inline-block"}} href="https://www.datadoghq.com/" target="_blank"><img width="150" height="38" alt="Telemetry - Datadog" src="/images/partners/dd.png" /></a>
+            <a style={{padding: "1em", display: "inline-block"}} href="https://www.datadoghq.com/" target="_blank"><img width="150" height="38" alt="Telemetry - Datadog" src="/images/partners/dd.png" /></a>
           </p>
         </Col>
       </Row>
