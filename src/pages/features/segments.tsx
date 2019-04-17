@@ -26,10 +26,10 @@ const SegmentPage = () => {
       />
       <DescribedImage
         image="/images/screenshots/record-tags.png"
-        title="Tag questionnaire responses"
+        title="Tag your data"
         desc={(
           <p>
-            Tags are set on questionnaire responses, either when collecting the response or retrospectively. Tags used previously for a beneficiary will be automatically suggested next time.
+            Tags can be assigned to beneficiaries or individual questionnaire responses.
           </p>
         )}
         odd={false}
