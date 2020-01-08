@@ -50,6 +50,9 @@ const createDraftBlogPages = (graphql, createPage) => {
       }
     `
   ).then(result => {
+    if (result.data.posts === null) {
+      return;
+    }
     const posts = result.data.posts.edges.map(p => p.node);
 
     posts.filter(post => post.fields.slug.startsWith('/blog/')).forEach(post => {
