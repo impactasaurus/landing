@@ -20,8 +20,7 @@ export const Questions: IQuestion[] = [{
   main: (
     <>
     <p>
-      Impactasaurus is a tool for recording, monitoring and reporting on soft outcomes.
-      It is the right tool for you, if the following describes your use case:
+      Impactasaurus is the tool for you if:
     </p>
     <ul>
       <li>You help beneficiaries over a period of time</li>
