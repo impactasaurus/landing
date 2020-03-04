@@ -6,6 +6,7 @@ import Container from "react-bootstrap/lib/Container";
 import SignupForm, {IFormOutput} from "../components/SignupForm";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
+import {Questions} from "./faq";
 
 import "whatwg-fetch";
 
@@ -66,7 +67,19 @@ const SignupPage = () => {
     </Hero>
     <Container className="slanted">
       <Row>
+        <Col md={{span: 12, offset: 0}} lg={{span: 10, offset: 1}} xl={{span: 8, offset: 2}}>
+          {Questions.filter((q) => q.title.includes("tool for me")).map((q) => (
+            <div key={q.id}>
+              <h3>{q.title}</h3>
+              {q.main}
+            </div>
+          ))}
+        </Col>
+      </Row>
+      <Row>
         <Col md={{span: 10, offset: 1}} lg={{span: 8, offset: 2}} xl={{span: 6, offset: 3}}>
+          <br />
+          <h3>Let's go!</h3>
           <SignupForm onFormSubmit={onSubmit}/>
         </Col>
       </Row>
