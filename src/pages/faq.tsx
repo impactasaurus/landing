@@ -90,8 +90,8 @@ export const Questions: IQuestion[] = [{
   main: (
     <p>
       Yes, you can add as many users to your organisation as you would like.
-      To invite others, head to settings then organisation.
-      On this page you can generate an invite link which should be given to anyone you would like to join your Impactasaurus.
+      To invite others, head to the users tab within the settings page.
+      Here you can generate an invite link which should be given to anyone you would like to join your Impactasaurus.
     </p>
   ),
   id: "new-users",
