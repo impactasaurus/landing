@@ -11,6 +11,7 @@ import {Link} from "gatsby";
 export interface IFormOutput {
   name: string;
   email: string;
+  emailCopy: string;
   password: string;
   organisation: string;
   policyAcceptance: boolean;
@@ -58,6 +59,7 @@ const InnerForm = (props: InjectedFormikProps<IProps, IFormOutput>) => {
     <Form noValidate={true} onSubmit={handleSubmit}>
       <FormControl name="name" label="Name" error={errors.name} touched={touched.name} {...defaultProps} />
       <FormControl name="email" label="Email" error={errors.email} touched={touched.email} {...defaultProps} />
+      <FormControl name="emailCopy" label="Confirm Email" error={errors.emailCopy} touched={touched.emailCopy} {...defaultProps} />
       <FormControl name="password" label="Password" type="password" error={errors.password} touched={touched.password} {...defaultProps} />
       <FormControl
         name="organisation"
@@ -100,6 +102,9 @@ const SignupForm = withFormik<IProps, IFormOutput>({
     if (values.email && !EmailValidator.validate(values.email)) {
       errors.email = "Your email does not appear to be valid";
     }
+    if (values.email !== values.emailCopy) {
+      errors.emailCopy = "The email addresses don't match";
+    }
     if (!values.password || values.password.length === 0) {
       errors.password = "Please provide a password";
     }
@@ -132,6 +137,7 @@ const SignupForm = withFormik<IProps, IFormOutput>({
     return {
       name: "",
       email: "",
+      emailCopy: "",
       password: "",
       organisation: "",
       policyAcceptance: false,
