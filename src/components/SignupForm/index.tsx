@@ -7,6 +7,7 @@ import Button from "react-bootstrap/lib/Button";
 import {faExclamation, faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "gatsby";
+import "./style.less";
 
 export interface IFormOutput {
   name: string;
@@ -56,7 +57,7 @@ const InnerForm = (props: InjectedFormikProps<IProps, IFormOutput>) => {
   const termsLabel = <label>I agree to the <Link to="/terms/">Terms of Use</Link>, <Link to="/privacy/">Privacy Policy</Link> and <Link to="/cookie/">Cookie Policy</Link></label>;
 
   return (
-    <Form noValidate={true} onSubmit={handleSubmit}>
+    <Form noValidate={true} onSubmit={handleSubmit} id="signup-form">
       <FormControl name="name" label="Name" error={errors.name} touched={touched.name} {...defaultProps} />
       <FormControl name="email" label="Email" error={errors.email} touched={touched.email} {...defaultProps} />
       <FormControl name="emailCopy" label="Confirm Email" error={errors.emailCopy} touched={touched.emailCopy} {...defaultProps} />
