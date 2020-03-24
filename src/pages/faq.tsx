@@ -148,6 +148,16 @@ export const Questions: IQuestion[] = [{
   ),
   id: "bulk-tag",
   support: true,
+}, {
+  title: "I tried to reset my password but never received an email",
+  main: (
+    <p>
+      Please try checking your junk email, the password reset email often finds its way there.
+      If the email isn't in your junk, please contact us, we would be happy to reset your password and explore why the email wasn't reaching you.
+    </p>
+  ),
+  id: "password-reset",
+  support: true,
 }];
 
 const Question = ({q}: {q: IQuestion}) => {
