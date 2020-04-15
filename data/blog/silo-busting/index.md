@@ -1,12 +1,12 @@
 ---
 title: 'Silo Busting: A Vision for Charity Software'
-createdDate: '2020-03-23'
-updatedDate: '2020-03-23'
+createdDate: '2020-04-15'
+updatedDate: '2020-04-15'
 author: Dan R
 tags:
   - software
 image: meredith-petrick-t-AY-NZg49k-unsplash.jpg
-draft: true
+draft: false
 ---
 
 We believe compatibility between software systems used in the charity sector could unlock huge benefits for charities. 
