@@ -25,6 +25,7 @@ const QuestionnairePage = () => {
           </p>
           <p>
             Benefit from our catalogue of peer reviewed and validated questionnaires taken from the literature.
+            Our questionnaires are also freely available to browse at <a href="https://softoutcomes.org">softoutcomes.org</a>.
           </p>
           </>
         )}
