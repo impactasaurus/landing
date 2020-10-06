@@ -43,6 +43,17 @@ export const Questions: IQuestion[] = [{
   id: "gdpr",
   sales: true,
 }, {
+  title: "What sensitive data do you hold?",
+  main: (
+    <p>
+      Impactasaurus was designed to hold very little senstive data.
+      For your staff, we capture email addresses and names.
+      For your beneficiaries, we capture just an ID which should not include personally identifiable information.
+    </p>
+  ),
+  id: "sensitive-data",
+  sales: true,
+}, {
   title: "Who is behind Impactasaurus?",
   main: (
     <>
@@ -137,6 +148,16 @@ export const Questions: IQuestion[] = [{
   id: "import",
   support: true,
   sales: true,
+}, {
+  title: "How can I delete a beneficiary?",
+  main: (
+    <p>
+      To delete a beneficiary, delete all their saved records.
+      If you have many beneficiaries to remove or they have a lot of records, drop us an email.
+    </p>
+  ),
+  id: "delete-ben",
+  support: true,
 }, {
   title: "How do I add or edit tags across many records?",
   main: (
