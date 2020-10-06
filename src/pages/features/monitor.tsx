@@ -35,6 +35,17 @@ const JourneyPage = () => {
       )}
       odd={false}
       />
+      <DescribedImage
+      image="/images/screenshots/activity-page.png"
+      padding={1}
+      title="Your organisation's pulse"
+      desc={(
+        <p>
+          The activity feed shows each questionnaire response as it is recorded, across your entire organisation; allowing you to monitor your service in real time.
+        </p>
+      )}
+      odd={true}
+      />
     </Container>
     </>
   );
