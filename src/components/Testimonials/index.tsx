@@ -27,6 +27,7 @@ export default () => {
                     name
                     image
                     quote
+                    url
                   }
                 }
               }
@@ -44,7 +45,7 @@ export default () => {
                   image={t.image}
                   name={t.name}
                   quote={t.quote}
-                  url={t.link}
+                  url={t.url}
                 />
               </Col>
             );
