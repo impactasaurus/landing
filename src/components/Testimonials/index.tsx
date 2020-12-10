@@ -5,50 +5,61 @@ import Container from "react-bootstrap/lib/Container";
 import Testimonial from "../Testimonial";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { StaticQuery, graphql } from "gatsby";
 
-export default () => (
-  <Container>
-    <Row className="header">
-      <Col>
-        <h2>Inspirational organisations <FontAwesomeIcon style={{color: "var(--primary)"}} icon={faHeart} /> Impactasaurus</h2>
-        <h4>Over 100 organisations use Impactasaurus to demonstrate their impact</h4>
-      </Col>
-    </Row>
-    <Row>
-      <Col xs={12} sm={6}>
-        <Testimonial
-          image="/images/clients/crcc.jpg"
-          name="Cornwall Rural Community Charity"
-          quote="Impactasaurus helps us understand the impact of our different projects. It produces fantastic visual representations that help us communicate the journey people make with our support."
-          url="https://www.cornwallrcc.org.uk"
+export default () => {
+  return (
+    <Container>
+      <Row className="header">
+        <Col>
+          <h2>Inspirational organisations <FontAwesomeIcon style={{color: "var(--primary)"}} icon={faHeart} /> Impactasaurus</h2>
+          <h4>Over 100 organisations use Impactasaurus to demonstrate their impact</h4>
+        </Col>
+      </Row>
+      <Row>
+        <StaticQuery
+          query={graphql`
+            {
+              allTestimonialsJson{
+                edges {
+                  node {
+                    id
+                    name
+                    image
+                    quote
+                  }
+                }
+              }
+            }
+          `}
+          render = {(data) => {
+            const rows: JSX.Element[] = [];
+            let testimonials = data.allTestimonialsJson.edges
+              .map((e: any) => ({sort: Math.random() * (e.weight || 1), value: e.node}))
+              .sort((a: any, b: any) => a.sort - b.sort)
+              .map((a: any) => a.value);
+            const wrapped = (t: any) => (
+              <Col xs={12} sm={6}>
+                <Testimonial
+                  image={t.image}
+                  name={t.name}
+                  quote={t.quote}
+                  url={t.link}
+                />
+              </Col>
+            );
+            for (let ct = 0; ct < testimonials.length; ct += 2) {
+              rows.push((
+                <Row key={`row-${ct}`}>
+                  {wrapped(testimonials[ct])}
+                  {ct + 1 < testimonials.length && wrapped(testimonials[ct + 1])}
+                </Row>
+              ));
+            }
+            return rows;
+          }}
         />
-      </Col>
-      <Col xs={12} sm={6}>
-        <Testimonial
-          image="/images/clients/breathing-spaces.jpg"
-          name="Breathing Spaces"
-          quote="We are delighted to recommend Impactasaurus to anyone who needs an easy to use, meaningful and efficient way of collecting, analysing and presenting data that demonstrates their outcomes and impact."
-          url="https://www.breathingspaces.co"
-        />
-      </Col>
-    </Row>
-    <Row>
-      <Col xs={12} sm={6}>
-        <Testimonial
-          image="/images/clients/sporting-force.png"
-          name="Sporting Force"
-          quote="Impactasaurus is an easy to use piece of software, it takes seconds to input questionnaire responses. We can provide funders and trustees with visuals that are easily understood on each beneficiary or project."
-          url="http://www.sportingforce.org"
-        />
-      </Col>
-      <Col xs={12} sm={6}>
-        <Testimonial
-          image="/images/clients/inclusion-gloucestershire.jpg"
-          name="Inclusion Gloucestershire"
-          quote="Times are tough for everyone and competition for funding is tight, having robust evidence of impact is critical. Working with Impactasaurus has helped us demonstrate the difference our work makes."
-          url="https://www.inclusiongloucestershire.co.uk/"
-        />
-      </Col>
-    </Row>
-  </Container>
-);
+      </Row>
+    </Container>
+  );
+};

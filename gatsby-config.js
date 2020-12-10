@@ -95,6 +95,16 @@ module.exports = {
       options: {
         exclude: ['/draft/blog/*']
       }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `testimonials`,
+        path: `${__dirname}/data/testimonials`,
+        plugins: [
+          `gatsby-transformer-json`
+        ]
+      }
     }
   ]
 };
