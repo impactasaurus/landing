@@ -59,8 +59,7 @@ const AboutPage = () => {
             We are truly grateful for their support.
           </p>
           <p>
-            Dan, the founder of Impactasaurus, is new to the charity sector, having previously worked in software consultancy.
-            The move to the third sector was driven by the desire to do something more meaningful.
+            Dan Reynolds, the founder of Impactasaurus, is new to the charity sector, having previously worked in software consultancy.
             By exploiting his software skills, Dan hopes to help charities help others.
           </p>
         </Col>
