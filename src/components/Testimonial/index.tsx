@@ -21,7 +21,7 @@ export default ({name, quote, image, url}: IProps) => {
     <StaticQuery
       query={graphql`
         {
-          allFile{
+          allFile (filter: {relativePath: {regex: "/clients\//"}}){
             edges {
               node {
                 relativePath
