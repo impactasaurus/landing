@@ -49,7 +49,7 @@ export default () => {
                 />
               </Col>
             );
-            for (let ct = 0; ct < Math.min(testimonials.length, 4); ct += 2) {
+            for (let ct = 0; ct < testimonials.length; ct += 2) {
               rows.push((
                 <Row key={`row-${ct}`}>
                   {wrapped(testimonials[ct])}
