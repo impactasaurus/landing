@@ -28,6 +28,7 @@ export default () => {
                     image
                     quote
                     url
+                    weight
                   }
                 }
               }
@@ -36,9 +37,8 @@ export default () => {
           render = {(data) => {
             const rows: JSX.Element[] = [];
             let testimonials = data.allTestimonialsJson.edges
-              .map((e: any) => ({sort: (e.weight || 1), value: e.node}))
-              .sort((a: any, b: any) => b.sort - a.sort)
-              .map((a: any) => a.value);
+              .map((e: any) => e.node)
+              .sort((a: any, b: any) => b.weight - a.weight);
             const wrapped = (t: any) => (
               <Col xs={12} sm={6}>
                 <Testimonial

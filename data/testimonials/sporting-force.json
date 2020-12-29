@@ -2,5 +2,6 @@
     "name": "Sporting Force",
     "image": "clients/sporting-force.png",
     "quote": "Impactasaurus is an easy to use piece of software, it takes seconds to input questionnaire responses. We can provide funders and trustees with visuals that are easily understood on each beneficiary or project.",
-    "url": "http://www.sportingforce.org"
+    "url": "http://www.sportingforce.org",
+    "weight": 8
 }
