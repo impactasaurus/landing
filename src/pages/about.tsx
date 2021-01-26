@@ -35,7 +35,7 @@ const AboutPage = () => {
           <p>
             The technical lead of the project, Dan, explored the market and found that ALD were not alone.
             Other charities were struggling to find the right tools for their impact needs.
-            Impactasaurus was founded to meet this need.
+            Impactasaurus was founded in 2017 to meet this need.
           </p>
         </Col>
       </Row>
