@@ -30,11 +30,7 @@ const AboutPage = () => {
             <li>too complicated</li>
           </ul>
           <p>
-            The project resulted in a tool which allowed ALD to record questionnaire responses and produce outcome graphs for individual beneficiaries.
-          </p>
-          <p>
-            The technical lead of the project, Dan, explored the market and found that ALD were not alone.
-            Other charities were struggling to find the right tools for their impact needs.
+            It became apparent that ALD were not alone, other charities were struggling to find the right tools for their impact needs.
             Impactasaurus was founded in 2017 to meet this need.
           </p>
         </Col>
