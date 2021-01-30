@@ -54,24 +54,6 @@ export const Questions: IQuestion[] = [{
   id: "sensitive-data",
   sales: true,
 }, {
-  title: "Who is behind Impactasaurus?",
-  main: (
-    <>
-    <p>Impactasaurus is built by a team of volunteers. It is not backed by any companies. See more at our <Link to="/about/">about page</Link>.</p>
-    </>
-  ),
-  id: "backing",
-  sales: true,
-}, {
-  title: "Is there a mobile app available?",
-  main: (
-    <p>
-      No, however, the web app works well on mobile phones and tablets.
-    </p>
-  ),
-  id: "app",
-  sales: true,
-}, {
   title: "Can I produce reports for a specific demographic, project or location?",
   main: (
     <p>
@@ -79,6 +61,15 @@ export const Questions: IQuestion[] = [{
     </p>
   ),
   id: "segment",
+  sales: true,
+}, {
+  title: "Who is behind Impactasaurus?",
+  main: (
+    <>
+    <p>Impactasaurus is built by a team of volunteers. It is not backed by any companies. See more at our <Link to="/about/">about page</Link>.</p>
+    </>
+  ),
+  id: "backing",
   sales: true,
 }, {
   title: "How should I refer to my beneficiaries within Impactasaurus?",
@@ -107,6 +98,26 @@ export const Questions: IQuestion[] = [{
   ),
   id: "new-users",
   support: true,
+}, {
+  title: "Can I white label / brand Impactasaurus?",
+  main: (
+    <p>
+      Yes, you can apply your organisation's logo and color scheme to Impactasaurus.
+      Please <Link to="/support/">contact support</Link> to set this up.
+    </p>
+  ),
+  id: "app",
+  sales: true,
+  support: true,
+}, {
+  title: "Is there a mobile app available?",
+  main: (
+    <p>
+      No, however, the web app works well on mobile phones and tablets.
+    </p>
+  ),
+  id: "app",
+  sales: true,
 }, {
   title: "Can I restrict what a user can do?",
   main: (
