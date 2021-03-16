@@ -4,13 +4,13 @@ subtitle: >-
   Easy to use and designed for smaller charities, Impactasaurus brings a fresh
   perspective to impact measurement and reporting
 createdDate: '2019-01-23'
-updatedDate: '2019-01-24'
+updatedDate: '2021-03-16'
 author: Dan R
 image: radar-frame.png
 draft: false
 ---
 
-Salisbury, UK--(Jan 23, 2019) - Today, Impactasaurus, an impact monitoring and reporting tool for small and medium sized charities, has been released.
+(Jan 23, 2019) - Today, Impactasaurus, an impact monitoring and reporting tool for small and medium sized charities, has been released.
 Impactasaurus brings a fresh perspective on impact measurement, focusing on ease of use and simplicity.
 
 "We set out to make it easier for small and medium sized charities to measure their social impact" says Dan, founder of Impactasaurus, 

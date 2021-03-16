@@ -10,7 +10,7 @@ image: photo-1513151233558-d860c5398176.jpeg
 draft: false
 ---
 
-Salisbury, UK--(March 16, 2021) - Impactasaurus, an impact monitoring and reporting tool, is recognised by Theo Paphitis and becomes a winner of his #SBS competition.
+(March 16, 2021) - Impactasaurus, an impact monitoring and reporting tool, is recognised by Theo Paphitis and becomes a winner of his #SBS competition.
 
 Dan Reynolds, founder of Impactasaurus, entered into the Small Business Sunday competition and was one of six weekly winners to gain a retweet by Theo to his near half a million Twitter followers, and join his prestigious #SBS club. The weekly initiative, set up by Theo in 2010, supports small businesses in the UK.
 
