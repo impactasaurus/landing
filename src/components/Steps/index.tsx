@@ -63,7 +63,7 @@ export default () => (
       )}
       odd={false}
     />
-    <Row className="header">
+    <Row className="header cta">
       <Col>
         <h4>Sound good? <Link to={"/signup/"}>Let's get you started...</Link></h4>
       </Col>

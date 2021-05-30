@@ -70,7 +70,7 @@ const SignupPage = () => {
         <Col md={{span: 12, offset: 0}} lg={{span: 10, offset: 1}} xl={{span: 8, offset: 2}}>
           {Questions.filter((q) => q.title.includes("tool for me")).map((q) => (
             <div key={q.id}>
-              <h3>{q.title}</h3>
+              <h4>{q.title}</h4>
               {q.main}
             </div>
           ))}

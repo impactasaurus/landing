@@ -23,10 +23,9 @@ export const Questions: IQuestion[] = [{
       Impactasaurus is the tool for you if:
     </p>
     <ul>
-      <li>You help beneficiaries over a period of time</li>
-      <li>Your beneficiaries can complete a questionnaire before and after your intervention (or more frequently)</li>
       <li>You are interested in understanding the impact you are having on your beneficiaries</li>
       <li>Your desired questionnaire is composed of scale questions (e.g. likert scales)</li>
+      <li><i>(For best results)</i> You help beneficiaries over a period of time, and you can collect questionnaire responses before and after your intervention (or more frequently)</li>
     </ul>
     </>
   ),

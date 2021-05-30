@@ -6,7 +6,7 @@ import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
 
 const JourneyPage = () => {
-  const intro = "Your beneficiaries go through a journey with your support. Understand their journey by visualising an individual beneficiary's records.";
+  const intro = "Your beneficiaries go through a journey with your support. Visualise their journey by collecting questionnaire responses throughout your intervention.";
   return (
     <>
     <SEO title="Monitor" description={intro}/>
