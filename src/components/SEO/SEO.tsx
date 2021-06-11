@@ -53,6 +53,11 @@ const SEO = ({context, title = null, description = null, image = null, article =
           url: `${siteUrl}${location.pathname}`,
         };
 
+        const createUrlWithLang = (lng: string) => {
+          const url = `${siteUrl}${lng === context.i18n.defaultLanguage ? "" : `/${lng}`}${context.i18n.originalPath}`;
+          return url.endsWith("/") ? url : `${url}/`;
+        };
+
         return (
           <>
             <Helmet title={seo.title}  titleTemplate={titleTemplate}>
@@ -61,6 +66,11 @@ const SEO = ({context, title = null, description = null, image = null, article =
               {!context.index && <meta name="robots" content="noindex" />}
               <html lang={context.i18n.language} />
               <link rel="canonical" href={seo.url} />
+              {context.i18n.languages.map((lng) => (
+                <link rel="alternate" key={lng} href={createUrlWithLang(lng)} hrefLang={lng} />
+              ))}
+              {/* adding a fallback page for unmatched languages */}
+              <link rel="alternate" href={createUrlWithLang(context.i18n.defaultLanguage)} hrefLang="x-default" />
             </Helmet>
             <Facebook
               title={seo.title} desc={seo.description}

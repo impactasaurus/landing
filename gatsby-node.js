@@ -1,7 +1,7 @@
 const path = require('path');
 const slash = require('slash');
 const {kebabCase, uniq, get, compact, times} = require('lodash');
-const indexableLanguages = require('./locales/indexableLanguages.json');
+const indexableLanguages = require('./i18n/indexableLanguages.json');
 
 // Don't forget to update hard code values into:
 // - `templates/blog-page.tsx:23`

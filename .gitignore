@@ -3,3 +3,9 @@ public
 node_modules
 .cache
 coverage
+
+# translations
+# - only english is kept in git
+# - other languages are downloaded at deployment
+i18n/locales/**/*.json
+!i18n/locales/en/*.json

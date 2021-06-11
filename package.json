@@ -18,9 +18,13 @@
     "test:watch": "jest --watch",
     "generate": "plop --plopfile ./generators/plopfile.js",
     "graphql-types": "gql-gen --url http://localhost:8000/___graphql --template typescript --out ./src/graphql-types.d.ts",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "i18n-push": "crowdin push --config i18n/crowdin.yml",
+    "i18n-pull": "crowdin pull --config i18n/crowdin.yml",
+    "posti18n-pull": "node ./i18n/generate.js"
   },
   "dependencies": {
+    "@crowdin/cli": "3.5.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "@fortawesome/react-fontawesome": "^0.1.3",
@@ -166,7 +170,8 @@
     "space": true,
     "rules": {
       "no-case-declarations": 0,
-      "default-case": 0
+      "default-case": 0,
+      "unicorn/no-abusive-eslint-disable":0
     }
   },
   "remarkConfig": {

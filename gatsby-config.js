@@ -110,7 +110,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/locales`,
+        path: `${__dirname}/i18n/locales`,
         name: `locales`
       }
     },
@@ -118,7 +118,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: 'locales',
-        languages: require('./locales/languages.json'),
+        languages: require('./i18n/languages.json'),
         defaultLanguage: `en`,
         siteUrl: url,
         i18nextOptions: {
