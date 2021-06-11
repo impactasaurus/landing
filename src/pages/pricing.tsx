@@ -6,10 +6,14 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 
-const PricingPage = () => {
+const PricingPage = ({pageContext}: PageProps) => {
   return (
     <>
-    <SEO title="Pricing" description="Impactasaurus is free! If this changes in future, we will give at least 2 months notice. We are a non profit organisation."/>
+    <SEO
+      title="Pricing"
+      description="Impactasaurus is free! If this changes in future, we will give at least 2 months notice. We are a non profit organisation."
+      context={pageContext}
+    />
     <Hero>
       <h1>Pricing</h1>
       <h4>Hope you are sitting down...</h4>
@@ -46,9 +50,8 @@ const PricingPage = () => {
             A special thanks to the following companies who provide their services for free:
           </p>
           <p style={{display: "flex", alignItems: "center"}}>
-            <a style={{padding: "1em", display: "inline-block"}} href="https://auth0.com/?utm_source=oss&utm_medium=gp&utm_campaign=oss" target="_blank" alt="Single Sign On & Token Based Authentication - Auth0"><img width="150" height="50" alt="JWT Auth for open source projects" src="/images/partners/a0.png"/></a>
+            <a style={{padding: "1em", display: "inline-block"}} href="https://auth0.com/?utm_source=oss&utm_medium=gp&utm_campaign=oss" target="_blank"><img width="150" height="50" alt="JWT Auth for open source projects" src="/images/partners/a0.png"/></a>
             <a style={{padding: "0.2em", display: "inline-block"}} href="https://sentry.io" target="_blank"><img width="150" height="50" alt="Error tracking - Sentry" src="/images/partners/sentry.svg" /></a>
-            <a style={{padding: "1em", display: "inline-block"}} href="https://www.datadoghq.com/" target="_blank"><img width="150" height="38" alt="Telemetry - Datadog" src="/images/partners/dd.png" /></a>
           </p>
         </Col>
       </Row>
@@ -62,9 +65,7 @@ const PricingPage = () => {
             A special thanks to the following companies who provide their tools and services for free:
           </p>
           <p style={{display: "flex", alignItems: "center"}}>
-            <a style={{padding: "1em", display: "inline-block"}} href="https://travis-ci.org" target="_blank"><img width="120" height="40" alt="Test and Deploy - Travis" src="/images/partners/travis.svg" /></a>
             <a style={{padding: "1em", display: "inline-block"}} href="https://github.com/" target="_blank"><img width="80" height="18" alt="Development platform - Github" src="/images/partners/github.svg" /></a>
-            <a style={{padding: "1em", display: "inline-block"}} href="https://www.jetbrains.com" target="_blank"><img width="80" height="50" alt="Development tooling - Jetbrains" src="/images/partners/jetbrains.svg" /></a>
           </p>
         </Col>
       </Row>

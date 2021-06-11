@@ -6,11 +6,11 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 
-const PrivacyPolicyPage = () => {
+const PrivacyPolicyPage = ({pageContext}: PageProps) => {
   const intro = "This Privacy Policy explains the information that Impactasaurus collects when you use its products and services, how that information is used, with whom it may be shared, and your privacy choices";
   return (
     <>
-    <SEO title="Privacy Policy" description={intro} />
+    <SEO title="Privacy Policy" description={intro} context={pageContext}/>
     <Hero>
       <h1>Privacy Policy</h1>
     </Hero>

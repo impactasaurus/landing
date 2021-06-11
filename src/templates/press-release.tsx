@@ -4,16 +4,16 @@ import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
-import { MarkdownRemark, MarkdownRemarkConnection } from "../graphql-types";
+import { MarkdownRemark } from "../graphql-types";
 import {withLayout, LayoutProps} from "../components/Layout";
 import { graphql } from "gatsby";
 import SEO from "../components/SEO/SEO";
-import {BlogSnippet} from "../components/BlogSnippet";
 
 interface PressReleaseProps extends LayoutProps {
   data: {
     pr: MarkdownRemark;
   };
+  pageContext: PageContext;
 }
 
 const PressReleasePage = (props: PressReleaseProps) => {
@@ -22,7 +22,7 @@ const PressReleasePage = (props: PressReleaseProps) => {
   const cover = get(frontmatter, "image.children.0.fluid", {} );
   return (
     <>
-    <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} pathname={fields.slug} />
+    <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} context={props.pageContext} />
     <Hero>
       <h1>{frontmatter.title}</h1>
       <h4>{frontmatter.subtitle}</h4>

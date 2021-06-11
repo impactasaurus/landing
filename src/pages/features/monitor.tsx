@@ -5,11 +5,11 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
 
-const JourneyPage = () => {
+const JourneyPage = ({pageContext}: PageProps) => {
   const intro = "Your beneficiaries go through a journey with your support. Visualise their journey by collecting questionnaire responses throughout your intervention.";
   return (
     <>
-    <SEO title="Monitor" description={intro}/>
+    <SEO title="Monitor" description={intro} context={pageContext}/>
     <Hero>
       <h1>Monitor</h1>
       <h4>Tailor your service to fit your beneficiary's journey</h4>

@@ -1,10 +1,11 @@
+const url = `https://impactasaurus.org`;
 module.exports = {
   siteMetadata: {
     title: 'Simple and Free Social Impact Reporting',
     titleTemplate: '%s - Impactasaurus',
     siteLanguage: 'en',
     logo: '/images/logos/logo.png',
-    siteUrl: `https://impactasaurus.org`,
+    siteUrl: url,
     description: 'Demonstrate your outcomes and social impact with Impactasaurus. Easy to use, free and only takes a few minutes to get started!',
     twitter: '@impactasaurus',
     googleVerification: 'abcdefz'
@@ -104,6 +105,27 @@ module.exports = {
         plugins: [
           `gatsby-transformer-json`
         ]
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locales`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: 'locales',
+        languages: require('./locales/languages.json'),
+        defaultLanguage: `en`,
+        siteUrl: url,
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false // Not needed for react as it escapes by default
+          }
+        }
       }
     }
   ]

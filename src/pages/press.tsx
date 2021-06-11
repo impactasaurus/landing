@@ -14,6 +14,7 @@ interface PressProps extends LayoutProps {
   data: {
     pressReleases: MarkdownRemarkConnection;
   };
+  pageContext: PageContext;
 }
 
 export const PRSnippet = ({node}: {node: MarkdownRemark}) => {
@@ -81,7 +82,11 @@ const PressPage = (props: PressProps) => {
 
   return (
     <>
-    <SEO title="Press" description="Impactasaurus' contact information, media kit and press releases. For all media enquiries please contact press@impactasaurus.org."/>
+    <SEO
+      title="Press"
+      description="Impactasaurus' contact information, media kit and press releases. For all media enquiries please contact press@impactasaurus.org."
+      context={props.pageContext}
+    />
     <Hero>
       <h1>Press</h1>
       <h4><a style={{color: "white"}} href="mailto:press@impactasaurus.org">press@impactasaurus.org</a></h4>

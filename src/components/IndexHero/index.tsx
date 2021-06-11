@@ -3,10 +3,9 @@ import Container from "react-bootstrap/lib/Container";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import SlantedHero from "../Hero/slanted";
-import {LayoutProps} from "../Layout";
 import "./style.less";
 
-export default ({children}: LayoutProps) => {
+export default () => {
   return (
     <div id="index-hero">
       <SlantedHero bottom={true}>

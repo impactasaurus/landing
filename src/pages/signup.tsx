@@ -57,10 +57,10 @@ const onSubmit = (v: IFormOutput) => {
   });
 };
 
-const SignupPage = () => {
+const SignupPage = ({pageContext}: PageProps) => {
   return (
     <>
-    <SEO title="Signup"/>
+    <SEO title="Signup" context={pageContext}/>
     <Hero>
       <h1>Signup</h1>
       <h4>In two minutes, you will be measuring your impact</h4>

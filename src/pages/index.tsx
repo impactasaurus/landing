@@ -5,9 +5,9 @@ import Testimonials from "../components/Testimonials";
 import Steps from "../components/Steps";
 import IndexHero from "../components/IndexHero";
 
-const IndexPage = () => (
+const IndexPage = ({pageContext}: PageProps) => (
   <div>
-    <SEO />
+    <SEO context={pageContext} />
     <IndexHero />
     <Steps />
     <Testimonials />

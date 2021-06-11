@@ -6,11 +6,11 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO";
 
-const TermsPage = () => {
+const TermsPage = ({pageContext}: PageProps) => {
   const intro = "These Terms of Use contain the terms under which we provide our Services to you and describe how our Services may be accessed and used";
   return (
     <>
-    <SEO title="Terms Of Use" description={intro} />
+    <SEO title="Terms Of Use" description={intro} context={pageContext} />
     <Hero>
       <h1>Terms Of Use</h1>
     </Hero>
