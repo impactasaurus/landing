@@ -50,13 +50,15 @@ const SEO = ({context, title = null, description = null, image = null, article =
           description: description || defaultDescription,
           image: `${siteUrl}${image || defaultImage}`,
           title: title || defaultTitle,
-          url: `${siteUrl}${location.pathname}`,
+          url: `${siteUrl}${context.i18n.path}`,
         };
 
         const createUrlWithLang = (lng: string) => {
           const url = `${siteUrl}${lng === context.i18n.defaultLanguage ? "" : `/${lng}`}${context.i18n.originalPath}`;
           return url.endsWith("/") ? url : `${url}/`;
         };
+
+        console.log(context.i18n);
 
         return (
           <>
