@@ -40,7 +40,7 @@ const isSuitableCoverage = function (langFile, sourceFile) {
   const src = flatten(loadFile(sourceFile));
   const lang = flatten(loadFile(langFile));
   const coverage = Object.keys(lang).length / Object.keys(src).length;
-  return coverage > 0.9;
+  return coverage >= 1 && false; // && false whilst extracting all the strings
 };
 
 const getCodeFromFilename = function (file) {

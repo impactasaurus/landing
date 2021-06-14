@@ -1,5 +1,27 @@
 {
-  "about": {
-    "title": "About Us"
+  "index": {
+    "title": "Easy impact reporting",
+    "subtitle": "Attract funding and improve your service",
+    "steps": {
+      "title": "You're only 4 steps away from demonstrating your impact",
+      "subtitle": "From choosing a questionnaire to reporting your impact, we keep things simple",
+      "1": {
+        "title": "1. Select a questionnaire",
+        "description": "Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire."
+      },
+      "2": {
+        "title": "2. Collect responses",
+        "description": "Questionnaire responses can be collected in person, remotely or retrospectively. Responses are <securityLink>securely</securityLink> saved within Impactasaurus for review and analysis."
+      },
+      "3": {
+        "title": "3. Monitor progress",
+        "description": "A beneficiary's journey can be monitored during your intervention. This allows you to tailor your services to meet their specific requirements."
+      },
+      "4": {
+        "title": "4. Report your impact",
+        "description": "Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a certain <segmentLink>segment</segmentLink> (e.g. a project or a location)."
+      },
+      "cta": "Sound good? <signupLink>Let's get you started...</signupLink>"
+    }
   }
 }
