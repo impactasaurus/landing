@@ -1,6 +1,7 @@
 const path = require('path');
 const slash = require('slash');
 const {kebabCase, uniq, get, compact, times} = require('lodash');
+const indexableLanguages = require('./i18n/indexableLanguages.json');
 
 // Don't forget to update hard code values into:
 // - `templates/blog-page.tsx:23`
@@ -24,6 +25,24 @@ exports.onCreateNode = ({node, actions, getNode}) => {
   if (slug) {
     createNodeField({node, name: `slug`, value: slug});
   }
+};
+
+exports.onCreatePage = ({page, actions}) => {
+  if (typeof page.context.i18n !== 'object') {
+    return;
+  }
+  const lang = page.context.i18n.language;
+  const indexable = indexableLanguages.indexOf(lang) !== -1;
+
+  const {createPage, deletePage} = actions;
+  deletePage(page);
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      index: indexable
+    }
+  });
 };
 
 const createDraftBlogPages = (graphql, createPage) => {

@@ -6,10 +6,14 @@ import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
 import { Link } from "gatsby";
 
-const ReportingPage = () => {
+const ReportingPage = ({pageContext}: PageProps) => {
   return (
     <>
-    <SEO title="Reporting" description="Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a subset."/>
+    <SEO
+      title="Reporting"
+      description="Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a subset."
+      context={pageContext}
+    />
     <Hero>
       <h1>Reporting</h1>
       <h4>Produce visualisations to demonstrate your impact</h4>

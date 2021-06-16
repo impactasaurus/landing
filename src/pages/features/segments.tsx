@@ -5,10 +5,14 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
 
-const SegmentPage = () => {
+const SegmentPage = ({pageContext}: PageProps) => {
   return (
     <>
-    <SEO title="Segments" description="Understand your impact for a specific location, project or demographic. Drive improvements by comparing the social impact of different approaches."/>
+    <SEO
+      title="Segments"
+      description="Understand your impact for a specific location, project or demographic. Drive improvements by comparing the social impact of different approaches."
+      context={pageContext}
+    />
     <Hero>
       <h1>Segments</h1>
       <h4>Analyse a subset of your beneficiaries</h4>

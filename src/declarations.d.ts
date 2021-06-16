@@ -16,3 +16,19 @@ declare module "disqus-react" {
     },
   }, {}> { }
 }
+
+declare interface PageContext {
+  index: boolean;
+  i18n: {
+    language: string;
+    defaultLanguage: string;
+    languages: string[];
+    originalPath: string;
+    path: string;
+  };
+  tag?: string; // only set into `templates/tags-pages.tsx`
+}
+
+declare interface PageProps {
+  pageContext: PageContext;
+}

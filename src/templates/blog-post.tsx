@@ -9,13 +9,14 @@ import {withLayout, LayoutProps} from "../components/Layout";
 import { graphql } from "gatsby";
 import SEO from "../components/SEO/SEO";
 import {BlogSnippet} from "../components/BlogSnippet";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 
 interface BlogPostProps extends LayoutProps {
   data: {
     post: MarkdownRemark;
     recents: MarkdownRemarkConnection;
   };
+  pageContext: PageContext;
 }
 
 const BlogPostPage = (props: BlogPostProps) => {
@@ -54,7 +55,7 @@ const BlogPostPage = (props: BlogPostProps) => {
       <div style={{width: "100%", height: "2em", backgroundColor: "red", textAlign: "center"}}>DRAFT</div>
       </>
     )}
-    <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} pathname={fields.slug} />
+    <SEO description={excerpt} title={frontmatter.title} article={true} image={cover.src} context={props.pageContext} />
     <Hero>
       <h1>{frontmatter.title}</h1>
       <h4>{frontmatter.createdDate} - {timeToRead} min read</h4>

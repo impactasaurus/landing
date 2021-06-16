@@ -6,11 +6,11 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 
-const CookiePolicyPage = () => {
+const CookiePolicyPage = ({pageContext}: PageProps) => {
   const intro = "This Cookie Policy explains how Impactasaurus and our affiliates use cookies and similar technologies to recognise you when you visit our website";
   return (
     <>
-    <SEO title="Cookie Policy" description={intro} />
+    <SEO title="Cookie Policy" description={intro} context={pageContext} />
     <Hero>
       <h1>Cookie Policy</h1>
     </Hero>

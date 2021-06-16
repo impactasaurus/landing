@@ -1,12 +1,12 @@
 import { Link } from "gatsby";
 import * as React from "react";
-import Helmet from "react-helmet";
 import {Menu, IMenuItem} from "./Menu";
 import {Footer, IFooterItem, convertMenuItem} from "./Footer";
 import { Provider } from "react-redux";
 import { store } from "../store";
 import "./theme.scss";
 import "./global.less";
+import { Helmet } from "react-helmet";
 
 const menuItems: IMenuItem[] = [
   {name: "Features", path: "", exact: true, children: [

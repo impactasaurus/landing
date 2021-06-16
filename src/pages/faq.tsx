@@ -202,13 +202,14 @@ const Question = ({q}: {q: IQuestion}) => {
   );
 };
 
-const FAQPage = () => {
+const FAQPage = ({pageContext}: PageProps) => {
+  const subtitle = "Answers to some common questions";
   return (
     <>
-    <SEO title="FAQ"/>
+    <SEO title="FAQ" description={subtitle} context={pageContext}/>
     <Hero>
       <h1>FAQ</h1>
-      <h4>Answers to some common questions</h4>
+      <h4>{subtitle}</h4>
     </Hero>
     <Container className="slanted">
       {Questions.filter((q) => q.sales).map((q) => <Question key={q.id} q={q}/>)}

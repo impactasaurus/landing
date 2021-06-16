@@ -7,11 +7,15 @@ import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 import {Questions} from "./faq";
 
-const SupportPage = () => {
+const SupportPage = ({pageContext}: PageProps) => {
   const qs = Questions.filter((q) => q.support);
   return (
     <>
-    <SEO title="Support" description="We are here to help, if you have a question or need help, please get in contact"/>
+    <SEO
+      title="Support"
+      description="We are here to help, if you have a question or need help, please get in contact"
+      context={pageContext}
+    />
     <Hero>
       <h1>Support</h1>
       <h4>We are here to help</h4>

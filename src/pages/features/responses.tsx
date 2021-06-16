@@ -6,10 +6,14 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
 
-const RecordsPage = () => {
+const RecordsPage = ({pageContext}: PageProps) => {
   return (
     <>
-    <SEO title="Responses" description="Questionnaire responses can be collected in person, remotely or retrospectively. Responses are securely saved within Impactasaurus for review and analysis."/>
+    <SEO
+      title="Responses"
+      description="Questionnaire responses can be collected in person, remotely or retrospectively. Responses are securely saved within Impactasaurus for review and analysis."
+      context={pageContext}
+    />
     <Hero>
       <h1>Questionnaire responses</h1>
       <h4>Collect and store your beneficiaries' responses</h4>

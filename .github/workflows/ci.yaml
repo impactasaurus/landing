@@ -24,6 +24,11 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: npm test
+      - name: Handle i18n
+        if: github.ref == 'refs/heads/master'
+        env:
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+        run: npm run i18n-push && npm run i18n-pull
       - name: Build project
         run: npm run build
       - name: Upload build artifacts

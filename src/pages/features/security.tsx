@@ -5,10 +5,14 @@ import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
 import { Link } from "gatsby";
 
-const SecurityPage = () => {
+const SecurityPage = ({pageContext}: PageProps) => {
   return (
     <>
-    <SEO title="Security" description="The security of your data is our highest priority. We work hard to protect your data, your beneficiaries privacy and your privacy."/>
+    <SEO
+      title="Security"
+      description="The security of your data is our highest priority. We work hard to protect your data, your beneficiaries privacy and your privacy."
+      context={pageContext}
+    />
     <Hero>
       <h1>Security</h1>
       <h4>The security of your data is our highest priority</h4>

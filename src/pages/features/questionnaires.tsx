@@ -5,10 +5,14 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
 
-const QuestionnairePage = () => {
+const QuestionnairePage = ({pageContext}: PageProps) => {
   return (
     <>
-    <SEO title="Questionnaires" description="Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire."/>
+    <SEO
+      title="Questionnaires"
+      description="Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire."
+      context={pageContext}
+    />
     <Hero>
       <h1>Questionnaires</h1>
       <h4>Define questions to measure your outcomes</h4>

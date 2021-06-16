@@ -5,9 +5,9 @@ import Testimonials from "../components/Testimonials";
 import Steps from "../components/Steps";
 import IndexHero from "../components/IndexHero";
 
-const IndexPage = () => (
+const IndexPage = ({pageContext}: PageProps) => (
   <div>
-    <SEO />
+    <SEO context={pageContext} />
     <IndexHero />
     <Steps />
     <Testimonials />
@@ -15,3 +15,17 @@ const IndexPage = () => (
 );
 
 export default withLayout(IndexPage);
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

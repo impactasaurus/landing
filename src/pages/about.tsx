@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {withLayout} from "../components/Layout";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
@@ -6,11 +6,11 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 
-const AboutPage = () => {
+const AboutPage = ({ pageContext }: PageProps) => {
   const vision = "Our vision is for all organisations, benefiting society, to understand their social impact, allowing them to demonstrate their value to stakeholders and drive improvements to their services";
   return (
     <>
-    <SEO title="About Us" description={vision}/>
+    <SEO title="About Us" description={vision} context={pageContext} />
     <Hero>
       <h1>About Us</h1>
       <h4>All organisations, benefiting society, should understand their social impact</h4>

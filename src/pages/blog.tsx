@@ -16,9 +16,7 @@ interface BlogProps extends LayoutProps {
     tags: MarkdownRemarkConnection;
     posts: MarkdownRemarkConnection;
   };
-  pageContext: {
-    tag?: string; // only set into `templates/tags-pages.tsx`
-  };
+  pageContext: PageContext;
 }
 
 // modelled on https://www.helpscout.net/blog/
@@ -27,13 +25,13 @@ const BlogPage = (props: BlogProps) => {
   const posts = props.data.posts.edges.map((e) => e.node);
   const { pathname } = props.location;
   const pageCount = Math.ceil(props.data.posts.totalCount / 10);
-
+  const subtitle = "News and thoughts from the Impactasaurus team";
   return (
     <>
-    <SEO title="Blog"/>
+    <SEO title="Blog" description={subtitle} context={props.pageContext}/>
     <Hero>
       <h1>Blog</h1>
-      <h4>News and thoughts from the Impactasaurus team</h4>
+      <h4>{subtitle}</h4>
     </Hero>
     <Container className="slanted">
       <Row>
