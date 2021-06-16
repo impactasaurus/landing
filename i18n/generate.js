@@ -37,10 +37,18 @@ const flatten = function (obj, prefix, current) {
 }
 
 const isSuitableCoverage = function (langFile, sourceFile) {
+  if(langFile === sourceFile) {
+    return true;
+  }
   const src = flatten(loadFile(sourceFile));
   const lang = flatten(loadFile(langFile));
   const coverage = Object.keys(lang).length / Object.keys(src).length;
   return coverage >= 1 && false; // && false whilst extracting all the strings
+};
+
+const notEmpty = function (file) {
+  const contents = loadFile(sourceFile);
+  return Object.keys(contents).length > 0;
 };
 
 const getCodeFromFilename = function (file) {
@@ -51,7 +59,7 @@ const getCodeFromFilename = function (file) {
 
 const files = getAllFiles("./i18n/locales");
 
-const all = files.filter((f) => f.includes("translation.json"));
+const all = files.filter((f) => f.includes("translation.json")).filter(notEmpty);
 const allCodes = all.map(getCodeFromFilename);
 fs.writeFileSync("./i18n/languages.json", JSON.stringify(allCodes));
 
