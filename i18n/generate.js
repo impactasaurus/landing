@@ -31,10 +31,12 @@ const flatten = function (obj, prefix, current) {
       flatten(obj[key], prefix.concat(key), current)
     })
   } else {
-    current[prefix.join('.')] = obj
+    if (obj !== "") {
+      current[prefix.join('.')] = obj
+    }
   }
   return current
-}
+};
 
 const isSuitableCoverage = function (langFile, sourceFile) {
   if(langFile === sourceFile) {
@@ -43,11 +45,11 @@ const isSuitableCoverage = function (langFile, sourceFile) {
   const src = flatten(loadFile(sourceFile));
   const lang = flatten(loadFile(langFile));
   const coverage = Object.keys(lang).length / Object.keys(src).length;
-  return coverage >= 1 && false; // && false whilst extracting all the strings
+  return coverage >= 1;// && false; // && false whilst extracting all the strings
 };
 
 const notEmpty = function (file) {
-  const contents = loadFile(sourceFile);
+  const contents = flatten(loadFile(file));
   return Object.keys(contents).length > 0;
 };
 
