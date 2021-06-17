@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 import * as React from "react";
 import {Menu, IMenuItem} from "./Menu";
 import {Footer, IFooterItem, convertMenuItem} from "./Footer";

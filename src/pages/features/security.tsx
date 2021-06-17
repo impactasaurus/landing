@@ -3,7 +3,7 @@ import {withLayout} from "../../components/Layout";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 
 const SecurityPage = ({pageContext}: PageProps) => {
   return (

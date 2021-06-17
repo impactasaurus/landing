@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 import { graphql } from "gatsby";
 import {MarkdownRemark, MarkdownRemarkConnection} from "../graphql-types";
 import {withLayout, LayoutProps} from "../components/Layout";

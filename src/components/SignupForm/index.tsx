@@ -6,7 +6,7 @@ import * as EmailValidator from "email-validator";
 import Button from "react-bootstrap/lib/Button";
 import {faExclamation, faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Link} from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 import "./style.less";
 
 export interface IFormOutput {
