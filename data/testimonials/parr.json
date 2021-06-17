@@ -1,7 +1,7 @@
 {
     "name": "Parr Sports & Community Centre",
     "image": "clients/parr.jpg",
-    "quote": "It's simple to use and a great way to view your impact. Guaranteed to help with potential funders and the customer service is amazing. I'd recommend this tool to everyone!",
+    "quoteKey": "index.testimonials.parr",
     "url": "https://www.parrsports.org.uk",
     "weight": 1
 }

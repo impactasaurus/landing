@@ -58,8 +58,6 @@ const SEO = ({context, title = null, description = null, image = null, article =
           return url.endsWith("/") ? url : `${url}/`;
         };
 
-        console.log(context.i18n);
-
         return (
           <>
             <Helmet title={seo.title}  titleTemplate={titleTemplate}>

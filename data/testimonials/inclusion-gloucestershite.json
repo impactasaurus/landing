@@ -1,7 +1,7 @@
 {
     "name": "Inclusion Gloucestershire",
     "image": "clients/inclusion-gloucestershire.jpg",
-    "quote": "Times are tough for everyone and competition for funding is tight, having robust evidence of impact is critical. Working with Impactasaurus has helped us demonstrate the difference our work makes.",
+    "quoteKey": "index.testimonials.inclusion",
     "url": "https://www.inclusiongloucestershire.co.uk/",
     "weight": 6
 }
