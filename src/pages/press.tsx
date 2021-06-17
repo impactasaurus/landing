@@ -104,7 +104,16 @@ const PressPage = (props: PressProps) => {
 export default withLayout(PressPage, false);
 
 export const pageQuery = graphql`
-query PagePress {
+query PagePress ($language: String!) {
+  locales: allLocale(filter: {language: {eq: $language}}) {
+    edges {
+      node {
+        ns
+        data
+        language
+      }
+    }
+  }
   pressReleases: allMarkdownRemark(
     sort: { order: DESC, fields: [frontmatter___createdDate] },
     filter: {

@@ -1,4 +1,15 @@
 {
+  "common": {
+    "cta": {
+      "title": "Understand your impact",
+      "subtitle": "Demonstrate your value and drive improvements",
+      "button": "Get started"
+    },
+    "header": {
+      "signup": "Sign up",
+      "login": "Log in"
+    }
+  },
   "index": {
     "title": "Easy impact reporting",
     "subtitle": "Attract funding and improve your service",

@@ -76,7 +76,16 @@ const BlogPostPage = (props: BlogPostProps) => {
 export default withLayout(BlogPostPage);
 
 export const pageQuery = graphql`
-  query TemplateBlogPost($slug: String!) {
+  query TemplateBlogPost($slug: String!, $language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
   post: markdownRemark(fields: {slug: {eq: $slug}}) {
     html
     excerpt

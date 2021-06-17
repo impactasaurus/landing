@@ -5,7 +5,16 @@ import { graphql } from "gatsby";
 export default Blog;
 
 export const pageQuery = graphql`
-query TemplateTagPage($tag: String) {
+query TemplateTagPage($tag: String, $language: String!) {
+  locales: allLocale(filter: {language: {eq: $language}}) {
+    edges {
+      node {
+        ns
+        data
+        language
+      }
+    }
+  }
   # Get tags
   tags: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
     group(field: frontmatter___tags) {

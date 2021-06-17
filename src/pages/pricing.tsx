@@ -83,3 +83,17 @@ const PricingPage = ({pageContext}: PageProps) => {
 };
 
 export default withLayout(PricingPage);
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
