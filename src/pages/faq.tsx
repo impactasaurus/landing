@@ -5,7 +5,7 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 
 interface IQuestion {
   title: string;
@@ -219,3 +219,17 @@ const FAQPage = ({pageContext}: PageProps) => {
 };
 
 export default withLayout(FAQPage);
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

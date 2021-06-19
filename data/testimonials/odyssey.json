@@ -1,7 +1,7 @@
 {
     "name": "Odyssey",
     "image": "clients/odyssey.png",
-    "quote": "Impactasaurus is an easy to use tool, and offers clear and powerful visuals to demonstrate impact. Backup and support is also first rate. Highly recommended!",
+    "quoteKey": "index.testimonials.odyssey",
     "url": "https://www.odyssey.org.uk",
     "weight": 5
 }

@@ -20,3 +20,17 @@ const NotFoundPage = () =>
   </>;
 
 export default withLayout(NotFoundPage, false);
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

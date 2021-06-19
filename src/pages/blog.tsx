@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 import { graphql } from "gatsby";
 import { MarkdownRemarkConnection } from "../graphql-types";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
@@ -50,7 +50,16 @@ const BlogPage = (props: BlogProps) => {
 export default withLayout(BlogPage);
 
 export const pageQuery = graphql`
-query PageBlog {
+query PageBlog ($language: String!) {
+  locales: allLocale(filter: {language: {eq: $language}}) {
+    edges {
+      node {
+        ns
+        data
+        language
+      }
+    }
+  }
   # Get tags
   tags: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
     group(field: frontmatter___tags) {

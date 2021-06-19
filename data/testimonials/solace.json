@@ -1,7 +1,7 @@
 {
     "name": "Solace",
     "image": "clients/solace.png",
-    "quote": "Impactasaurus does exactly what we need it to and avoids complicated processes or duplication of existing systems. We can demonstrate trends by organisation, by project, or see the journey of a specific beneficiary.",
+    "quoteKey": "index.testimonials.solace",
     "url": "https://www.solace-uk.org.uk",
     "weight": 9
 }

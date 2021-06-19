@@ -3,9 +3,9 @@ import Navbar from "react-bootstrap/lib/Navbar";
 import Nav from "react-bootstrap/lib/Nav";
 import NavDropdown from "react-bootstrap/lib/NavDropdown";
 import Button from "react-bootstrap/lib/Button";
-import "./style.less";
-import { Link } from "gatsby";
+import { useTranslation, Link } from "gatsby-plugin-react-i18next";
 import Logo from "../Logo";
+import "./style.less";
 
 export interface IMenuItem {
   name: string;
@@ -49,20 +49,24 @@ const ButtonLink = (p) => {
   return <Button as={Link} {...p}>{p.children}</Button>;
 };
 
-export const Menu = ({ items, pathname }: IMenuProps) =>
-  <Navbar expand="lg" sticky="top">
-    <Navbar.Brand as={Link} to="/">
-      <Logo />
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
-        {items.filter((i) => i.right !== true).map((item) => <MenuItem item={item} pathname={pathname} key={item.path} />)}
-      </Nav>
-      <Nav className="justify-content-end">
-        {items.filter((i) => i.right === true).map((item) => <MenuItem item={item} pathname={pathname} key={item.path} />)}
-        <Nav.Item as={Button} variant="outline-primary" href="https://app.impactasaurus.org">Log in</Nav.Item>
-        <Nav.Item as={ButtonLink} variant="primary" to="/signup/">Sign up</Nav.Item>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>;
+export const Menu = ({ items, pathname }: IMenuProps) => {
+  const {t} = useTranslation();
+  return (
+    <Navbar expand="lg" sticky="top">
+      <Navbar.Brand as={Link} to="/">
+        <Logo />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          {items.filter((i) => i.right !== true).map((item) => <MenuItem item={item} pathname={pathname} key={item.path} />)}
+        </Nav>
+        <Nav className="justify-content-end">
+          {items.filter((i) => i.right === true).map((item) => <MenuItem item={item} pathname={pathname} key={item.path} />)}
+          <Nav.Item as={Button} variant="outline-primary" href="https://app.impactasaurus.org">{t("common.header.login")}</Nav.Item>
+          <Nav.Item as={ButtonLink} variant="primary" to="/signup/">{t("common.header.signup")}</Nav.Item>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+};

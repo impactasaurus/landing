@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 import { graphql } from "gatsby";
 import {MarkdownRemark, MarkdownRemarkConnection} from "../graphql-types";
 import {withLayout, LayoutProps} from "../components/Layout";
@@ -104,7 +104,16 @@ const PressPage = (props: PressProps) => {
 export default withLayout(PressPage, false);
 
 export const pageQuery = graphql`
-query PagePress {
+query PagePress ($language: String!) {
+  locales: allLocale(filter: {language: {eq: $language}}) {
+    edges {
+      node {
+        ns
+        data
+        language
+      }
+    }
+  }
   pressReleases: allMarkdownRemark(
     sort: { order: DESC, fields: [frontmatter___createdDate] },
     filter: {

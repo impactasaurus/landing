@@ -4,7 +4,7 @@ import DescribedImage from "../../components/DescribedImage";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 
 const ReportingPage = ({pageContext}: PageProps) => {
   return (
@@ -57,3 +57,17 @@ const ReportingPage = ({pageContext}: PageProps) => {
 };
 
 export default withLayout(ReportingPage);
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

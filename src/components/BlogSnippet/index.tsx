@@ -2,7 +2,7 @@ import * as React from "react";
 import {MarkdownRemark} from "../../graphql-types";
 import Col from "react-bootstrap/lib/Col";
 import { get } from "lodash";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 
 export const BlogSnippet = ({node, wide}: {node: MarkdownRemark, wide?: boolean}) => {
   const { frontmatter, fields: { slug } } = node;

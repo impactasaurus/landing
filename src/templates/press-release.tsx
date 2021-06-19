@@ -52,7 +52,16 @@ const PressReleasePage = (props: PressReleaseProps) => {
 export default withLayout(PressReleasePage, false);
 
 export const pageQuery = graphql`
-  query TemplatePR($slug: String!) {
+  query TemplatePR($slug: String!, $language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
   pr: markdownRemark(fields: {slug: {eq: $slug}}) {
     html
     excerpt

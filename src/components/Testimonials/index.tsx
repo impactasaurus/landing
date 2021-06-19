@@ -6,14 +6,23 @@ import Testimonial from "../Testimonial";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { StaticQuery, graphql } from "gatsby";
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 
 export default () => {
+  const {t} = useTranslation();
   return (
     <Container>
       <Row className="header">
         <Col>
-          <h2>Inspirational organisations <FontAwesomeIcon style={{color: "var(--primary)"}} icon={faHeart} /> Impactasaurus</h2>
-          <h4>Over 100 organisations use Impactasaurus to demonstrate their impact</h4>
+          <h2>
+            <Trans
+              i18nKey="index.testimonials.title"
+              components={{
+                heart: <FontAwesomeIcon style={{color: "var(--primary)"}} icon={faHeart} />,
+              }}
+            />
+          </h2>
+          <h4>{t("index.testimonials.subtitle")}</h4>
         </Col>
       </Row>
       <Row>
@@ -26,7 +35,7 @@ export default () => {
                     id
                     name
                     image
-                    quote
+                    quoteKey
                     url
                     weight
                   }
@@ -39,13 +48,13 @@ export default () => {
             let testimonials = data.allTestimonialsJson.edges
               .map((e: any) => e.node)
               .sort((a: any, b: any) => b.weight - a.weight);
-            const wrapped = (t: any) => (
+            const wrapped = (tm: any) => (
               <Col xs={12} sm={6}>
                 <Testimonial
-                  image={t.image}
-                  name={t.name}
-                  quote={t.quote}
-                  url={t.url}
+                  image={tm.image}
+                  name={tm.name}
+                  quote={tm.quoteKey ? t(tm.quoteKey) : tm.quote}
+                  url={tm.url}
                 />
               </Col>
             );

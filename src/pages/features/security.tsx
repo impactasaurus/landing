@@ -3,7 +3,7 @@ import {withLayout} from "../../components/Layout";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-react-i18next";
 
 const SecurityPage = ({pageContext}: PageProps) => {
   return (
@@ -44,3 +44,17 @@ const SecurityPage = ({pageContext}: PageProps) => {
 };
 
 export default withLayout(SecurityPage);
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

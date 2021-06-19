@@ -1,4 +1,15 @@
 {
+  "common": {
+    "cta": {
+      "title": "Understand your impact",
+      "subtitle": "Demonstrate your value and drive improvements",
+      "button": "Get started"
+    },
+    "header": {
+      "signup": "Sign up",
+      "login": "Log in"
+    }
+  },
   "index": {
     "title": "Easy impact reporting",
     "subtitle": "Attract funding and improve your service",
@@ -22,6 +33,20 @@
         "description": "Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a certain <segmentLink>segment</segmentLink> (e.g. a project or a location)."
       },
       "cta": "Sound good? <signupLink>Let's get you started...</signupLink>"
+    },
+    "testimonials": {
+      "title": "Inspirational organisations <heart/> Impactasaurus",
+      "subtitle": "Over 100 organisations use Impactasaurus to demonstrate their impact",
+      "ageConcern": "Impactasaurus allows us to show our clients and volunteers the difference we are making in a user friendly and visual way. It also helps us demonstrate to funders that we are worth investing in.",
+      "bridge": "Impactasaurus has made our evaluation process much easier, we now have a clear visual representation of the impact that we have throughout our services. It has transformed our evaluation work.",
+      "breathingSpaces": "We are delighted to recommend Impactasaurus to anyone who needs an easy to use, meaningful and efficient way of collecting, analysing and presenting data that demonstrates their outcomes and impact.",
+      "crcc": "Impactasaurus helps us understand the impact of our different projects. It produces fantastic visual representations that help us communicate the journey people make with our support.",
+      "inclusion": "Times are tough for everyone and competition for funding is tight, having robust evidence of impact is critical. Working with Impactasaurus has helped us demonstrate the difference our work makes.",
+      "odyssey": "Impactasaurus is an easy to use tool, and offers clear and powerful visuals to demonstrate impact. Backup and support is also first rate. Highly recommended!",
+      "outreach": "Impactasaurus is fantastic, it has provided us with an easy, accessible way of measuring the difference we are making to young people and then sharing this with Trustees, funders and supporters. Simple yet effective and so valuable.",
+      "parr": "It's simple to use and a great way to view your impact. Guaranteed to help with potential funders and the customer service is amazing. I'd recommend this tool to everyone!",
+      "solace": "Impactasaurus does exactly what we need it to and avoids complicated processes or duplication of existing systems. We can demonstrate trends by organisation, by project, or see the journey of a specific beneficiary.",
+      "sportingForce": "Impactasaurus is an easy to use piece of software, it takes seconds to input questionnaire responses. We can provide funders and trustees with visuals that are easily understood on each beneficiary or project."
     }
   }
 }

@@ -1,7 +1,7 @@
 {
     "name": "Outreach Youth",
     "image": "clients/outreach.png",
-    "quote": "Impactasaurus is fantastic, it has provided us with an easy, accessible way of measuring the difference we are making to young people and then sharing this with Trustees, funders and supporters. Simple yet effective and so valuable.",
+    "quoteKey": "index.testimonials.outreach",
     "url": "https://outreachyouth.org.uk",
     "weight": 7
 }
