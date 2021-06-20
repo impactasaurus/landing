@@ -105,7 +105,7 @@ export const Questions: IQuestion[] = [{
       Please <Link to="/support/">contact support</Link> to set this up.
     </p>
   ),
-  id: "app",
+  id: "white-label",
   sales: true,
   support: true,
 }, {
