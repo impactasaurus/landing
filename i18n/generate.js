@@ -59,6 +59,32 @@ const getCodeFromFilename = function (file) {
   return c[c.length - 1];
 };
 
+const substituteMissing = function (file, srcFile) {
+  const set = function (obj, path, value) {
+    const elements = path.split(".");
+    const key = elements[0];
+    if(elements.length === 1) {
+      obj[key] = value;
+      return;
+    }
+    if (!obj[key]) {
+      obj[key] = {};
+    }
+    set(obj[key], elements.splice(1).join('.'), value);
+  };
+  const findMissing = function (src, dest) {
+    return Object.keys(src).filter((k) => !dest[k]);
+  };
+  const dest = loadFile(file);
+  const source = flatten(loadFile(srcFile));
+  const missing = findMissing(source, flatten(dest));
+  if (missing.length === 0) {
+    return;
+  }
+  missing.forEach((m) => set(dest, m, source[m]));
+  fs.writeFileSync(file, JSON.stringify(dest, null, 3));
+};
+
 const files = getAllFiles("./i18n/locales");
 
 const all = files.filter((f) => f.includes("translation.json")).filter(notEmpty);
@@ -73,6 +99,8 @@ if (source.length !== 1) {
 source = source[0];
 const suitableCodes = all.filter((f) => isSuitableCoverage(f, source)).map(getCodeFromFilename);
 fs.writeFileSync("./i18n/indexableLanguages.json", JSON.stringify(suitableCodes));
+
+all.forEach(f => substituteMissing(f, source));
 
 console.log("Languages with some coverage:");
 console.log(allCodes);
