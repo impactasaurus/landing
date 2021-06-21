@@ -8,6 +8,27 @@
     "header": {
       "signup": "Sign up",
       "login": "Log in"
+    },
+    "pages": {
+      "features": "Features",
+      "questionnaires": "Questionnaires",
+      "responses": "Responses",
+      "monitor": "Monitor",
+      "reporting": "Reporting",
+      "segments": "Segments",
+      "security": "Security",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "blog": "Blog",
+      "about": "About",
+      "support": "Support",
+      "signup": "Signup",
+      "terms": "Terms of Use",
+      "product": "Product",
+      "company": "Company",
+      "press": "Press",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
     }
   },
   "index": {
