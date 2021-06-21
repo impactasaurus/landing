@@ -4,32 +4,39 @@ import DescribedImage from "../../components/DescribedImage";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 
 const QuestionnairePage = ({pageContext}: PageProps) => {
+  const {t} = useTranslation();
+  const title = t("questionnaires.title");
   return (
     <>
     <SEO
-      title="Questionnaires"
-      description="Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire."
+      title={title}
+      description={t("questionnaires.description")}
       context={pageContext}
     />
     <Hero>
-      <h1>Questionnaires</h1>
-      <h4>Define questions to measure your outcomes</h4>
+      <h1>{title}</h1>
+      <h4>{t("questionnaires.subtitle")}</h4>
     </Hero>
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/catalogue.png"
         padding={1}
-        title="Select from our catalogue"
+        title={t("questionnaires.catalogue.title")}
         desc={(
           <>
           <p>
-            Unsure what questionnaire to use?
+            {t("questionnaires.catalogue.intro")}
           </p>
           <p>
-            Benefit from our catalogue of peer reviewed and validated questionnaires taken from the literature.
-            Our questionnaires are also freely available to browse at <a href="https://softoutcomes.org">softoutcomes.org</a>.
+            <Trans
+              i18nKey="questionnaires.catalogue.main"
+              components={{
+                soLink: <a href="https://softoutcomes.org" target="_blank" />,
+              }}
+            />
           </p>
           </>
         )}
@@ -37,10 +44,10 @@ const QuestionnairePage = ({pageContext}: PageProps) => {
       />
       <DescribedImage
         image="/images/screenshots/new-likert-q.png"
-        title="Create your own"
+        title={t("questionnaires.create.title")}
         desc={(
           <p>
-            If our catalogue of questionnaires does not suit, you can create your own questionnaire. Define your own questions and scales easily with our questionnaire creator.
+            {t("questionnaires.create.main")}
           </p>
         )}
         odd={false}
@@ -48,10 +55,10 @@ const QuestionnairePage = ({pageContext}: PageProps) => {
       <DescribedImage
         image="/images/screenshots/categories.png"
         padding={1}
-        title="Group questions"
+        title={t("questionnaires.group.title")}
         desc={(
           <p>
-            Related questions can be categorised to produce higher level views of the data. Perfect for questionnaires with lots of questions.
+            {t("questionnaires.group.main")}
           </p>
         )}
         odd={true}

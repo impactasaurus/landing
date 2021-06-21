@@ -69,5 +69,23 @@
       "solace": "Impactasaurus does exactly what we need it to and avoids complicated processes or duplication of existing systems. We can demonstrate trends by organisation, by project, or see the journey of a specific beneficiary.",
       "sportingForce": "Impactasaurus is an easy to use piece of software, it takes seconds to input questionnaire responses. We can provide funders and trustees with visuals that are easily understood on each beneficiary or project."
     }
+  },
+  "questionnaires": {
+    "title": "Questionnaires",
+    "subtitle": "Define questions to measure your outcomes",
+    "description": "Based on your desired outcomes, choose from our range of peer reviewed questionnaires. If none of them suit, you can always create your own questionnaire.",
+    "catalogue": {
+      "title": "Select from our catalogue",
+      "intro": "Unsure what questionnaire to use?",
+      "main": "Benefit from our catalogue of peer reviewed and validated questionnaires taken from the literature. Our questionnaires are also freely available to browse at <soLink>softoutcomes.org</soLink>."
+    },
+    "create": {
+      "title": "Create your own",
+      "main": "If our catalogue of questionnaires does not suit, you can create your own questionnaire. Define your own questions and scales easily with our questionnaire creator."
+    },
+    "group": {
+      "title": "Group questions",
+      "main": "Related questions can be categorised to produce higher level views of the data. Perfect for questionnaires with lots of questions."
+    }
   }
 }
