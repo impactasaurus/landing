@@ -87,5 +87,93 @@
       "title": "Group questions",
       "main": "Related questions can be categorised to produce higher level views of the data. Perfect for questionnaires with lots of questions."
     }
+  },
+  "responses": {
+    "title": "Responses",
+    "title-alt": "Questionnaire responses",
+    "subtitle": "Collect and store your beneficiaries' responses",
+    "description": "Questionnaire responses can be collected in person, remotely or retrospectively. Responses are securely saved within Impactasaurus for review and analysis.",
+    "method": {
+      "title": "Collect responses however works for you",
+      "together": "complete the questionnaire together with your beneficiary",
+      "remote": "send them a link to complete it on their own",
+      "data-entry": "enter answers captured on paper or historically."
+    },
+    "secure": {
+      "title": "Secure cloud storage",
+      "main": "Your beneficiaries' answers are stored <sLink>securely</sLink> in the cloud and are available from anywhere in the world."
+    }
+  },
+  "monitor": {
+    "title": "Monitor",
+    "subtitle": "Tailor your service to fit your beneficiary's journey",
+    "description": "Your beneficiaries go through a journey with your support. Visualise their journey by collecting questionnaire responses throughout your intervention.",
+    "journey": {
+      "title": "Your beneficiary's journey"
+    },
+    "tailor": {
+      "title": "Tailor your service",
+      "main": "Tailor the service you provide based on an individual's journey. As the saying goes, \"If you can't measure it, you can't improve it\"."
+    },
+    "pulse": {
+      "title": "Your organisation's pulse",
+      "main": "The activity feed shows each questionnaire response as it is recorded, across your entire organisation; allowing you to monitor your service in real time."
+    }
+  },
+  "reporting": {
+    "title": "Reporting",
+    "subtitle": "Produce visualisations to demonstrate your impact",
+    "description": "Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a subset.",
+    "visualise": {
+      "title": "Visualise your impact",
+      "main": "View the average distance travelled by your beneficiaries, as a result of your intervention. Download visualisations to include in your impact reports."
+    },
+    "segment": {
+      "title": "Report on a subset of beneficiaries",
+      "main": "Generate reports for a particular project, location or demographic using tags. See the <sLink>segments</sLink> feature page for more information."
+    },
+    "export": {
+      "title": "Export the report's data",
+      "main": "The data used to produce the report can be exported to Excel for backup, verification or custom analysis."
+    }
+  },
+  "segment": {
+    "title": "Segments",
+    "description": "Understand your impact for a specific location, project or demographic. Drive improvements by comparing the social impact of different approaches.",
+    "subtitle": "Analyse a subset of your beneficiaries",
+    "tags": {
+      "title": "Introducing tags",
+      "main": "Understand your impact for a specific location, project or demographic using tags. Tags are free text labels which can be used to segment your data."
+    },
+    "tagging": {
+      "title": "Tag your data",
+      "main": "Tags can be assigned to beneficiaries or individual questionnaire responses."
+    },
+    "report": {
+      "title": "Report on a subset of beneficiaries",
+      "main1": "Generate reports for a given set of tags. Only questionnaire responses with matching tags will be included in the report.",
+      "main2": "Interested in knowing the impact of a particular project? Generate a report for that project's tag."
+    }
+  },
+  "security": {
+    "title": "Security",
+    "description": "The security of your data is our highest priority. We work hard to protect your data, your beneficiaries privacy and your privacy.",
+    "subtitle": "The security of your data is our highest priority",
+    "how": {
+      "title": "How we protect your data",
+      "main": "Impactasaurus is designed with multiple layers of protection across a distributed, reliable infrastructure. We encrypt data in transit and at rest to ensure it is secure. In case of disaster, we take regular backups."
+    },
+    "benPrivacy": {
+      "title": "How we protect your beneficiaries privacy",
+      "main": "Questionnaire responses contain extremely personal information. To protect your beneficiaries, we do not store personally identifiable information about them. Instead, beneficiaries are referred to by ID only, keeping their responses anonymous to outside eyes."
+    },
+    "charityPrivacy": {
+      "title": "How we protect your privacy",
+      "main": "Our <ppLink>privacy policy</ppLink> clearly describes when we collect your information and the steps we take to protect it."
+    },
+    "account": {
+      "title": "How we protect your account",
+      "main": "Impactasaurus offers automatic detection of abnormal or suspicious account activity."
+    }
   }
 }
