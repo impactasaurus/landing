@@ -3,40 +3,42 @@ import {withLayout} from "../../components/Layout";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
-import { Link } from "gatsby-plugin-react-i18next";
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
 
 const SecurityPage = ({pageContext}: PageProps) => {
+  const {t} = useTranslation();
   return (
     <>
     <SEO
-      title="Security"
-      description="The security of your data is our highest priority. We work hard to protect your data, your beneficiaries privacy and your privacy."
+      title={t("security.title")}
+      description={t("security.description")}
       context={pageContext}
     />
     <Hero>
-      <h1>Security</h1>
-      <h4>The security of your data is our highest priority</h4>
+      <h1>{t("security.title")}</h1>
+      <h4>{t("security.subtitle")}</h4>
     </Hero>
     <Container className="slanted">
-      <h5>How we protect your data</h5>
+      <h5>{t("security.how.title")}</h5>
       <p>
-        Impactasaurus is designed with multiple layers of protection across a distributed, reliable infrastructure.
-        We encrypt data in transit and at rest to ensure it is secure.
-        In case of disaster, we take regular backups.
+        {t("security.how.main")}
       </p>
-      <h5>How we protect your beneficiaries privacy</h5>
+      <h5>{t("security.benPrivacy.title")}</h5>
       <p>
-        Questionnaire responses contain extremely personal information.
-        To protect your beneficiaries, we do not store personally identifiable information about them.
-        Instead, beneficiaries are referred to by ID only, keeping their responses anonymous to outside eyes.
+        {t("security.benPrivacy.main")}
       </p>
-      <h5>How we protect your privacy</h5>
+      <h5>{t("security.charityPrivacy.title")}</h5>
       <p>
-        Our <Link to={"/privacy"}>privacy policy</Link> clearly describes when we collect your information and the steps we take to protect it.
+        <Trans
+          i18nKey="security.charityPrivacy.main"
+          components={{
+            ppLink: <Link to={"/privacy"} />,
+          }}
+        />
       </p>
-      <h5>How we protect your account</h5>
+      <h5>{t("security.account.title")}</h5>
       <p>
-        Impactasaurus offers automatic detection of abnormal or suspicious account activity.
+        {t("security.account.main")}
       </p>
     </Container>
     </>

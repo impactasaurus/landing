@@ -4,36 +4,38 @@ import DescribedImage from "../../components/DescribedImage";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const SegmentPage = ({pageContext}: PageProps) => {
+  const {t} = useTranslation();
   return (
     <>
     <SEO
-      title="Segments"
-      description="Understand your impact for a specific location, project or demographic. Drive improvements by comparing the social impact of different approaches."
+      title={t("segment.title")}
+      description={t("segment.description")}
       context={pageContext}
     />
     <Hero>
-      <h1>Segments</h1>
-      <h4>Analyse a subset of your beneficiaries</h4>
+      <h1>{t("segment.title")}</h1>
+      <h4>{t("segment.subtitle")}</h4>
     </Hero>
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/tags.png"
-        title="Introducing tags"
+        title={t("segment.tags.title")}
         desc={(
           <p>
-            Understand your impact for a specific location, project or demographic using tags. Tags are free text labels which can be used to segment your data.
+            {t("segment.tags.main")}
           </p>
         )}
         odd={true}
       />
       <DescribedImage
         image="/images/screenshots/record-tags.png"
-        title="Tag your data"
+        title={t("segment.tagging.title")}
         desc={(
           <p>
-            Tags can be assigned to beneficiaries or individual questionnaire responses.
+            {t("segment.tagging.main")}
           </p>
         )}
         odd={false}
@@ -41,14 +43,14 @@ const SegmentPage = ({pageContext}: PageProps) => {
       <DescribedImage
         image="/images/screenshots/report-tags-with-report.png"
         padding={0.5}
-        title="Report on a subset of beneficiaries"
+        title={t("segment.report.title")}
         desc={(
           <>
           <p>
-            Generate reports for a given set of tags. Only questionnaire responses with matching tags will be included in the report.
+            {t("segment.report.main1")}
           </p>
           <p>
-            Interested in knowing the impact of a particular project? Generate a report for that project's tag.
+            {t("segment.report.main2")}
           </p>
           </>
         )}

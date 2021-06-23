@@ -1,44 +1,44 @@
-import { Link } from "gatsby-plugin-react-i18next";
 import * as React from "react";
+import { Link } from "gatsby-plugin-react-i18next";
 import {Menu, IMenuItem} from "./Menu";
 import {Footer, IFooterItem, convertMenuItem} from "./Footer";
 import { Provider } from "react-redux";
 import { store } from "../store";
+import { Helmet } from "react-helmet";
 import "./theme.scss";
 import "./global.less";
-import { Helmet } from "react-helmet";
 
 const menuItems: IMenuItem[] = [
-  {name: "Features", path: "", exact: true, children: [
-      {name: "Questionnaires", path: "/features/questionnaires/", exact: true},
-      {name: "Responses", path: "/features/responses/", exact: true},
-      {name: "Monitor", path: "/features/monitor/", exact: true},
-      {name: "Reporting", path: "/features/reporting/", exact: true},
-      {name: "Segments", path: "/features/segments/", exact: true},
-      {name: "Security", path: "/features/security/", exact: true},
+  {key: "common.pages.features", path: "", exact: true, children: [
+      {key: "common.pages.questionnaires", path: "/features/questionnaires/", exact: true},
+      {key: "common.pages.responses", path: "/features/responses/", exact: true},
+      {key: "common.pages.monitor", path: "/features/monitor/", exact: true},
+      {key: "common.pages.reporting", path: "/features/reporting/", exact: true},
+      {key: "common.pages.segments", path: "/features/segments/", exact: true},
+      {key: "common.pages.security", path: "/features/security/", exact: true},
     ]},
-  {name: "Pricing", path: "/pricing/", exact: true},
-  {name: "FAQ", path: "/faq/", exact: true},
-  {name: "Blog", path: "/blog/", exact: false},
-  {name: "About", path: "/about/", exact: true},
-  {name: "Support", path: "/support/", exact: true, right: true},
+  {key: "common.pages.pricing", path: "/pricing/", exact: true},
+  {key: "common.pages.faq", path: "/faq/", exact: true},
+  {key: "common.pages.blog", path: "/blog/", exact: false},
+  {key: "common.pages.about", path: "/about/", exact: true},
+  {key: "common.pages.support", path: "/support/", exact: true, right: true},
 ];
 
 const footerItems: IFooterItem[] = [
-  convertMenuItem(menuItems, "Features"),
-  {name: "Product", path: "", children: [
-    {name: "Signup", path: "/signup/"},
-    convertMenuItem(menuItems, "Pricing"),
-    convertMenuItem(menuItems, "FAQ"),
-    convertMenuItem(menuItems, "Support"),
-    {name: "Terms of Use", path: "/terms/"},
+  convertMenuItem(menuItems, "common.pages.features"),
+  {key: "common.pages.product", path: "", children: [
+    {key: "common.pages.signup", path: "/signup/"},
+    convertMenuItem(menuItems, "common.pages.pricing"),
+    convertMenuItem(menuItems, "common.pages.faq"),
+    convertMenuItem(menuItems, "common.pages.support"),
+    {key: "common.pages.terms", path: "/terms/"},
   ]},
-  {name: "Company", path: "", children: [
-    convertMenuItem(menuItems, "About"),
-    convertMenuItem(menuItems, "Blog"),
-    {name: "Press", path: "/press/"},
-    {name: "Privacy", path: "/privacy/"},
-    {name: "Cookies", path: "/cookie/"},
+  {key: "common.pages.company", path: "", children: [
+    convertMenuItem(menuItems, "common.pages.about"),
+    convertMenuItem(menuItems, "common.pages.blog"),
+    {key: "common.pages.press", path: "/press/"},
+    {key: "common.pages.privacy", path: "/privacy/"},
+    {key: "common.pages.cookies", path: "/cookie/"},
   ]},
 ];
 
@@ -51,8 +51,6 @@ export interface LayoutProps {
 
 const Layout = (props: LayoutProps & {signup?: boolean}) => {
   const { pathname } = props.location;
-  const isHome = pathname === "/";
-
   return (
     <Provider store={store}>
       <div>

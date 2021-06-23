@@ -8,7 +8,7 @@ import Logo from "../Logo";
 import "./style.less";
 
 export interface IMenuItem {
-  name: string;
+  key: string;
   path: string;
   exact: boolean;
   children?: IMenuItem[];
@@ -29,19 +29,20 @@ const isActive = (exact: boolean, itemPath: string, pathname: string): boolean =
   (exact) ? pathname === itemPath : pathname.startsWith(itemPath);
 
 const MenuItem = ({item, pathname}: IRenderItemProp) => {
+  const {t} = useTranslation();
   if (item.children) {
     const active = item.children.reduce((a, c) => {
       return a || isActive(c.exact, c.path, pathname);
     }, false);
     return (
-      <NavDropdown title={item.name} id={item.name} key={item.path} active={active}>
+      <NavDropdown title={t(item.key)} id={item.key} key={item.path} active={active}>
         {item.children.map((i) =>
-          <NavDropdown.Item as={Link} to={i.path} key={i.path} active={isActive(i.exact, i.path, pathname)}>{i.name}</NavDropdown.Item>,
+          <NavDropdown.Item as={Link} to={i.path} key={i.path} active={isActive(i.exact, i.path, pathname)}>{t(i.key)}</NavDropdown.Item>,
         )}
       </NavDropdown>
     );
   } else {
-    return <Nav.Link as={Link} to={item.path} key={item.path} active={isActive(item.exact, item.path, pathname)}>{item.name}</Nav.Link>;
+    return <Nav.Link as={Link} to={item.path} key={item.path} active={isActive(item.exact, item.path, pathname)}>{t(item.key)}</Nav.Link>;
   }
 };
 

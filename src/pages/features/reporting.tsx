@@ -4,28 +4,29 @@ import DescribedImage from "../../components/DescribedImage";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
-import { Link } from "gatsby-plugin-react-i18next";
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
 
 const ReportingPage = ({pageContext}: PageProps) => {
+  const {t} = useTranslation();
   return (
     <>
     <SEO
-      title="Reporting"
-      description="Generate reports showing the impact your organisation had on your beneficiaries. Reports can be generated covering all of your beneficiaries or just a subset."
+      title={t("reporting.title")}
+      description={t("reporting.description")}
       context={pageContext}
     />
     <Hero>
-      <h1>Reporting</h1>
-      <h4>Produce visualisations to demonstrate your impact</h4>
+      <h1>{t("reporting.title")}</h1>
+      <h4>{t("reporting.subtitle")}</h4>
     </Hero>
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/report.png"
         padding={1}
-        title="Visualise your impact"
+        title={t("reporting.visualise.title")}
         desc={(
           <p>
-            View the average distance travelled by your beneficiaries, as a result of your intervention. Download visualisations to include in your impact reports.
+            {t("reporting.visualise.main")}
           </p>
         )}
         odd={true}
@@ -33,20 +34,25 @@ const ReportingPage = ({pageContext}: PageProps) => {
       <DescribedImage
         image="/images/screenshots/report-tags.png"
         padding={1}
-        title="Report on a subset of beneficiaries"
+        title={t("reporting.segment.title")}
         desc={(
           <p>
-            Generate reports for a particular project, location or demographic using tags. See the <Link to={"/features/segments"}>segments</Link> feature page for more information.
+            <Trans
+              i18nKey="reporting.segment.main"
+              components={{
+                sLink: <Link to={"/features/segments"} />,
+              }}
+            />
           </p>
         )}
         odd={false}
       />
       <DescribedImage
         image="/images/screenshots/report-export.png"
-        title="Export the report's data"
+        title={t("reporting.export.title")}
         desc={(
           <p>
-            The data used to produce the report can be exported to Excel for backup, verification or custom analysis.
+            {t("reporting.export.main")}
           </p>
         )}
         odd={true}

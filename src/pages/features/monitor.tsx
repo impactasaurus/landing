@@ -4,21 +4,23 @@ import DescribedImage from "../../components/DescribedImage";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../../components/Hero";
 import SEO from "../../components/SEO/SEO";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const JourneyPage = ({pageContext}: PageProps) => {
-  const intro = "Your beneficiaries go through a journey with your support. Visualise their journey by collecting questionnaire responses throughout your intervention.";
+  const {t} = useTranslation();
+  const intro = t("monitor.description");
   return (
     <>
-    <SEO title="Monitor" description={intro} context={pageContext}/>
+    <SEO title={t("monitor.title")} description={intro} context={pageContext}/>
     <Hero>
-      <h1>Monitor</h1>
-      <h4>Tailor your service to fit your beneficiary's journey</h4>
+      <h1>{t("monitor.title")}</h1>
+      <h4>{t("monitor.subtitle")}</h4>
     </Hero>
     <Container className="slanted">
       <DescribedImage
         image="/images/screenshots/impactasaurus-graph.png"
         padding={1}
-        title="Your beneficiary's journey"
+        title={t("monitor.journey.title")}
         desc={(
           <p>{intro}</p>
         )}
@@ -27,10 +29,10 @@ const JourneyPage = ({pageContext}: PageProps) => {
       <DescribedImage
       image="/images/screenshots/table.png"
       padding={1}
-      title="Tailor your service"
+      title={t("monitor.tailor.title")}
       desc={(
         <p>
-          Tailor the service you provide based on an individual's journey. As the saying goes, "If you can't measure it, you can't improve it".
+          {t("monitor.tailor.main")}
         </p>
       )}
       odd={false}
@@ -38,10 +40,10 @@ const JourneyPage = ({pageContext}: PageProps) => {
       <DescribedImage
       image="/images/screenshots/activity-page.png"
       padding={1}
-      title="Your organisation's pulse"
+      title={t("monitor.pulse.title")}
       desc={(
         <p>
-          The activity feed shows each questionnaire response as it is recorded, across your entire organisation; allowing you to monitor your service in real time.
+          {t("monitor.pulse.main")}
         </p>
       )}
       odd={true}
