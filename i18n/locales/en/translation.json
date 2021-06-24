@@ -175,5 +175,110 @@
       "title": "How we protect your account",
       "main": "Impactasaurus offers automatic detection of abnormal or suspicious account activity."
     }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Hope you are sitting down...",
+    "description": "Impactasaurus is free! If this changes in future, we will give at least 2 months notice. We are a non profit organisation.",
+    "header": {
+      "title": "Impactasaurus is free!",
+      "subtitle": "If this changes, we will give you plenty of warning"
+    },
+    "changes": {
+      "title": "What happens if the situation changes?",
+      "p1": "If our donations dry up or our running costs dramatically increase, there is a chance we may need to charge you.",
+      "p2": "If we start charging for Impactasaurus, you will be given at least 2 months warning. If you decide you do not want to pay, we will help you migrate to another solution.",
+      "p3": "Impactasaurus is a non profit organisation, future pricing will only cover the costs of running and developing the software."
+    },
+    "thanks": "A special thanks to the following companies who provide their services for free:",
+    "running": {
+      "title": "How do you afford the running costs?",
+      "main": "Impactasaurus was designed from the start to exploit cloud computing technology, as such, running costs are minimal. Donations cover these costs."
+    },
+    "development": {
+      "title": "How do you afford to develop the software?",
+      "main": "Development of the software is undertaken by volunteers who want to give back to society."
+    },
+    "beta": {
+      "title": "I took part in the beta, how will future pricing apply to me?",
+      "main": "Organisations which took part in the beta will have free access to Impactasaurus forever, as a thanks for your invaluable feedback."
+    }
+  },
+  "questions": {
+    "is-it-right": {
+      "title": "Is Impactasaurus the right tool for me?",
+      "if": "Impactasaurus is the tool for you if:",
+      "1": "You are interested in understanding the impact you are having on your beneficiaries",
+      "2": "Your desired questionnaire is composed of scale questions (e.g. likert scales)",
+      "3": "(For best results) You help beneficiaries over a period of time, and you can collect questionnaire responses before and after your intervention (or more frequently)"
+    },
+    "gdpr": {
+      "title": "Are you GDPR compliant?",
+      "main": "Yes, we take data privacy and security extremely seriously. For more information, see our <sLink>privacy and security feature page</sLink>, <pLink>privacy policy</pLink> and <cLink>cookie policy</cLink>."
+    },
+    "sensitive-data": {
+      "title": "What sensitive data do you hold?",
+      "main": "Impactasaurus was designed to hold very little senstive data. For your staff, we capture email addresses and names. For your beneficiaries, we capture just an ID which should not include personally identifiable information."
+    },
+    "segment": {
+      "title": "Can I produce reports for a specific demographic, project or location?",
+      "main": "Yes, this is possible with the use of tags. <sLink>Click here for more information</sLink>."
+    },
+    "backing": {
+      "title": "Who is behind Impactasaurus?",
+      "main": "Impactasaurus is built by a team of volunteers. It is not backed by any companies. See more at our <aLink>about page</aLink>."
+    },
+    "ben-id": {
+      "title": "How should I refer to my beneficiaries within Impactasaurus?",
+      "1": "If you have a system which stores beneficiary information (e.g. CRM), the beneficiary's ID within that system should also be used in Impactasaurus.",
+      "2": "If you don't have such a system, look for other ways you can assign IDs to your beneficiaries. As an example, many charities keep a spreadsheet with beneficiary information, the row number could be used as the beneficiary ID. Avoid using personal information which could be used to identify the individual, for example phone numbers, postcodes or names."
+    },
+    "new-users": {
+      "title": "Can I add more users to my account?",
+      "main": "Yes, you can add as many users to your organisation as you would like. To invite others, head to the users tab within the settings page. Here you can generate an invite link which should be given to anyone you would like to join your Impactasaurus."
+    },
+    "white-label": {
+      "title": "Can I white label / brand Impactasaurus?",
+      "main": "Yes, you can apply your organisation's logo and color scheme to Impactasaurus. Please contact support to set this up."
+    },
+    "app": {
+      "title": "Is there a mobile app available?",
+      "main": "No, however, the web app works well on mobile phones and tablets."
+    },
+    "permissions": {
+      "title": "Can I restrict what a user can do?",
+      "1": "All users within your organisation have the same permissions. This decision was made to keep the software simple and easy to use.",
+      "2": "If you would like some control over user permissions, please drop us an email. If there is enough demand, we will consider adding this functionality."
+    },
+    "export": {
+      "title": "Can I export my data?",
+      "main": "Impactasaurus offers a range of export functionality within the application. You can export all the data associated with a questionnaire, an individual beneficiary or the data used in a report. When viewing a graph, look for a download icon in the control panel. To export data for a particular questionnaire, head to the settings > data page."
+    },
+    "import": {
+      "title": "How do I import my historic data?",
+      "main": "Due to the variety of data formats, we do not support this within the application currently. If you have a lot of data which needs importing, please email a sample of the data. We are happy to do one off imports from any data format as long as the data is compatible with Impactasaurus."
+    },
+    "delete-ben": {
+      "title": "How can I delete a beneficiary?",
+      "main": "To delete a beneficiary, delete all their saved records. If you have many beneficiaries to remove or they have a lot of records, drop us an email."
+    },
+    "bulk-tag": {
+      "title": "How do I add or edit tags across many records?",
+      "main": "Currently the app allows tags to be edited for one record at a time. It can be time consuming to make sweeping changes to your tags. We are working on making this easier within the app, but until then, please email and explain how you would like your tags adjusted."
+    },
+    "password-reset": {
+      "title": "I tried to reset my password but never received an email",
+      "main": "Please try checking your junk email, the password reset email often finds its way there. If the email isn't in your junk, please contact us, we would be happy to reset your password and explore why the email wasn't reaching you."
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Answers to some common questions"
+  },
+  "support": {
+    "title": "Support",
+    "subtitle": "We are here to help",
+    "description": "We are here to help, if you have a question or need help, please get in contact",
+    "email": "if you have a question, feature suggestion or need help, please email:"
   }
 }
