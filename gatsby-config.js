@@ -91,6 +91,7 @@ module.exports = {
         exclude: ['/draft/blog/*']
       }
     },
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
