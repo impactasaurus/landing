@@ -280,5 +280,28 @@
     "subtitle": "We are here to help",
     "description": "We are here to help, if you have a question or need help, please get in contact",
     "email": "if you have a question, feature suggestion or need help, please email:"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Our vision is for all organisations, benefiting society, to understand their social impact, allowing them to demonstrate their value to stakeholders and drive improvements to their services",
+    "subtitle": "All organisations, benefiting society, should understand their social impact",
+    "origin": {
+      "title": "Origin",
+      "intro": "In 2016, <aldLink>ALD Life</aldLink> created a project on <scLink>Social Coder</scLink> requesting a custom outcome monitoring and reporting solution. ALD found that the commercial offerings were:",
+      "expensive": "too expensive",
+      "crm": "only offered to users of a specific CRM system",
+      "config": "not configurable enough",
+      "complicated": "too complicated",
+      "end": "It became apparent that ALD were not alone, other charities were struggling to find the right tools for their impact needs. Impactasaurus was founded in 2017 to meet this need."
+    },
+    "vision": {
+      "title": "Vision",
+      "end": "To achieve this vision, we are creating <strong>easy to use</strong> and <strong>inexpensive</strong> software, to help small and medium size charities measure and understand their social impact."
+    },
+    "team": {
+      "title": "Team",
+      "team": "A team of volunteers help bring Impactasaurus' vision to life. From programming to marketing, many very talented people have given up their time to help. We are truly grateful for their support.",
+      "dan": "Dan Reynolds, the founder of Impactasaurus, is new to the charity sector, having previously worked in software consultancy. By exploiting his software skills, Dan hopes to help charities help others."
+    }
   }
 }
