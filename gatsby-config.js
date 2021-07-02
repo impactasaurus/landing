@@ -83,12 +83,6 @@ module.exports = {
     `gatsby-plugin-less`,
     `gatsby-plugin-sass`,
 
-    // This plugin generates a service worker and AppShell
-    // html file so the site works offline and is otherwise
-    // resistant to bad networks. Works with almost any
-    // site!
-    `gatsby-plugin-offline`,
-
     // Crawler support
     'gatsby-plugin-robots-txt',
     {
@@ -97,6 +91,7 @@ module.exports = {
         exclude: ['/draft/blog/*']
       }
     },
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
