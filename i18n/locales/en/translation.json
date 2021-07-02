@@ -303,5 +303,32 @@
       "team": "A team of volunteers help bring Impactasaurus' vision to life. From programming to marketing, many very talented people have given up their time to help. We are truly grateful for their support.",
       "dan": "Dan Reynolds, the founder of Impactasaurus, is new to the charity sector, having previously worked in software consultancy. By exploiting his software skills, Dan hopes to help charities help others."
     }
+  },
+  "signup": {
+    "title": "Signup",
+    "subtitle": "In two minutes, you will be measuring your impact",
+    "cta": "Let's go!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "confirm": "Confirm Email",
+      "password": "Password",
+      "org": "Organisation's Name",
+      "existingOrg": "If your organisation already has an account with Impactasaurus, please request an invite from your colleagues",
+      "legal": "I agree to the <tLink>Terms of Use</tLink>, <pLink>Privacy Policy</pLink> and <cLink>Cookie Policy</cLink>",
+      "button": "Get started"
+    },
+    "errors": {
+      "mustAccept": "To use Impactasaurus you must accept the terms of use and privacy policy",
+      "nameNeeded": "Please provide your name",
+      "emailNeeded": "Please provide your email address",
+      "invalidEmail": "Your email does not appear to be valid",
+      "emailMismatch": "The email addresses don't match",
+      "passwordNeeded": "Please provide a password",
+      "passwordLength": "Passwords should be at least 6 characters long",
+      "orgNameNeeded": "Please provide your organisation's name",
+      "emailAlreadyExists": "User with email address {{email}} already exists",
+      "signupFailed": "Signup failed. Please refresh and try again, if that doesn't work, please drop us an email at support@impactasaurus.org"
+    }
   }
 }
