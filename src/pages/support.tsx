@@ -6,24 +6,26 @@ import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 import {Questions} from "./faq";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const SupportPage = ({pageContext}: PageProps) => {
-  const qs = Questions.filter((q) => q.support);
+  const {t} = useTranslation();
+  const qs = Questions(t).filter((q) => q.support);
   return (
     <>
     <SEO
-      title="Support"
-      description="We are here to help, if you have a question or need help, please get in contact"
+      title={t("support.title")}
+      description={t("support.description")}
       context={pageContext}
     />
     <Hero>
-      <h1>Support</h1>
-      <h4>We are here to help</h4>
+      <h1>{t("support.title")}</h1>
+      <h4>{t("support.subtitle")}</h4>
     </Hero>
     <Container className="slanted">
       <Row>
         <Col>
-          <h4>if you have a question, feature suggestion or need help, please email:</h4>
+          <h4>{t("support.email")}</h4>
         </Col>
       </Row>
       <Row className="header">

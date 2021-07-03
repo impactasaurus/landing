@@ -5,49 +5,50 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const PricingPage = ({pageContext}: PageProps) => {
+  const {t} = useTranslation();
   return (
     <>
     <SEO
-      title="Pricing"
-      description="Impactasaurus is free! If this changes in future, we will give at least 2 months notice. We are a non profit organisation."
+      title={t("pricing.title")}
+      description={t("pricing.description")}
       context={pageContext}
     />
     <Hero>
-      <h1>Pricing</h1>
-      <h4>Hope you are sitting down...</h4>
+      <h1>{t("pricing.title")}</h1>
+      <h4>{t("pricing.subtitle")}</h4>
     </Hero>
     <Container className="slanted">
       <Row className="header">
         <Col>
-          <h2>Impactasaurus is free!</h2>
-          <h4>If this changes, we will give you plenty of warning</h4>
+          <h2>{t("pricing.header.title")}</h2>
+          <h4>{t("pricing.header.subtitle")}</h4>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h5>What happens if the situation changes?</h5>
+          <h5>{t("pricing.changes.title")}</h5>
           <p>
-            If our donations dry up or our running costs dramatically increase, there is a chance we may need to charge you.
+            {t("pricing.changes.p1")}
           </p>
           <p>
-            If we start charging for Impactasaurus, you will be given at least 2 months warning.
-            If you decide you do not want to pay, we will help you migrate to another solution.
+            {t("pricing.changes.p2")}
           </p>
           <p>
-            Impactasaurus is a non profit organisation, future pricing will only cover the costs of running and developing the software.
+            {t("pricing.changes.p3")}
           </p>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h5>How do you afford the running costs?</h5>
+          <h5>{t("pricing.running.title")}</h5>
           <p>
-            Impactasaurus was designed from the start to exploit cloud computing technology, as such, running costs are minimal. Donations cover these costs.
+            {t("pricing.running.main")}
           </p>
           <p>
-            A special thanks to the following companies who provide their services for free:
+            {t("pricing.thanks")}
           </p>
           <p style={{display: "flex", alignItems: "center"}}>
             <a style={{padding: "1em", display: "inline-block"}} href="https://auth0.com/?utm_source=oss&utm_medium=gp&utm_campaign=oss" target="_blank"><img width="150" height="50" alt="JWT Auth for open source projects" src="/images/partners/a0.png"/></a>
@@ -57,12 +58,12 @@ const PricingPage = ({pageContext}: PageProps) => {
       </Row>
       <Row>
         <Col>
-          <h5>How do you afford to develop the software?</h5>
+          <h5>{t("pricing.development.title")}</h5>
           <p>
-            Development of the software is undertaken by volunteers who want to give back to society.
+            {t("pricing.development.main")}
           </p>
           <p>
-            A special thanks to the following companies who provide their tools and services for free:
+            {t("pricing.thanks")}
           </p>
           <p style={{display: "flex", alignItems: "center"}}>
             <a style={{padding: "1em", display: "inline-block"}} href="https://github.com/" target="_blank"><img width="80" height="18" alt="Development platform - Github" src="/images/partners/github.svg" /></a>
@@ -71,9 +72,9 @@ const PricingPage = ({pageContext}: PageProps) => {
       </Row>
       <Row>
         <Col>
-          <h5>I took part in the beta, how will future pricing apply to me?</h5>
+          <h5>{t("pricing.beta.title")}</h5>
           <p>
-            Organisations which took part in the beta will have free access to Impactasaurus forever, as a thanks for your invaluable feedback.
+            {t("pricing.beta.main")}
           </p>
         </Col>
       </Row>

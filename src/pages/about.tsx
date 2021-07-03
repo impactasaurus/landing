@@ -5,58 +5,61 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 
 const AboutPage = ({ pageContext }: PageProps) => {
-  const vision = "Our vision is for all organisations, benefiting society, to understand their social impact, allowing them to demonstrate their value to stakeholders and drive improvements to their services";
+  const {t} = useTranslation();
+  const vision = t("about.description");
   return (
     <>
-    <SEO title="About Us" description={vision} context={pageContext} />
+    <SEO title={t("about.title")} description={vision} context={pageContext} />
     <Hero>
-      <h1>About Us</h1>
-      <h4>All organisations, benefiting society, should understand their social impact</h4>
+      <h1>{t("about.title")}</h1>
+      <h4>{t("about.subtitle")}</h4>
     </Hero>
     <Container className="slanted">
       <Row>
         <Col>
-          <h3>Origin</h3>
+          <h3>{t("about.origin.title")}</h3>
           <p>
-            In 2016, <a href="https://aldlife.org">ALD Life</a> created a project on <a href="https://socialcoder.org">Social Coder</a> requesting a custom outcome monitoring and reporting solution.
-            ALD found that the commercial offerings were:
+            <Trans
+              i18nKey="about.origin.intro"
+              components={{
+                aldLink: <a href="https://aldlife.org"/>,
+                scLink: <a href="https://socialcoder.org"/>,
+              }}
+            />
           </p>
           <ul>
-            <li>too expensive</li>
-            <li>only offered to users of a specific CRM system</li>
-            <li>not configurable enough</li>
-            <li>too complicated</li>
+            <li>{t("about.origin.expensive")}</li>
+            <li>{t("about.origin.crm")}</li>
+            <li>{t("about.origin.config")}</li>
+            <li>{t("about.origin.complicated")}</li>
           </ul>
           <p>
-            It became apparent that ALD were not alone, other charities were struggling to find the right tools for their impact needs.
-            Impactasaurus was founded in 2017 to meet this need.
+            {t("about.origin.end")}
           </p>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h3>Vision</h3>
+          <h3>{t("about.vision.title")}</h3>
           <p>
             {vision}.
           </p>
           <p>
-            To achieve this vision, we are creating <b>easy to use</b> and <b>inexpensive</b> software, to help small and medium size charities measure and understand their social impact.
+            <Trans i18nKey="about.vision.end"/>
           </p>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h3>Team</h3>
+          <h3>{t("about.team.title")}</h3>
           <p>
-            A team of volunteers help bring Impactasaurus' vision to life.
-            From programming to marketing, many very talented people have given up their time to help.
-            We are truly grateful for their support.
+            {t("about.team.team")}
           </p>
           <p>
-            Dan Reynolds, the founder of Impactasaurus, is new to the charity sector, having previously worked in software consultancy.
-            By exploiting his software skills, Dan hopes to help charities help others.
+            {t("about.team.dan")}
           </p>
         </Col>
       </Row>

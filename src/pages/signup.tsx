@@ -7,8 +7,8 @@ import SignupForm, {IFormOutput} from "../components/SignupForm";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import {Questions} from "./faq";
-
 import "whatwg-fetch";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const sendToApp = () => {
   window.location.href = "http://app.impactasaurus.org";
@@ -58,17 +58,20 @@ const onSubmit = (v: IFormOutput) => {
 };
 
 const SignupPage = ({pageContext}: PageProps) => {
+  const {t} = useTranslation();
+  const title = t("signup.title");
+  const subtitle = t("signup.subtitle");
   return (
     <>
-    <SEO title="Signup" context={pageContext}/>
+    <SEO title={title} description={subtitle} context={pageContext}/>
     <Hero>
-      <h1>Signup</h1>
-      <h4>In two minutes, you will be measuring your impact</h4>
+      <h1>{title}</h1>
+      <h4>{subtitle}</h4>
     </Hero>
     <Container className="slanted">
       <Row>
         <Col md={{span: 12, offset: 0}} lg={{span: 10, offset: 1}} xl={{span: 8, offset: 2}}>
-          {Questions.filter((q) => q.title.includes("tool for me")).map((q) => (
+          {Questions(t).filter((q) => q.id === "is-it-right").map((q) => (
             <div key={q.id}>
               <h4>{q.title}</h4>
               {q.main}
@@ -79,8 +82,8 @@ const SignupPage = ({pageContext}: PageProps) => {
       <Row>
         <Col md={{span: 10, offset: 1}} lg={{span: 8, offset: 2}} xl={{span: 6, offset: 3}}>
           <br />
-          <h3>Let's go!</h3>
-          <SignupForm onFormSubmit={onSubmit}/>
+          <h3>{t("signup.cta")}</h3>
+          <SignupForm onFormSubmit={onSubmit} t={t}/>
         </Col>
       </Row>
     </Container>

@@ -6,7 +6,7 @@ import * as EmailValidator from "email-validator";
 import Button from "react-bootstrap/lib/Button";
 import {faExclamation, faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { Link } from "gatsby-plugin-react-i18next";
+import { Link, Trans } from "gatsby-plugin-react-i18next";
 import "./style.less";
 
 export interface IFormOutput {
@@ -20,6 +20,7 @@ export interface IFormOutput {
 
 interface IProps {
   onFormSubmit(v: IFormOutput): Promise<void>;
+  t: (s: string, o?: any) => string;
 }
 
 const FormControl = ({name, label, type = "text", touched, error, handleChange, handleBlur, message}) => (
@@ -48,26 +49,38 @@ const InnerForm = (props: InjectedFormikProps<IProps, IFormOutput>) => {
     handleBlur,
     handleSubmit,
     error,
+    t,
   } = props;
 
   const defaultProps = {
     handleBlur,
     handleChange,
   };
-  const termsLabel = <label>I agree to the <Link to="/terms/">Terms of Use</Link>, <Link to="/privacy/">Privacy Policy</Link> and <Link to="/cookie/">Cookie Policy</Link></label>;
+  const termsLabel = (
+    <label>
+      <Trans
+        i18nKey="signup.form.legal"
+        components={{
+          tLink: <Link to="/terms/" />,
+          pLink: <Link to="/privacy/" />,
+          cLink: <Link to="/cookie/" />,
+        }}
+      />
+    </label>
+  );
 
   return (
     <Form noValidate={true} onSubmit={handleSubmit} id="signup-form">
-      <FormControl name="name" label="Name" error={errors.name} touched={touched.name} {...defaultProps} />
-      <FormControl name="email" label="Email" error={errors.email} touched={touched.email} {...defaultProps} />
-      <FormControl name="emailCopy" label="Confirm Email" error={errors.emailCopy} touched={touched.emailCopy} {...defaultProps} />
-      <FormControl name="password" label="Password" type="password" error={errors.password} touched={touched.password} {...defaultProps} />
+      <FormControl name="name" label={t("signup.form.name")} error={errors.name} touched={touched.name} {...defaultProps} />
+      <FormControl name="email" label={t("signup.form.email")} error={errors.email} touched={touched.email} {...defaultProps} />
+      <FormControl name="emailCopy" label={t("signup.form.confirm")} error={errors.emailCopy} touched={touched.emailCopy} {...defaultProps} />
+      <FormControl name="password" label={t("signup.form.password")} type="password" error={errors.password} touched={touched.password} {...defaultProps} />
       <FormControl
         name="organisation"
-        label="Organisation's Name"
+        label={t("signup.form.org")}
         error={errors.organisation}
         touched={touched.organisation}
-        message="If your organisation already has an account with Impactasaurus, please request an invite from your colleagues"
+        message={t("signup.form.existingOrg")}
         {...defaultProps}
       />
       <Form.Group>
@@ -81,7 +94,7 @@ const InnerForm = (props: InjectedFormikProps<IProps, IFormOutput>) => {
       </Form.Group>
       <Button style={{width: "100%"}} type="submit" disabled={!isValid || isSubmitting}>
         {isSubmitting && <FontAwesomeIcon icon={faSpinner} spin={true} style={{marginRight: "0.2em", fontSize: "0.8em"}}/> }
-        Get Started
+        {t("signup.form.button")}
       </Button>
       {error && <span style={{color: "red"}}><FontAwesomeIcon icon={faExclamation} style={{marginRight: "0.5em", marginLeft: "0.1em", marginTop: "1em"}}/>{error}</span>}
     </Form>
@@ -90,34 +103,36 @@ const InnerForm = (props: InjectedFormikProps<IProps, IFormOutput>) => {
 
 const SignupForm = withFormik<IProps, IFormOutput>({
   validate: (values: IFormOutput, p: IProps) => {
+    const {t} = p;
     const errors: FormikErrors<IFormOutput> = {};
     if (values.policyAcceptance !== true) {
-      errors.policyAcceptance = "To use Impactasaurus you must accept the terms of use and privacy policy" as any;
+      errors.policyAcceptance = t("signup.errors.mustAccept") as any;
     }
     if (!values.name || values.name.length === 0) {
-      errors.name = "Please provide your name";
+      errors.name = t("signup.errors.nameNeeded");
     }
     if (!values.email || values.email.length === 0) {
-      errors.email = "Please provide your email address";
+      errors.email = t("signup.errors.emailNeeded");
     }
     if (values.email && !EmailValidator.validate(values.email)) {
-      errors.email = "Your email does not appear to be valid";
+      errors.email = t("signup.errors.invalidEmail");
     }
     if (values.email !== values.emailCopy) {
-      errors.emailCopy = "The email addresses don't match";
+      errors.emailCopy = t("signup.errors.emailMismatch");
     }
     if (!values.password || values.password.length === 0) {
-      errors.password = "Please provide a password";
+      errors.password = t("signup.errors.passwordNeeded");
     }
     if (values.password && values.password.length < 6) {
-      errors.password = "Passwords should be at least 6 characters long";
+      errors.password = t("signup.errors.passwordLength");
     }
     if (!values.organisation || values.organisation.length === 0) {
-      errors.organisation = "Please provide your organisation\'s name";
+      errors.organisation = t("signup.errors.orgNameNeeded");
     }
     return errors;
   },
   handleSubmit: (v: FormikValues, formikBag: FormikBag<IProps, IFormOutput>): void => {
+    const {t} = formikBag.props;
     formikBag.setError(undefined);
     formikBag.setSubmitting(true);
     formikBag.props.onFormSubmit(v as IFormOutput)
@@ -125,12 +140,12 @@ const SignupForm = withFormik<IProps, IFormOutput>({
         formikBag.setSubmitting(false);
         console.error(e);
         if (e.message.includes("already")) {
-          formikBag.setError(`User with email address ${v.email} already exists`);
+          formikBag.setError(t("signup.errors.emailAlreadyExists", {email: v.email}));
         } else {
           if (Sentry) {
             Sentry.captureMessage(e.message);
           }
-          formikBag.setError(`Signup failed. Please refresh and try again, if that doesn't work, please drop us an email at support@impactasaurus.org`);
+          formikBag.setError(t("signup.errors.signupFailed"));
         }
       });
   },

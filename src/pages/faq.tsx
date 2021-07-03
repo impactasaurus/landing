@@ -5,186 +5,184 @@ import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
-import { Link } from "gatsby-plugin-react-i18next";
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
 
 interface IQuestion {
+  id: string;
   title: string;
   main: JSX.Element;
-  id: string;
   sales?: boolean;
   support?: boolean;
 }
 
-export const Questions: IQuestion[] = [{
-  title: "Is Impactasaurus the right tool for me?",
+export const Questions = (t: (s: string) => string): IQuestion[] => [{
+  title: t("questions.is-it-right.title"),
   main: (
     <>
     <p>
-      Impactasaurus is the tool for you if:
+      {t("questions.is-it-right.if")}
     </p>
     <ul>
-      <li>You are interested in understanding the impact you are having on your beneficiaries</li>
-      <li>Your desired questionnaire is composed of scale questions (e.g. likert scales)</li>
-      <li><i>(For best results)</i> You help beneficiaries over a period of time, and you can collect questionnaire responses before and after your intervention (or more frequently)</li>
+      <li>{t("questions.is-it-right.1")}</li>
+      <li>{t("questions.is-it-right.2")}</li>
+      <li>{t("questions.is-it-right.3")}</li>
     </ul>
     </>
   ),
   id: "is-it-right",
   sales: true,
 }, {
-  title: "Are you GDPR compliant?",
+  title: t("questions.gdpr.title"),
   main: (
     <p>
-      Yes, we take data privacy and security extremely seriously.
-      For more information, see our <Link to="/features/security/">privacy and security feature page</Link>, <Link to="/privacy/">privacy policy</Link> and <Link to="/cookie/">cookie policy</Link>.
+      <Trans
+        i18nKey="questions.gdpr.main"
+        components={{
+          sLink: <Link to="/features/security/" />,
+          pLink: <Link to="/privacy/" />,
+          cLink: <Link to="/cookie/" />,
+        }}
+      />
     </p>
   ),
   id: "gdpr",
   sales: true,
 }, {
-  title: "What sensitive data do you hold?",
+  title: t("questions.sensitive-data.title"),
   main: (
     <p>
-      Impactasaurus was designed to hold very little senstive data.
-      For your staff, we capture email addresses and names.
-      For your beneficiaries, we capture just an ID which should not include personally identifiable information.
+      {t("questions.sensitive-data.main")}
     </p>
   ),
   id: "sensitive-data",
   sales: true,
 }, {
-  title: "Can I produce reports for a specific demographic, project or location?",
+  title: t("questions.segment.title"),
   main: (
     <p>
-      Yes, this is possible with the use of tags. <Link to="/features/segments/">Click here for more information</Link>.
+      <Trans
+        i18nKey="questions.segment.main"
+        components={{
+          sLink: <Link to="/features/segments/" />,
+        }}
+      />
     </p>
   ),
   id: "segment",
   sales: true,
 }, {
-  title: "Who is behind Impactasaurus?",
+  title: t("questions.backing.title"),
   main: (
-    <>
-    <p>Impactasaurus is built by a team of volunteers. It is not backed by any companies. See more at our <Link to="/about/">about page</Link>.</p>
-    </>
+    <p>
+      <Trans
+        i18nKey="questions.backing.main"
+        components={{
+          aLink: <Link to="/about/" />,
+        }}
+      />
+    </p>
   ),
   id: "backing",
   sales: true,
 }, {
-  title: "How should I refer to my beneficiaries within Impactasaurus?",
+  title: t("questions.ben-id.title"),
   main: (
     <>
     <p>
-      If you have a system which stores beneficiary information (e.g. CRM), the beneficiary's ID within that system should also be used in Impactasaurus.
+      {t("questions.ben-id.1")}
     </p>
     <p>
-      If you don't have such a system, look for other ways you can assign IDs to your beneficiaries.
-      As an example, many charities keep a spreadsheet with beneficiary information, the row number could be used as the beneficiary ID.
-      Avoid using personal information which could be used to identify the individual, for example phone numbers, postcodes or names.
+      {t("questions.ben-id.2")}
     </p>
     </>
   ),
   id: "ben-id",
   support: true,
 }, {
-  title: "Can I add more users to my account?",
+  title: t("questions.new-users.title"),
   main: (
     <p>
-      Yes, you can add as many users to your organisation as you would like.
-      To invite others, head to the users tab within the settings page.
-      Here you can generate an invite link which should be given to anyone you would like to join your Impactasaurus.
+      {t("questions.new-users.main")}
     </p>
   ),
   id: "new-users",
   support: true,
 }, {
-  title: "Can I white label / brand Impactasaurus?",
+  title: t("questions.white-label.title"),
   main: (
     <p>
-      Yes, you can apply your organisation's logo and color scheme to Impactasaurus.
-      Please <Link to="/support/">contact support</Link> to set this up.
+      {t("questions.white-label.main")}
     </p>
   ),
   id: "white-label",
   sales: true,
   support: true,
 }, {
-  title: "Is there a mobile app available?",
+  title: t("questions.app.title"),
   main: (
     <p>
-      No, however, the web app works well on mobile phones and tablets.
+      {t("questions.app.main")}
     </p>
   ),
   id: "app",
   sales: true,
 }, {
-  title: "Can I restrict what a user can do?",
+  title: t("questions.permissions.title"),
   main: (
     <>
     <p>
-      All users within your organisation have the same permissions.
-      This decision was made to keep the software simple and easy to use.
+      {t("questions.permissions.1")}
     </p>
     <p>
-      If you would like some control over user permissions, <Link to="/support/">please drop us an email</Link>.
-      If there is enough demand, we will consider adding this functionality.
+      {t("questions.permissions.2")}
     </p>
     </>
   ),
   id: "permissions",
   support: true,
 }, {
-  title: "Can I export my data?",
+  title: t("questions.export.title"),
   main: (
     <p>
-      Impactasaurus offers a range of export functionality within the application.
-      You can export all the data associated with a questionnaire, an individual beneficiary or the data used in a report.
-      When viewing a graph, look for a download icon in the control panel.
-      To export data for a particular questionnaire, head to the settings > data page.
+      {t("questions.export.main")}
     </p>
   ),
   id: "export",
   sales: true,
   support: true,
 }, {
-  title: "How do I import my historic data?",
+  title: t("questions.import.title"),
   main: (
     <p>
-      Due to the variety of data formats, we do not support this within the application currently.
-      If you have a lot of data which needs importing, <Link to="/support/">please email</Link> a sample of the data.
-      We are happy to do one off imports from any data format as long as the data is compatible with Impactasaurus.
+      {t("questions.import.main")}
     </p>
   ),
   id: "import",
   support: true,
   sales: true,
 }, {
-  title: "How can I delete a beneficiary?",
+  title: t("questions.delete-ben.title"),
   main: (
     <p>
-      To delete a beneficiary, delete all their saved records.
-      If you have many beneficiaries to remove or they have a lot of records, drop us an email.
+      {t("questions.delete-ben.main")}
     </p>
   ),
   id: "delete-ben",
   support: true,
 }, {
-  title: "How do I add or edit tags across many records?",
+  title: t("questions.bulk-tag.title"),
   main: (
     <p>
-      Currently the app allows tags to be edited for one record at a time.
-      It can be time consuming to make sweeping changes to your tags.
-      We are working on making this easier within the app, but until then, please email and explain how you would like your tags adjusted.
+      {t("questions.bulk-tag.main")}
     </p>
   ),
   id: "bulk-tag",
   support: true,
 }, {
-  title: "I tried to reset my password but never received an email",
+  title: t("questions.password-reset.title"),
   main: (
     <p>
-      Please try checking your junk email, the password reset email often finds its way there.
-      If the email isn't in your junk, please contact us, we would be happy to reset your password and explore why the email wasn't reaching you.
+      {t("questions.password-reset.main")}
     </p>
   ),
   id: "password-reset",
@@ -203,16 +201,17 @@ const Question = ({q}: {q: IQuestion}) => {
 };
 
 const FAQPage = ({pageContext}: PageProps) => {
-  const subtitle = "Answers to some common questions";
+  const {t} = useTranslation();
+  const subtitle = t("faq.subtitle");
   return (
     <>
-    <SEO title="FAQ" description={subtitle} context={pageContext}/>
+    <SEO title={t("faq.title")} description={subtitle} context={pageContext}/>
     <Hero>
-      <h1>FAQ</h1>
+      <h1>{t("faq.title")}</h1>
       <h4>{subtitle}</h4>
     </Hero>
     <Container className="slanted">
-      {Questions.filter((q) => q.sales).map((q) => <Question key={q.id} q={q}/>)}
+      {Questions(t).filter((q) => q.sales).map((q) => <Question key={q.id} q={q}/>)}
     </Container>
     </>
   );
