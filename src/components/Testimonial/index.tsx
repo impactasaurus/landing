@@ -59,7 +59,7 @@ export default ({name, quote, image, url}: IProps) => {
         {linkWrapper(imgElement)}
       </Col>
       <Col md={{span: 6, offset: 1}}>
-        {linkWrapper(<h5>{name}</h5>)}
+        {linkWrapper(<h5 className="no-translation">{name}</h5>)}
         <p>{quote}</p>
       </Col>
     </Row>

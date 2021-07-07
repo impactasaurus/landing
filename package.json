@@ -7,7 +7,7 @@
   "scripts": {
     "start": "gatsby develop",
     "develop": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build && node ./i18n/indexablePages.js",
     "lint": "npm run lint:ts && npm run lint:md && npm run lint:js && npm run lint:less && npm run lint:scss",
     "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
     "lint:md": "remark .",
@@ -21,7 +21,7 @@
     "precommit": "lint-staged",
     "i18n-push": "crowdin push --config i18n/crowdin.yml",
     "i18n-pull": "crowdin pull --config i18n/crowdin.yml",
-    "posti18n-pull": "node ./i18n/generate.js"
+    "posti18n-pull": "node ./i18n/languages.js"
   },
   "dependencies": {
     "@crowdin/cli": "3.5.3",
@@ -95,6 +95,7 @@
     "eslint-config-xo-react": "0.11.1",
     "eslint-plugin-react": "6.10.3",
     "flat": "^2.0.1",
+    "html-to-text": "^8.0.0",
     "husky": "0.13.3",
     "jest": "19.0.2",
     "lint-staged": "3.4.0",
@@ -106,6 +107,7 @@
     "remark-cli": "^3.0.1",
     "remark-preset-lint-recommended": "^2.0.0",
     "storybook-readme": "^3.0.6",
+    "string-similarity": "^4.0.4",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "ts-jest": "19.0.8",

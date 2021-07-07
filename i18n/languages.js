@@ -1,8 +1,12 @@
-// This node script is ran during CI, it generates languages.json and indexableLanguages.json
+// This node script is ran during CI
+// it generates languages.json and substitutes missing keys with english
 /* eslint-disable */
 
 const fs = require("fs");
 const path = require("path");
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+
 
 const getAllFiles = function (dirPath, arrayOfFiles = []) {
   const files = fs.readdirSync(dirPath);
@@ -36,16 +40,6 @@ const flatten = function (obj, prefix, current) {
     }
   }
   return current
-};
-
-const isSuitableCoverage = function (langFile, sourceFile) {
-  if(langFile === sourceFile) {
-    return true;
-  }
-  const src = flatten(loadFile(sourceFile));
-  const lang = flatten(loadFile(langFile));
-  const coverage = Object.keys(lang).length / Object.keys(src).length;
-  return coverage >= 1 && false; // && false whilst extracting all the strings
 };
 
 const notEmpty = function (file) {
@@ -87,7 +81,7 @@ const substituteMissing = function (file, srcFile) {
 
 const files = getAllFiles("./i18n/locales");
 
-const all = files.filter((f) => f.includes("translation.json")).filter(notEmpty);
+const all = files.filter((f) => f.includes("translation.json")).filter(notEmpty).filter(hasCommonStringsTranslated);
 const allCodes = all.map(getCodeFromFilename);
 fs.writeFileSync("./i18n/languages.json", JSON.stringify(allCodes));
 
@@ -97,13 +91,10 @@ if (source.length !== 1) {
   process.exit(2);
 }
 source = source[0];
-const suitableCodes = all.filter((f) => isSuitableCoverage(f, source)).map(getCodeFromFilename);
-fs.writeFileSync("./i18n/indexableLanguages.json", JSON.stringify(suitableCodes));
 
 all.forEach(f => substituteMissing(f, source));
 
 console.log("Languages with some coverage:");
 console.log(allCodes);
-console.log("Languages with suitable coverage:");
-console.log(suitableCodes);
-process.exit(0);
+
+
