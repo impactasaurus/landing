@@ -4,9 +4,6 @@
 
 const fs = require("fs");
 const path = require("path");
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-
 
 const getAllFiles = function (dirPath, arrayOfFiles = []) {
   const files = fs.readdirSync(dirPath);
@@ -47,6 +44,19 @@ const notEmpty = function (file) {
   return Object.keys(contents).length > 0;
 };
 
+const hasCommonStringsTranslated = function (file, source) {
+  const loadCommonTranslations = (f) => {
+    var raw = loadFile(f);
+    var common = raw.common || {};
+    return flatten(common);
+  };
+
+  const lng = loadCommonTranslations(file);
+  const src = loadCommonTranslations(source);
+
+  return Object.keys(lng).length === Object.keys(src).length;
+};
+
 const getCodeFromFilename = function (file) {
   const path = file.replace("/translation.json", "");
   const c = path.split("/");
@@ -81,10 +91,6 @@ const substituteMissing = function (file, srcFile) {
 
 const files = getAllFiles("./i18n/locales");
 
-const all = files.filter((f) => f.includes("translation.json")).filter(notEmpty).filter(hasCommonStringsTranslated);
-const allCodes = all.map(getCodeFromFilename);
-fs.writeFileSync("./i18n/languages.json", JSON.stringify(allCodes));
-
 let source = files.filter((f) => f.includes("/en/translation.json"));
 if (source.length !== 1) {
   console.error("couldn't find source");
@@ -92,9 +98,16 @@ if (source.length !== 1) {
 }
 source = source[0];
 
-all.forEach(f => substituteMissing(f, source));
+const langFiles = files.filter((f) => f.includes("translation.json"))
+  .filter(notEmpty)
+  .filter((f) => hasCommonStringsTranslated(f, source));
 
-console.log("Languages with some coverage:");
-console.log(allCodes);
+langFiles.forEach(f => substituteMissing(f, source));
+
+const codes = langFiles.map(getCodeFromFilename);
+fs.writeFileSync("./i18n/languages.json", JSON.stringify(codes));
+
+console.log("Languages with common coverage:");
+console.log(codes);
 
 

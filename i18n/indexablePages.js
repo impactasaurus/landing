@@ -2,9 +2,6 @@
 // It expects to be ran after a build
 /* eslint-disable */
 
-// This node script is ran during CI, it generates languages.json
-/* eslint-disable */
-
 const fs = require("fs");
 const path = require("path");
 const util = require('util');
@@ -12,7 +9,7 @@ const exec = util.promisify(require('child_process').exec);
 const indexablePages = require("./indexablePages.json");
 const generatedLanguages = require("./languages.json").filter((lng) => lng !== "en");
 const { htmlToText } = require('html-to-text');
-var stringSimilarity = require("string-similarity");
+const cheerio = require('cheerio');
 
 
 const getAllFiles = function (dirPath, arrayOfFiles = []) {
@@ -54,7 +51,10 @@ const textExtractionOptions = {
 
 const loadHTMLText = function (file) {
   const buf = fs.readFileSync(`./public${file}`);
-  return htmlToText(buf.toString(), textExtractionOptions).replace(new RegExp("impactasaurus", "ig"), "");
+  return htmlToText(buf.toString(), textExtractionOptions)
+    .replace(new RegExp("impactasaurus", "ig"), "")
+    .split("\n")
+    .filter(s => s.length > 0);
 };
 
 const isSuitableCoverage = function (langFile, sourceFile) {
@@ -64,12 +64,15 @@ const isSuitableCoverage = function (langFile, sourceFile) {
   const src = loadHTMLText(sourceFile);
   const lang = loadHTMLText(langFile);
   if(langFile.includes("pt")) {
-    console.log(src.split("\n").filter(s => s.length > 0));
+    //console.log(src);
     //console.log(lang);
   }
-  const similarity = stringSimilarity.compareTwoStrings(src, lang);
-  console.log(`${langFile} - ${similarity}`);
-  return similarity < 0.75;
+  if(src.length !== lang.length) {
+    console.error(`paragraph count mismatch - ${langFile}`);
+    process.exit(2);
+  }
+  const notTranslated = src.filter((s, i) => s === lang[i]);
+  return notTranslated.length === 0;
 };
 
 const getCodeFromFilename = function (file) {
@@ -80,10 +83,24 @@ const getCodeFromFilename = function (file) {
   return "en";
 };
 
-const indexableVersions = function (file) {
-  return generatedLanguages
-    .map((lng) => `/${lng}${file}`)
-    .filter((lFile) => isSuitableCoverage(lFile, file));
+const blockCrawlers = function (file) {
+  const path = `./public${file}`;
+  let str = fs.readFileSync(path).toString();
+  if(str.includes('content="noindex"')) {
+    return;
+  }
+  str = str.replace("<head>", '<head><meta name="robots" content="noindex" />');
+  fs.writeFileSync(path, str, "utf8")
+};
+
+const processPage = function (page) {
+  const pages = generatedLanguages
+    .map((lng) => `/${lng}${page}`)
+    .map((f) => ({file: f, index: isSuitableCoverage(f, page)}));
+  pages
+    .filter((o) => !o.index)
+    .forEach((o) => blockCrawlers(o.file));
+  return pages.filter((o) => o.index).map(o => o.file);
 };
 
 async function execute() {
@@ -98,30 +115,11 @@ async function execute() {
     process.exit(1);
   }
 
-  // match source docs to lang
-  const pages = builtHtml.filter((f) => getCodeFromFilename(f) === "en").filter((f) => f.includes("security"));
-  console.log(pages);
-  const pathsToIndex = pages.reduce((a, p) => a.concat(indexableVersions(p)), []);
-  console.log(pathsToIndex);
+  const pages = builtHtml.filter((f) => getCodeFromFilename(f) === "en");
 
-  // for each pair, assess difference
-
-  // for those with adequate difference, add to output
-
-  // compare output to original
-  // if different, write to file and rerun build
-
-
-  /*
-  const suitableCodes = all.filter((f) => isSuitableCoverage(f, source)).map(getCodeFromFilename);
-  fs.writeFileSync("./i18n/indexableLanguages.json", JSON.stringify(suitableCodes));
-
-  all.forEach(f => substituteMissing(f, source));
-
-  console.log("Languages with suitable coverage:");
-  console.log(suitableCodes);
-  process.exit(0);
-  */
+  const blocked = pages.reduce((arr, pg) => arr.concat(processPage(pg)), []);
+  console.log("The following pages will be indexed:")
+  console.log(blocked);
 };
 
 execute();

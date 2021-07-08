@@ -50,7 +50,7 @@ const SEO = ({context, title = null, description = null, image = null, article =
           description: description || defaultDescription,
           image: `${siteUrl}${image || defaultImage}`,
           title: title || defaultTitle,
-          url: `${siteUrl}${context.i18n.path}`,
+          url: `${siteUrl}${context.i18n.path}`, // TODO: missing / for non english
         };
 
         const createUrlWithLang = (lng: string) => {
