@@ -5,11 +5,10 @@
 const fs = require("fs");
 const path = require("path");
 const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const exec = require('child_process').exec;
 const indexablePages = require("./indexablePages.json");
 const generatedLanguages = require("./languages.json").filter((lng) => lng !== "en");
 const { htmlToText } = require('html-to-text');
-const cheerio = require('cheerio');
 
 
 const getAllFiles = function (dirPath, arrayOfFiles = []) {
@@ -63,10 +62,6 @@ const isSuitableCoverage = function (langFile, sourceFile) {
   }
   const src = loadHTMLText(sourceFile);
   const lang = loadHTMLText(langFile);
-  if(langFile.includes("pt")) {
-    //console.log(src);
-    //console.log(lang);
-  }
   if(src.length !== lang.length) {
     console.error(`paragraph count mismatch - ${langFile}`);
     process.exit(2);
@@ -83,24 +78,10 @@ const getCodeFromFilename = function (file) {
   return "en";
 };
 
-const blockCrawlers = function (file) {
-  const path = `./public${file}`;
-  let str = fs.readFileSync(path).toString();
-  if(str.includes('content="noindex"')) {
-    return;
-  }
-  str = str.replace("<head>", '<head><meta name="robots" content="noindex" />');
-  fs.writeFileSync(path, str, "utf8")
-};
-
 const processPage = function (page) {
-  const pages = generatedLanguages
+  return generatedLanguages
     .map((lng) => `/${lng}${page}`)
-    .map((f) => ({file: f, index: isSuitableCoverage(f, page)}));
-  pages
-    .filter((o) => !o.index)
-    .forEach((o) => blockCrawlers(o.file));
-  return pages.filter((o) => o.index).map(o => o.file);
+    .filter((f) => isSuitableCoverage(f, page));
 };
 
 async function execute() {
@@ -116,10 +97,27 @@ async function execute() {
   }
 
   const pages = builtHtml.filter((f) => getCodeFromFilename(f) === "en");
-
-  const blocked = pages.reduce((arr, pg) => arr.concat(processPage(pg)), []);
+  const index = pages
+    .reduce((arr, pg) => arr.concat(processPage(pg)), [])
+    .map((f) => f.replace("index.html", ""));
   console.log("The following pages will be indexed:")
-  console.log(blocked);
+  console.log(index);
+
+  const toWrite = JSON.stringify(index);
+  if(toWrite === JSON.stringify(indexablePages)) {
+    console.log("Build is up to date, no need to rebuild");
+    process.exit(0);
+  }
+
+  fs.writeFileSync("./i18n/indexablePages.json", toWrite, "utf8");
+  console.log("A rebuild is required...")
+  var proc = exec("npm run build");
+  proc.stdout.pipe(process.stdout);
+  proc.stderr.pipe(process.stderr);
+  process.on('exit', (code) => {
+    console.log('Build exited with code ' + code.toString());
+    process.exit(code);
+  })
 };
 
 execute();

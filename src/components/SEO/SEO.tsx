@@ -46,16 +46,16 @@ const SEO = ({context, title = null, description = null, image = null, article =
         },
       }) => {
 
+        const createUrlWithLang = (lng: string) => {
+          const url = `${siteUrl}${lng === context.i18n.defaultLanguage ? "" : `/${lng}`}${context.i18n.originalPath}`;
+          return url.endsWith("/") ? url : `${url}/`;
+        };
+
         const seo = {
           description: description || defaultDescription,
           image: `${siteUrl}${image || defaultImage}`,
           title: title || defaultTitle,
-          url: `${siteUrl}${context.i18n.path}`, // TODO: missing / for non english
-        };
-
-        const createUrlWithLang = (lng: string) => {
-          const url = `${siteUrl}${lng === context.i18n.defaultLanguage ? "" : `/${lng}`}${context.i18n.originalPath}`;
-          return url.endsWith("/") ? url : `${url}/`;
+          url: createUrlWithLang(context.i18n.language),
         };
 
         return (
@@ -63,7 +63,7 @@ const SEO = ({context, title = null, description = null, image = null, article =
             <Helmet title={seo.title}  titleTemplate={titleTemplate}>
               <meta name="description" content={seo.description} />
               <meta name="image" content={seo.image} />
-              {!context.index && <meta name="robots" content="noindex" />}
+              <meta name="robots" content={context.index ? "all" : "noindex"} />
               <html lang={context.i18n.language} />
               <link rel="canonical" href={seo.url} />
               {context.i18n.languages.map((lng) => (
