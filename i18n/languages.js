@@ -79,7 +79,11 @@ const substituteMissing = function (file, srcFile) {
   const findMissing = function (src, dest) {
     return Object.keys(src).filter((k) => !dest[k]);
   };
+  const saveRaw = function(original) {
+    fs.writeFileSync(file.replace("translation.json", "raw.json"), JSON.stringify(original, null, 3));
+  };
   const dest = loadFile(file);
+  saveRaw(dest);
   const source = flatten(loadFile(srcFile));
   const missing = findMissing(source, flatten(dest));
   if (missing.length === 0) {

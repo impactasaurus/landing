@@ -60,6 +60,9 @@ const isSuitableCoverage = function (langFile, sourceFile) {
   if(langFile === sourceFile) {
     return true;
   }
+  const wordCount = (stringArr) => {
+    return stringArr.reduce((ct, s) => ct + s.trim().split(/\s+/).length, 0);
+  };
   const src = loadHTMLText(sourceFile);
   const lang = loadHTMLText(langFile);
   if(src.length !== lang.length) {
@@ -67,7 +70,7 @@ const isSuitableCoverage = function (langFile, sourceFile) {
     process.exit(2);
   }
   const notTranslated = src.filter((s, i) => s === lang[i]);
-  return notTranslated.length === 0;
+  return wordCount(notTranslated) / wordCount(src) < 0.1;
 };
 
 const getCodeFromFilename = function (file) {
@@ -100,17 +103,19 @@ async function execute() {
   const index = pages
     .reduce((arr, pg) => arr.concat(processPage(pg)), [])
     .map((f) => f.replace("index.html", ""));
-  console.log("The following pages will be indexed:")
-  console.log(index);
 
   const toWrite = JSON.stringify(index);
   if(toWrite === JSON.stringify(indexablePages)) {
-    console.log("Build is up to date, no need to rebuild");
+    console.log("Indexable locale pages up to date, no need to rebuild");
     process.exit(0);
   }
 
-  fs.writeFileSync("./i18n/indexablePages.json", toWrite, "utf8");
+  console.log("The following pages will be indexed:")
+  console.log(index);
   console.log("A rebuild is required...")
+
+  fs.writeFileSync("./i18n/indexablePages.json", toWrite, "utf8");
+
   var proc = exec("npm run build");
   proc.stdout.pipe(process.stdout);
   proc.stderr.pipe(process.stderr);
