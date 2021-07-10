@@ -1,7 +1,7 @@
 const path = require('path');
 const slash = require('slash');
 const {kebabCase, uniq, get, compact, times} = require('lodash');
-const indexableLanguages = require('./i18n/indexableLanguages.json');
+const indexablePages = require('./i18n/indexablePages.json');
 
 // Don't forget to update hard code values into:
 // - `templates/blog-page.tsx:23`
@@ -32,15 +32,13 @@ exports.onCreatePage = ({page, actions}) => {
     return;
   }
   const lang = page.context.i18n.language;
-  const indexable = indexableLanguages.indexOf(lang) !== -1;
-
   const {createPage, deletePage} = actions;
   deletePage(page);
   createPage({
     ...page,
     context: {
       ...page.context,
-      index: indexable
+      index: lang === 'en' ? true : indexablePages.includes(page.path)
     }
   });
 };

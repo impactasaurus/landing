@@ -59,7 +59,7 @@ const Layout = (props: LayoutProps & {signup?: boolean}) => {
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         </Helmet>
         <Menu pathname={pathname} items={menuItems} />
-        <div>
+        <div className="main-content">
           {props.children}
         </div>
         <Footer Link={Link} items={footerItems} signup={props.signup}/>

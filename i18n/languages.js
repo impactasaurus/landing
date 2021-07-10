@@ -1,4 +1,5 @@
-// This node script is ran during CI, it generates languages.json and indexableLanguages.json
+// This node script is ran during CI
+// it generates languages.json and substitutes missing keys with english
 /* eslint-disable */
 
 const fs = require("fs");
@@ -38,19 +39,22 @@ const flatten = function (obj, prefix, current) {
   return current
 };
 
-const isSuitableCoverage = function (langFile, sourceFile) {
-  if(langFile === sourceFile) {
-    return true;
-  }
-  const src = flatten(loadFile(sourceFile));
-  const lang = flatten(loadFile(langFile));
-  const coverage = Object.keys(lang).length / Object.keys(src).length;
-  return coverage >= 1 && false; // && false whilst extracting all the strings
-};
-
 const notEmpty = function (file) {
   const contents = flatten(loadFile(file));
   return Object.keys(contents).length > 0;
+};
+
+const hasCommonStringsTranslated = function (file, source) {
+  const loadCommonTranslations = (f) => {
+    var raw = loadFile(f);
+    var common = raw.common || {};
+    return flatten(common);
+  };
+
+  const lng = loadCommonTranslations(file);
+  const src = loadCommonTranslations(source);
+
+  return Object.keys(lng).length === Object.keys(src).length;
 };
 
 const getCodeFromFilename = function (file) {
@@ -75,7 +79,11 @@ const substituteMissing = function (file, srcFile) {
   const findMissing = function (src, dest) {
     return Object.keys(src).filter((k) => !dest[k]);
   };
+  const saveRaw = function(original) {
+    fs.writeFileSync(file.replace("translation.json", "raw.json"), JSON.stringify(original, null, 3));
+  };
   const dest = loadFile(file);
+  saveRaw(dest);
   const source = flatten(loadFile(srcFile));
   const missing = findMissing(source, flatten(dest));
   if (missing.length === 0) {
@@ -87,23 +95,23 @@ const substituteMissing = function (file, srcFile) {
 
 const files = getAllFiles("./i18n/locales");
 
-const all = files.filter((f) => f.includes("translation.json")).filter(notEmpty);
-const allCodes = all.map(getCodeFromFilename);
-fs.writeFileSync("./i18n/languages.json", JSON.stringify(allCodes));
-
 let source = files.filter((f) => f.includes("/en/translation.json"));
 if (source.length !== 1) {
   console.error("couldn't find source");
   process.exit(2);
 }
 source = source[0];
-const suitableCodes = all.filter((f) => isSuitableCoverage(f, source)).map(getCodeFromFilename);
-fs.writeFileSync("./i18n/indexableLanguages.json", JSON.stringify(suitableCodes));
 
-all.forEach(f => substituteMissing(f, source));
+const langFiles = files.filter((f) => f.includes("translation.json"))
+  .filter(notEmpty)
+  .filter((f) => hasCommonStringsTranslated(f, source));
 
-console.log("Languages with some coverage:");
-console.log(allCodes);
-console.log("Languages with suitable coverage:");
-console.log(suitableCodes);
-process.exit(0);
+langFiles.forEach(f => substituteMissing(f, source));
+
+const codes = langFiles.map(getCodeFromFilename);
+fs.writeFileSync("./i18n/languages.json", JSON.stringify(codes));
+
+console.log("Languages with common coverage:");
+console.log(codes);
+
+

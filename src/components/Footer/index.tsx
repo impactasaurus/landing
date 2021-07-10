@@ -52,7 +52,7 @@ export const Footer = ({ items, Link, signup }: IFooterProps) => {
           {items.map((i) => <Column key={i.key} item={i} Link={Link} />)}
         </Row>
         <Row>
-          <span className="copyright">© {(new Date()).getFullYear()} Impactasaurus</span>
+          <span className="copyright no-translation">© {(new Date()).getFullYear()} Impactasaurus</span>
         </Row>
       </Container>
     </footer>
