@@ -62,7 +62,7 @@
     "gatsby-transformer-json": "2.1.6",
     "gatsby-transformer-remark": "2.1.19",
     "gatsby-transformer-sharp": "2.1.10",
-    "graphql-code-generator": "^0.5.2",
+    "graphql-code-generator": "^0.18.2",
     "gray-matter": "^2.1.1",
     "i18next": "^20.3.1",
     "language-name-map": "^0.3.0",
