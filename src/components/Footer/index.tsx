@@ -2,11 +2,12 @@ import * as React from "react";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 import Container from "react-bootstrap/lib/Container";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import {GatsbyLinkProps} from "gatsby-link";
 import {IMenuItem} from "../Menu";
 import Logo from "../Logo";
 import Signup from "../Signup";
+import { getLangNameFromCode } from "language-name-map";
 import "./style.less";
 
 export interface IFooterItem {
@@ -38,13 +39,28 @@ export const Column = ({item, Link}: {item: IFooterItem, Link: any}) => {
 };
 
 export const Footer = ({ items, Link, signup }: IFooterProps) => {
+  const {languages, originalPath} = useI18next();
+  const languageSwitch = (
+    <span id="lang-selector">
+      {languages.map((l) =>
+        <Link className="lang" key={l} to={originalPath} language={l}>
+          {getLangNameFromCode(l).native}
+        </Link>,
+      )}
+    </span>
+  );
   return (
     <footer>
       {signup !== false && <Signup />}
       <Container>
         <Row>
           <Col>
-            {signup !== false && <Logo /> }
+            {signup !== false && (
+              <span id="footer-initial-container">
+                <Logo />
+                {languageSwitch}
+              </span>
+            )}
             <hr width="100%"/>
           </Col>
         </Row>
