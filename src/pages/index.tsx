@@ -4,15 +4,24 @@ import SEO from "../components/SEO";
 import Testimonials from "../components/Testimonials";
 import Steps from "../components/Steps";
 import IndexHero from "../components/IndexHero";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
-const IndexPage = ({pageContext}: PageProps) => (
-  <div>
-    <SEO context={pageContext} />
-    <IndexHero />
-    <Steps />
-    <Testimonials />
-  </div>
-);
+const IndexPage = ({pageContext}: PageProps) => {
+  const {t} = useTranslation();
+
+  return (
+    <div>
+      <SEO
+        context={pageContext}
+        title={t("index.seoTitle")}
+        description={t("index.description")}
+      />
+      <IndexHero />
+      <Steps />
+      <Testimonials />
+    </div>
+  );
+};
 
 export default withLayout(IndexPage);
 

@@ -5,7 +5,7 @@ import Facebook from "./Facebook";
 import { Helmet } from "react-helmet";
 
 interface IProps {
-  title?: string;
+  title: string;
   description?: string;
   image?: string;
   article?: boolean;
@@ -28,7 +28,7 @@ const query = graphql`
   }
   `;
 
-const SEO = ({context, title = null, description = null, image = null, article = false}: IProps) => {
+const SEO = ({context, title, description = null, image = null, article = false}: IProps) => {
 
   return (
     <StaticQuery
