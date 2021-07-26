@@ -60,3 +60,7 @@ jobs:
           invalidation: /
           delete-removed: false
           private: true
+      - name: Notify search engines of change
+        uses: atymic/sitemap-ping-action@master
+        with:
+          sitemap-url: https://impactasaurus.org/sitemap.xml
