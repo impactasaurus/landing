@@ -80,11 +80,11 @@
     "catalogue": {
       "title": "Select from our catalogue",
       "intro": "Unsure what questionnaire to use?",
-      "main": "Benefit from our catalogue of peer reviewed and validated questionnaires taken from the literature. Our questionnaires are also freely available to browse at <soLink>softoutcomes.org</soLink>."
+      "main": "Benefit from our catalogue of peer reviewed and validated questionnaires taken from the scientific literature. Our questionnaires are also freely available to browse at <soLink>softoutcomes.org</soLink>."
     },
     "create": {
       "title": "Create your own",
-      "main": "If our catalogue of questionnaires does not suit, you can create your own questionnaire. Define your own questions and scales easily with our questionnaire creator."
+      "main": "If our catalogue of questionnaires does not suit, you can create your own questionnaire. Define your own scale questions easily with our questionnaire creator."
     },
     "group": {
       "title": "Group questions",
@@ -99,7 +99,7 @@
     "method": {
       "title": "Collect responses however works for you",
       "together": "complete the questionnaire together with your beneficiary",
-      "remote": "send them a link to complete it on their own",
+      "remote": "send a link for your beneficiary to complete remotely",
       "data-entry": "enter answers captured on paper or historically."
     },
     "secure": {
