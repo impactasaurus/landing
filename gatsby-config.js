@@ -8,7 +8,7 @@ module.exports = {
     siteUrl: url,
     description: 'Demonstrate your outcomes and social impact with Impactasaurus. Easy to use, free and only takes a few minutes to get started!',
     twitter: '@impactasaurus',
-    googleVerification: 'abcdefz'
+    sentryKey: 'a01a68a753034c548bbeff7c06dd2d37'
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorJson'
@@ -33,14 +33,6 @@ module.exports = {
         anonymize: true,
         // Setting this parameter is also optional
         respectDNT: true
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-sentry',
-      options: {
-        dsn: 'https://a01a68a753034c548bbeff7c06dd2d37@sentry.io/1362042',
-        environment: process.env.NODE_ENV,
-        enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)()
       }
     },
 
