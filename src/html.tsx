@@ -15,9 +15,11 @@ interface HtmlProps {
 export default (props: HtmlProps) => {
   const head = Helmet.rewind();
 
-  const verification = config.siteMetadata && config.siteMetadata.googleVerification ? <meta
-    name="google-site-verification"
-    content={config.siteMetadata.googleVerification} /> : null;
+  const verification = config.siteMetadata && config.siteMetadata.googleVerification ?
+    <meta name="google-site-verification" content={config.siteMetadata.googleVerification} /> : null;
+
+  const sentry = config.siteMetadata && config.siteMetadata.sentryKey ?
+    <script src={`https://js.sentry-cdn.com/${config.siteMetadata.sentryKey}.min.js`} crossOrigin="anonymous" /> : null;
 
   return (
     <html lang="en">
@@ -29,6 +31,7 @@ export default (props: HtmlProps) => {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
         />
+        {sentry}
         {head.title.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
