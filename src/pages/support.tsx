@@ -9,8 +9,14 @@ import {Questions} from "./faq";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const SupportPage = ({pageContext}: PageProps) => {
-  const {t} = useTranslation();
+  const {t, i18n} = useTranslation();
   const qs = Questions(t).filter((q) => q.support);
+
+  let email = "support@impactasaurus.org";
+  if (i18n.language === "pt") {
+    email = "support.pt@impactasaurus.org";
+  }
+
   return (
     <>
     <SEO
@@ -30,7 +36,7 @@ const SupportPage = ({pageContext}: PageProps) => {
       </Row>
       <Row className="header">
         <Col>
-          <h2><a href="mailto:support@impactasaurus.org">support@impactasaurus.org</a></h2>
+          <h2><a href={`mailto:${email}`}>{email}</a></h2>
         </Col>
       </Row>
       <Row className="header">
