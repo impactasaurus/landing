@@ -7,7 +7,7 @@ const indexablePages = require('./i18n/indexablePages.json');
 // - `templates/blog-page.tsx:23`
 // - `pages/blog.tsx:26`
 // - `pages/blog.tsx:121`
-const POSTS_PER_PAGE = 10;
+const POSTS_PER_PAGE = 9;
 const cleanArray = arr => compact(uniq(arr));
 
 // Create slugs for files.
