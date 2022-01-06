@@ -1,12 +1,12 @@
 ---
 title: 'Solace: Surviving exile and persecution'
-createdDate: '2022-01-05'
-updatedDate: '2022-01-05'
+createdDate: '2022-01-06'
+updatedDate: '2022-01-06'
 author: rcooke
 tags:
   - case study
 image: solace_logo.jpg
-draft: true
+draft: false
 ---
 
 As part of a new blog series, we are shining the spotlight on organizations that have fully embraced impact measurement. [Ruth Cooke](https://www.linkedin.com/in/ruth-cooke-0aab6ab9) from [Solace](https://www.solace-uk.org.uk/) has kindly answered some questions about how they approach and benefit from measuring their impact.
