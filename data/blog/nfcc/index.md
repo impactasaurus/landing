@@ -1,15 +1,15 @@
 ---
 title: National Fire Chiefs Council
 createdDate: '2022-12-04'
-updatedDate: '2022-12-04'
+updatedDate: '2022-12-05'
 author: jhardy
 tags:
   - case study
 image: nfcc-logo.png
-draft: true
+draft: false
 ---
 
-[Jo Hardy](https://twitter.com/Jofireinspired), Early Intervention National Liaison Officer at [National Fire Chiefs Council (NFCC)](https://www.nationalfirechiefs.org.uk/), has kindly provided a few words about why they have chosen Impactasaurus as part of their [Early Intervention Implementation Framework](https://www.nationalfirechiefs.org.uk/write/MediaUploads/Miscellaneous/0_-_NFCC_Early_Intervention_Implementation_Framework.pdf). The framework is a suite of guidance and tools to assist fire and rescue services in delivering effective early intervention programmes that meet the needs of young people, communities and key stakeholders. To read more about the framework, please head to [NFCC's website](https://www.nationalfirechiefs.org.uk/News/early-intervention-implementation-framework-launched-).
+[Jo Hardy](https://twitter.com/Jofireinspired), Early Intervention National Liaison Officer at [National Fire Chiefs Council (NFCC)](https://www.nationalfirechiefs.org.uk/), has kindly provided a few words about why they have chosen Impactasaurus as part of their Early Intervention Implementation Framework. The framework is a suite of guidance and tools to assist fire and rescue services in delivering effective early intervention programmes that meet the needs of young people, communities and key stakeholders. To read more about the framework, please head to [NFCC's website](https://www.nationalfirechiefs.org.uk/Prevention-Children-and-young-people).
 
 * * *
 
