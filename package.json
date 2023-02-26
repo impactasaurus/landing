@@ -96,7 +96,7 @@
     "enzyme-adapter-react-16": "^1.0.0",
     "eslint-config-xo-react": "0.11.1",
     "eslint-plugin-react": "6.10.3",
-    "flat": "^2.0.1",
+    "flat": "^5.0.1",
     "html-to-text": "^8.0.0",
     "http-server": "^0.12.3",
     "husky": "0.13.3",
