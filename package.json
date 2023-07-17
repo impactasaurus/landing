@@ -25,7 +25,7 @@
     "posti18n-pull": "node ./i18n/languages.js"
   },
   "dependencies": {
-    "@crowdin/cli": "3.5.3",
+    "@crowdin/cli": "3.12.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "@fortawesome/react-fontawesome": "^0.1.3",
